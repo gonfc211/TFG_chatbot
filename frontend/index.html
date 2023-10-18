@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="chatBot">
 
+<head>
+    <title>Open Edx Chatbot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<body ng-controller="botController">
+
+    <button class="open-button" ng-click="openChat()">Chat</button>
+
+    <div class="chat-popup" id="chat-window">
+    
+        <div id="chat-history"></div>
+    
+        <div id="suggested-questions">
+    
+            <p>Suggested Questions:</p>
+            <button class="btn question" ng-click="askQuestion(questions[0])">{{questions[0]}}</button><br>
+            <button class="btn question" ng-click="askQuestion(questions[1])">{{questions[1]}}</button><br>
+            <button class="btn question" ng-click="askQuestion(questions[2])">{{questions[2]}}</button><br>
+    
+        </div>
+    
+        <form class="form-container" id="chat-form">
+    
+            <input type="text" id="user-input" ng-model="messageText" (keydown.enter)="sendMessage()">
+            <button class="btn" ng-click="sendMessage()">Enviar</button>
+    
+            <button class="btn" ng-click="startRecording()">Grabar</button>
+            <button class="btn" ng-click="stopRecording()">Parar Grabacion</button>
+    
+            <button class="btn cancel" type="button" ng-click="closeChat()">Cerrar</button>
+    
+        </form>
+    
+    
+    
+    </div>
+
+
+</body>
+
+</html>
