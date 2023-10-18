@@ -1,0 +1,50 @@
+Veamos ahora el enfoque estructural de las pruebas,
+que se conoce también como "pruebas de caja blanca"
+o de "caja de cristal". En este caso o observamos el interior
+del código en detalle. Veamos este sencillo programa:
+calcula el máximo de dos números; tiene dos argumentos, dos
+enteros, "a" y "b". Si "a" es menor que "b" devuelve "b" y si no, "a".
+Entonces, esencialmente hay dos rutas, dos caminos
+por los que puede transcurrir el programa.
+Dados "a" y "b", o bien "a" es menor que "b" y en ese caso se asigna "b" a "m"
+y se devuelve ese "m", que es el código en rojo,
+o "a < b" no se cumple, en cuyo caso
+solo ejecutamos el caso "else", el código azul.
+Por tanto, hay estas dos rutas posibles.
+Una vez que hemos identificado estas dos rutas
+tenemos que encontrar los valores de entrada
+para estas dos rutas, junto con los resultados esperados.
+Aquí vemos, por ejemplo. Tenemos estos dos casos de prueba
+y si los seguimos, si los aplicamos terminamos
+atravesando los dos caminos posibles, las dos rutas posibles.
+Bien, ahora analicemos un caso un poco más complicado.
+Aquí tenemos un bucle "while" y dentro de él una sentencia condicional.
+La pregunta es, ¿qué casos debemos probar?
+Bueno, hay varias posibilidades. La primera posibilidad sería no entrar
+en el bucle, entonces tenemos que encontrar un caso de prueba
+que haga falsa la condición del "while". Supongamos que entramos
+una vez el bucle. Aquí, a su vez, tenemos dos posibilidades
+para el condicional: se ejecuta el caso "then"
+o se ejecuta el caso "else". Otra posibilidad sería entrar dos
+veces en el bucle. Una vez ejecutando el caso "then"
+y una vez el caso "else", por ejemplo. Bien, este es un poquito el
+esquema, ¿no? Es decir, y lo que hay que preguntarse ahora es:
+¿cuáles serían los valores de "n" y  "epsilon" que nos lleven a estos cuatro
+casos de prueba? Bien, lo dejamos como ejercicio para pensar.
+Bien, finalmente mencionemos un caso interesante más,
+en el que tenemos varios bucles anidados.
+La idea aquí es trabajar desde el bucle más interno hacia el exterior.
+Primero realiza pruebas simples de bucle para el bucle
+más interno, mientras que los bucles externos mantienen el mínimo
+número de iteraciones. Luego añade otras pruebas para valores
+fuera de rango o excluidos y finalmente trabaja hacia el exterior
+realizando las pruebas para el siguiente bucle, pero manteniendo
+los bucles externos con valores mínimos
+y otros bucles anidados en valores típicos y continúa en esta
+forma hasta que se han probado todos los bucles.
+Bien, el enfoque estructural de pruebas examina el código
+e intenta seguir tantos caminos como sea posible
+para aumentar nuestra confianza en la corrección del código
+y para las rutas identificadas, para los caminos identificados
+tenemos que definir los correspondientes valores de entrada
+como casos de prueba.

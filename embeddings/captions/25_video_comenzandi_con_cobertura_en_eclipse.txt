@@ -1,0 +1,69 @@
+El plugin de cobertura de código EclEmma
+fue creado en 2006 y su código se abrió bajo una
+licencia pública Eclipse EPL. EclEmma recupera métricas
+de cobertura de código al mismo tiempo que se ejecutan pruebas
+de programa directamente en Eclipse.
+El plugin se puede instalar de dos formas:
+la primera es desde el "Marketplace" de Eclipse.
+Podemos pulsar en "Help", "Eclipse Marketplace"
+y después buscar EclEmma. La segunda opción es utilizar
+los sitios web de actualización. Podemos poner la URL
+en cualquier instalación de Eclipse de la versión 3.5
+o superior en el menú "Help", "Install New Software", instalar
+software nuevo. Cuando se instala el plugin hay que reiniciar Eclipse.
+A partir de ese momento se pueden ejecutar pruebas utilizando
+la nueva opción de lanzamiento, "Launch Coverage As".
+EclEmma añade un nuevo modo de lanzamiento,
+"Coverage", al mismo nivel que "Run" y Debug", ejecutar y depurar,
+que ya están disponibles desde el menú
+"Run" y en la barra de herramientas. La opción "Coverage Configurations"
+también está disponible para establecer el ámbito empleado
+en el análisis de cobertura. Es posible seleccionar el código
+fuente en Java que se desea analizar en la prueba de cobertura.
+En este ejemplo podemos ver en el panel de la izquierda
+las clases de prueba creadas para los proyectos
+"Calculator" y "SquareGrid". Vamos a seleccionar las fuentes
+del proyecto "SquareGrid" en el panel de la derecha.
+A continuación vamos a lanzar el modo de cobertura de código
+utilizando el proyecto "SquareGrid" como ejemplo.
+En primer lugar seleccionamos la clase de prueba "SquareGridTest",
+que está en el paquete "Test". Después pulsamos la pestaña
+"Coverage" y seleccionamos la opción "Coverage As"
+y después "JUnit Test".
+Si hubiéramos seleccionado la clase "SquareGrid"
+podríamos haber seleccionado "Coverage As"
+"Java Application", aplicación Java.
+La vista de cobertura del código, "Coverage",
+aparece automáticamente cuando se lanza una nueva sesión.
+Se puede abrir manualmente así como también desde el menú
+"Window", "Show view", "Other" en la categoría Java.
+Esta vista muestra informes de cobertura para la sesión que
+se encuentra activa. La vista "Coverage" muestra todos los elementos
+de Java analizados dentro de la jerarquía común.
+Las columnas individuales contienen el grado de cobertura,
+"Coverage", las instrucciones cubiertas, "Covered Instructions",
+las instrucciones no cubiertas, "Missed Instructions",
+y el total instrucciones, "Total Instructions".
+La cobertura se mide, por defecto, en términos de números y
+porcentaje de instrucciones, pero esto se puede cambiar
+de acuerdo con el tipo de cobertura deseado
+utilizando la pestaña "View Menu".
+Podemos seleccionar "Branch Counters" para ver las coberturas
+de ramas, "Line Counters" para ver la cobertura de líneas
+de código, "Method Counters" para ver la cobertura de métodos
+y algunas otras opciones adicionales. La cobertura de líneas
+y de ramas de las sesiones activas también se muestra directamente
+en los editores del código fuente de Java
+utilizando líneas de color resaltadas.
+Color verde se utiliza para líneas o ramas que se han cubierto
+completamente. Color amarillo se utiliza para líneas o ramas
+parcialmente cubiertas en las cuales hay algunas instrucciones
+o ramas que no se cubren. Finalmente, el color rojo se usa para
+líneas o ramas que no se han ejecutado. En las clases de prueba
+también se resalta la cobertura. En el caso de la clase "SquareGrid",
+el resultado sería similar, con el color verde mostrando
+las pruebas exitosas y el color rojo mostrando las pruebas
+fallidas. En este ejemplo podemos ver que la cobertura no es
+del cien por cien. Si quisiéramos cubrir un cien por cien entonces
+deberíamos añadir pruebas para los valores no permitidos
+de "x" e "y" y para el método "Main".

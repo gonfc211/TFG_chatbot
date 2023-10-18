@@ -1,0 +1,82 @@
+Bien, habéis escrito un programa y estáis muy orgullosos de ello.
+¡Estupendo! Pero, ¿estáis seguros de que funciona correctamente?
+Porque puede haber errores de codificación
+y los motivos para estos errores pueden ser muy variopintos:
+la compresión incorrecta del problema a resolver
+o una mala práctica de codificación o una
+cooperación incorrecta con los compañeros que trabajan en el
+mismo proyecto y una larga lista de posibilidades.
+Ahora sobre todo nos preocupan los requisitos funcionales del código.
+Es decir, hay requisitos no funcionales
+que pueden ser de interés en general, como el rendimiento, la seguridad,
+la usabilidad, la mantenibilidad, etcétera, pero los vamos a dejar
+aparte y vamos a ocuparnos ahora de los requisitos funcionales.
+En este contexto, una forma de encontrar errores en el código
+es comprobar que el resultado del código para una determinada
+entrada coincide con los resultados esperados.
+Veamos. Bien, tenemos la especificación de un programa a escribir,
+digamos que queremos escribir un programa que calcule el cuadrado
+de un número dado. Es decir, si nos dan un dos
+el resultado debería ser cuatro. Si nos dan un tres, el resultado
+debería ser nueve. Esta es la especificación y ahora escribimos un
+programa que satisfaga esta especificación.
+Así que nuestro programa debería devolver un cuatro cuando
+se le dé un dos. Entonces, ¿cómo podemos saber si el programa
+es correcto? Pues decir, pues muy fácil, nada más probaremos
+el programa para ver si resultado es el esperado.
+Le damos un dos y miramos a ver si el resultado es un cuatro.
+Bien, pero esto no es suficiente porque también habría que
+probar con el tres y con el cuatro, con el cinco, con el cero, con el uno,
+con los negativos y si los números pueden ser
+reales, es decir, números con coma o punto flotante, tendremos
+que continuar comprobando los números con la parte decimal.
+Bueno, bueno, bueno... Un momento... Este es un número de comprobaciones
+muy grande, porque, recordemos, ¿cuántos valores diferentes puede
+tener un número "double", número de coma flotante "double".
+Bien, utiliza 64 bits, es decir dos elevado a 64
+ comprobaciones distintas, esto es algo así como 18
+por diez elevado a 18, que es un número enorme.
+Incluso con el ordenador más rápido no tendríamos tiempo
+suficiente para comprobar este sencillo programa
+durante toda nuestra vida o durante varias vidas
+y la situación es mucho peor si tenemos varias entradas.
+Entonces, la pregunta es: ¿podemos encontrar un conjunto reducido
+de casos de prueba que sea suficientemente pequeño
+como para ser ejecutado en un marco de tiempo razonable
+pero suficientemente grande como para aumentar nuestra confianza
+suficientemente en el código?
+Bien, esta es la primera pregunta. La segunda cuestión es:
+quizás no sea suficiente mirar simplemente el comportamiento
+entrada-salida.
+Quizá deberíamos mirar el código con más detalle
+y en particular mirar, por ejemplo, todos los posibles caminos
+de sentencias que puede tomar la ejecución de un programa.
+Con esto entendemos todas las posibles secuencias de sentencias
+que una posible ejecución podría seguir según los diferentes
+valores que pueden tomar las condiciones en las sentencias condicionales
+y en los bucles. Y tenemos que probar un conjunto de posibles valores
+de entrada cuidadosamente seleccionados
+como para comprobar si los resultados son conformes a nuestras
+expectativas. Así, en principio, hay dos planteamientos para
+las pruebas. Uno es enfoque funcional, que comprueba el comportamiento
+de entrada-salida sin mirar el código. Es el enfoque que se
+llama de "caja negra", porque no miramos dentro.
+Entrada-salida. El otro es el enfoque estructural, que mira el
+código. A diferencia del primero se llama enfoque de prueba de la
+"caja blanca o de cristal".
+Por otra parte, distinguimos entre la prueba unitaria
+y la prueba de integración. La prueba unitaria se refiere a
+comprobar una sola unidad de código. Esta unidad puede ser
+un solo método o una clase completa, y la prueba de integración
+se refiere a comprobar varias de estas unidades como un grupo,
+porque es posible que una unidad muestre el fundamento correcto
+si se prueba de forma independiente pero no o en conjunción
+con un grupo.
+Así, nuestro objetivo será encontrar
+un buen conjunto de casos de prueba que sea lo suficientemente
+pequeño como para ser tratable pero suficientemente grande
+como para convencernos de que nuestro programa
+es correcto. Porque lo que sabemos es que la prueba
+sólo puede mostrar la presencia de errores
+y no su ausencia, como dijo una vez el célebre científico informático
+Edsger W. Dijkstra.

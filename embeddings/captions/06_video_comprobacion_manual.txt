@@ -1,0 +1,107 @@
+
+Una forma de encontrar errores en un código es ejecutarlo
+en la cabeza. Bueno, o quizás con la ayuda de lápiz y papel,
+para hacer el seguimiento de los valores que las variables
+van tomando sucesivamente. Esto se conoce como seguimiento a
+mano, en inglés "hand tracing", porque se sigue, de alguna forma, el código a mano.
+Vamos a ver el siguiente ejemplo.
+Queremos escribir un método que calcule la división entera
+de dos enteros. Tenemos un dividendo m, digamos ocho,
+y un divisor n, por ejemplo tres, y queremos saber cuántas
+veces cabe n en m. Si tenemos ocho unidades,
+podemos hacer un primer grupo de tres y un segundo grupo de
+tres y ya solo nos quedan dos unidades, por tanto no podemos hacer
+ningún grupo más de tres. Como podemos hacer dos grupos de
+tres, el resultado de la división entera es dos
+y como tenemos dos unidades restantes, decimos que el resto
+o módulo es dos.
+De nuevo otra vez. Supongamos ahora que el dividendo es veintitrés
+y n, el divisor, cuatro. ¿Cuántas veces cabe cuatro en veintitrés?
+Bueno, podemos hacer como mucho cinco grupos de cuatro,
+así que la división entera es cinco. Cuatro por cinco es veinte
+y nos deja un resto de tres. Por tanto, la división entera es
+cinco y el resto tres.
+Recordemos que si los argumentos son enteros, la barra inclinada
+hacia la derecha representa la división entera
+y el resto de la división entera, el módulo, se representa
+con un signo de porcentaje.
+Bien, entonces, ¿cómo podemos calcular esta división entera?
+Vayamos por partes. Cogemos el dividendo, m,
+y le restamos el divisor n sucesivamente hasta que no se
+puede hacer más. Cada vez que estamos n de m
+incrementamos un contador en una unidad.
+Así que, primero, tenemos veintitrés unidades,
+hacemos un grupo de cuatro y quedan diecinueve unidades restantes.
+A continuación, hacemos un segundo grupo de cuatro,
+con lo que queda en quince. Hacemos un tercer grupo de cuatro.
+Nos quedan once unidades. Hacemos un cuarto grupo de cuatro
+y quedan siete. Y el quinto y último posible grupo de cuatro,
+con lo cual nos quedan tres. En resumen, cinco veces cuatro, más los
+tres que quedan, hacen un total de veintitrés.
+Observamos que esta ecuación tiene validez
+no sólo para los valores de x e y al final del proceso,
+sino también en cualquier paso intermedio.
+Por ejemplo, después de haber hecho el primer grupo de cuatro,
+cuando y es igual a uno y x es diecinueve, son los diecinueve restantes,
+la ecuación se cumple y también para los demás valores de y.
+Por tanto, hemos visto que hemos restado el divisor del dividendo,
+del dividendo restante, en repetidas ocasiones y vamos a tomar
+esto como base para un bucle "while". y es el número de
+grupos de unidades que hemos agrupado en cada paso
+y equis es el número de unidades restantes por agrupar.
+Por tanto, x es inicialmente m, ya que no se ha agrupado ninguna unidad.
+E y es cero por la misma razón.
+El bucle "while", vemos que x disminuye de n en n
+e y se incrementa en una unidad, porque en cada iteración construimos
+un nuevo grupo de n, y haremos esto mientras queden unidades
+e y nos dará número de grupos que hemos logrado formar al final.
+Ahora comprobemos si nuestro razonamiento es correcto.
+Ejecutemos el código a mano, hagamos este "hand tracing", este
+seguimiento a mano.
+Pero como ayuda, podemos hacernos valer de una tabla
+en la que escribo los valores de nuestras variables en diferentes
+momentos de la ejecución. Vamos a ejecutar ahora el mismo ejemplo
+que hemos visto antes, en el que m es veintitrés y n cuatro.
+Por tanto, primero inicializamos x a veintitrés e y a cero.
+A continuación, entramos en el bucle, porque veintitrés es mayor
+que cuatro. Por tanto, disminuimos x en cuatro unidades,
+quedando diecinueve, e incrementamos y en uno.
+Por tanto, ahora y es igual a uno. En la siguiente iteración,
+como la condición todavía se cumple, a pasa a ser quince
+e y dos. La condición sigue siendo cierta,
+así que entramos de nuevo en el bucle. x pasa a ser once e y tres.
+Una vez más. Ahora x pasa a ser siete e y cuatro.
+Y una vez más, la última. x pasa a ser tres e y cinco.
+Ahora bien, si x es igual a tres, la condición ya no se cumple
+y salimos del bucle y el método devuelve el valor de y,
+el último valor y, que en nuestro caso es cinco. Así que cinco
+es el resultado de la división entera. Como subproducto, el resto
+de esta división entera es tres, pero no nos lo han preguntado.
+Recordemos que en cualquier iteración del bucle, la ecuación
+de arriba se cumple y lo podemos comprobar con los valores,
+por ejemplo, que tenemos al final. Ahora bien,
+¿es nuestro programa correcto? Bueno, parece serlo,
+pero, para asegurarnos, vamos a comprobarlo con otros valores.
+Ahora supongamos que m es veinticuatro y n, de nuevo, cuatro.
+Podemos hacer el mismo seguimiento a mano,
+pero cuando llegamos a un x igual a cuatro
+salimos del bucle, ya que cuatro no es mayor que cuatro,
+y nos saldría también cinco como resultado de la división entera.
+¿Es esto correcto? ¡No! Si el resto es cuatro,
+es que podemos hacer otro grupo de cuatro,
+tenemos que hacer una iteración más del bucle.
+El problema en nuestro código es que la condición del bucle
+era incorrecta. Tiene que ser x mayor que o igual a n.
+El resto siempre tiene que ser menor, es decir, rigurosamente menor
+que el divisor n.
+Si esto no se cumple en el final nuestro programa esta mal.
+Bien, esto ha sido el seguimiento a mano, el "hand tracing",
+que es útil cuando no hay otra forma de revisar el código o queremos
+revisar algo en un minuto. El problema es que es engorroso
+y que no garantiza que encontremos todos los errores, todos
+los "bugs". En el ejemplo mostrado además hemos visto que tenemos
+que ser especialmente cuidadosos en los casos límite.
+Así que, bueno, esto es depurar a mano, con sus limitaciones,
+pero podemos hacerlo mejor. Lo veremos más adelante.
+Pero vamos a eliminar, vamos a intentar eliminar todos los errores, todos
+"bugs". Los "bugs", ¿donde estás? ¿Dónde estás? ¡Te pillé!

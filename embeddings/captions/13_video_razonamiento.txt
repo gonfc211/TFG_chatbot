@@ -1,0 +1,45 @@
+El hecho de combinar código con expresiones lógicas
+nos da paso a posibilidades interesantes en las que podemos razonar
+acerca de los programas y esto, a su vez, nos puede ayudar a escribir
+programas lógicamente correctos. Bien, volvamos a nuestro ejemplo
+de la división entera, pero en lugar de escribir los asertos
+a posteriori comencemos con ellos en primer lugar.
+Así que, antes de entrar al bucle "while" y después de cada iteración
+dentro del bucle y, por tanto, también después de salir de él,
+sabemos que se cumple la siguiente igualdad:
+"y", el número de bloques de n unidades, por "n", el número
+de unidades en cada bloque, más las unidades restantes, "x",
+es igual a "m".
+Esta ecuación permanece invariante a lo largo de toda la
+ejecución del bucle, por ello la llamamos
+"invariante" del bucle.
+Lo que hacemos en cada iteración del bucle es empaquetar n unidades
+en un bloque, así que si "y" lo incrementamos en uno,
+"x" tiene que ser decrementando en n unidades
+si queremos que se siga cumpliendo la invariante.
+Miremos en la parte inferior derecha, las ecuaciones que tenemos ahí.
+Las variables en rojo se corresponden a una iteración
+y las azules a la siguiente. La relación entre ellas es muy clara.
+Así que esta invariante nos ayuda a reforzar nuestra confianza
+sobre las sentencias que escribimos en el bucle.
+Pero veamos qué ocurre con la condición del bucle
+si al final de salir del bucle tiene que cumplirse x < n,
+esto quiere decir que dentro del bucle
+tiene que ser válida la negación de esta condición.
+Es decir, no es cierto que x sea menor que n.
+Es decir, que x tiene que ser mayor o igual que n.
+"x < n" es una condición que se cumple después de
+salir del bucle, es una poscondición.
+Así que cuando diseñamos el programa desde cero
+puede ser de gran utilidad ir hacia la lógica y el código
+de forma sucesiva. Son como dos visiones de lo mismo.
+El código es la visión operacional, el cambio través del tiempo,
+mientras que las expresiones lógicas son verdades que se cumplen
+en distintos lugares del código. El hecho de pensar en invariantes
+y condiciones refuerza nuestra comprensión del código
+y nos ayuda a escribirlo mejor. "Vaya", estarás pensando,
+"creía que estaba aprendiendo a programar y ahora tengo que saber
+de lógica y razonamiento". Bueno, no te preocupes,
+esto es solamente una herramienta conceptual
+que te ayudará a escribir programas correctos
+y esto lo que quieres, ¿no es así?

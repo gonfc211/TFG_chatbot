@@ -1,0 +1,91 @@
+Eclipse soporta la creación de casos de prueba y "Suites" de prueba,
+tests, por medio de asistentes con JUnit.
+Eclipse proporciona soporte para la creación
+y ejecución de estos tests de forma interactiva.
+Vamos a utilizar el proyecto "Calculator", calculadora, de Java
+en Eclipse para comprender cómo funciona JUnit.
+Este proyecto tiene una clase, "Calculator", con un atributo
+estático llamado "result", resultado, y cuatro métodos:
+sumar, "add", restar, "substract", elevar al cuadrado, "square"
+y obtener un resultado, "getResult".
+Si tenemos un proyecto creado con al menos una clase,
+entonces podemos crear una clase de prueba en JUnit.
+En la vista "package explorer", explorador de paquetes,
+haz clic con el botón derecho en una clase
+y selecciona "New", "JUnit Test Case", caso de prueba en JUnit.
+Alternativamente también puedes usar la barra del menú,
+"File", "New", "JUnit Test Case".
+Después, en el asistente, debes comprobar la versión que está
+habilitada, en este caso la versión 4, y también la carpeta
+de origen. Debes añadir un nombre al paquete
+y escribir un nombre para la clase del caso de prueba.
+Este nombre es generalmente el nombre de la clase que queremos
+probar junto con "test".
+Puedes utilizar "stubs", que son trozos de código usados como
+sustituto del código real para el método que te gustaría crear.
+También debes especificar la clase sometida a prueba,
+"Class under test". El botón examinar, "Browse..." puede ayudarte a encontrar
+esta clase en tus sistema de ficheros.
+Ahora, haz clic en el botón "next", siguiente,
+y en la siguiente pantalla el asistente muestra los métodos disponibles
+para probar.
+Selecciona aquellos que quieras. En este caso, vamos a seleccionar
+"add" y "substract". Finalmente, haz clic en el botón "Finish" para terminar.
+Ahora puedes implementar los "stubs" y los tests del método.
+Eclipse normalmente añade sentencias de importación
+y busca de forma automática todas aquellas importaciones estáticas
+que sean necesarias. En este caso la importación estática
+se usa para sentencias del tipo "assert", "assertions".
+La importación estática acepta como públicos y estáticos
+los atributos y métodos definidos en una clase
+para ser utilizados en código Java sin especificar la clase
+en la que el atributo está definido.
+Igualmente, Eclipse añade la sentencia "fail("Not yet implemented");",
+fallo todavía no implementado, en los métodos de prueba.
+Esta sentencia debe ser sustituida por tu implementación.
+Para ejecutar un test, selecciona la clase que contiene los
+tests, haz clic con el botón derecho y luego selecciona "Run As",
+ejecutar como, "JUnit Test", test de JUnit.
+Este proceso inicia JUnit y ejecuta todos los métodos
+de prueba en esta clase. También puedes utilizar el atajo de
+teclado Alt + Shift + X y T para ejecutar el test
+en la clase seleccionada.
+Observa que si la posición del cursor está en el panel de
+edición sobre un nombre de método de prueba,
+este atajo ejecuta sólo ese método de prueba.
+El resultado de las pruebas de JUnit se muestra en la
+vista de JUnit, "JUnit View".
+En esta vista tienes información sobre el número de tests
+ejecutados, "Runs", los errores y los fallos.
+Los resultados de los tests se muestran individualmente
+indicando el éxito o el fallo, además del tiempo empleado.
+Si hay errores o fallos, la información adicional con el detalle
+se mostrará en el panel inferior.
+En el método "testSubstract" la prueba asido modificada
+para dar lugar a un fallo, "assertTrue(calc.getResult()==2);".
+El resultado puede verse en la vista de JUnit.
+En este caso hay un fallo en el método
+y su rastro indica que es un "AssertionError".
+La vista JUnit por defecto también puede ser configurada
+para mostrar, por ejemplo, sólo pruebas fallidas.
+Puedes añadir otro caso de prueba en JUnit,
+por ejemplo, la clase "ParameterizedSquareTest",
+siguiendo los pasos anteriores. En este caso, Eclipse
+te ayuda a importar las nuevas clases. Por ejemplo,
+"RunWith", ejecutar con, "Parameterized",
+"Parameterized.Parameters" de los paquetes "org.junit.runner"
+y "org.junit.runners".
+Puedes ejecutar este test y ver el resultado en la vista de JUnit.
+De nuevo, si hay fallos, los verás en la parte inferior
+en el panel de rastreo de fallos, "Failure Trace".
+Una vez que todos los casos de prueba están implementados
+puedes crear una "suite" de pruebas, "Test Suite",
+de JUnit, que ejecutará todas las clases de prueba en
+el orden especificado. En la vista "package explorer",
+selecciona las clases de prueba que deberían ser incluidas,
+haz clic con el botón derecho y selecciona "New",
+"Other...", "Java", "JUnit", "JUnit Test Suite".
+Con esto se iniciará el asistente "JUnit Test Suite".
+Puedes comprobar el nombre de la clase y las clases de prueba
+incluidas en la "suite".
+Haz clic en el botón "Finish" y ahora pues ejecutar la clase "AllTests".

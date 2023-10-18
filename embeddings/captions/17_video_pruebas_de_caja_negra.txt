@@ -1,0 +1,43 @@
+Bien ahora veamos el "testing" funcional, el "testing" de caja negra,
+el "testing" en el que no miramos dentro del código.
+Como no podemos revisar todos los posibles valores de entrada,
+clasifiquemos estos valores de entrada en grupos,
+y en grupos para los cuales se puede esperar un comportamiento
+similar. En otras palabras, clasifiquemos los valores de entrada
+en clases de equivalencia. Aquí vemos una posible forma de
+dividir, de particionar los valores en varios conjuntos.
+Pero ahora veamos este ejemplo: hemos escrito un programa para
+calcular el máximo de dos valores enteros.
+el resultado debería ser "a" si "a" es mayor que "b"
+y "b" si no lo es. Bueno, el caso de la igualdad lo podemos poner
+en el primero o en el segundo caso, lo tenemos puesto en el segundo.
+Ahora bien, si "a" y "b" son valores enteros y no podemos probarlos
+todos la pregunta es: ¿cuál sería una buena partición
+para testear, para probar nuestra caja negra?
+Probemos con esta partición: dividimos "a" y "b" considerando
+si son pares o impares, así que tenemos cuatro conjuntos, cuatro
+clases de equivalencia: una en la que ambos son pares,
+otra ambos impares, otra uno par y el otro impar y viceversa.
+Y ahora identifiquemos cuatro parejas a-b
+como representantes de estos cuatro conjuntos.
+Elegimos por ejemplo, dos cuatro, uno cinco, uno seis y dos siete
+y ahora suponemos que obtenemos los siguientes resultados
+en nuestro programa sometido a prueba. Los resultados que nos da
+para esas cuatro parejas de entrada son cuatro, cinco, seis y siete.
+Bien, los resultados obtenidos son exactamente los mismos que
+los esperados, así que en principio podríamos concluir que
+nuestro programa, nuestro programa misterioso,
+es correcto. Pero miremos el interior. ¡Oh! Nos encontramos una sorpresa...
+Porque este programa siempre devuelve el segundo argumento, "b".
+Lo que sucede es que para los valores de entrada elegidos
+"b" coincide con el máximo. Por tanto, concluimos que esta partición
+no es suficientemente buena; busquemos una partición mejor.
+Ahora vamos a dividir en estas tres clases de equivalencia:
+a menor que b, a igual a b, y a mayor que b.
+Y elegimos tres valores de prueba, uno en cada clase de equivalencia:
+la clase amarilla, la verde y la azul. Ahora nuestro programa
+anterior falla con esta prueba, pero esperemos que uno correcto
+la superará adecuadamente. Por tanto, particionar el conjunto
+de posibles entradas es un enfoque para la prueba de caja negra,
+pero, como hemos visto, tenemos que elegir esta partición de
+una forma sabia para obtener una buena prueba.

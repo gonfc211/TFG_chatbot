@@ -1,0 +1,68 @@
+Ahora que ya conoces algo más de la herramienta de depuración
+de Eclipse vamos a ver tres programas de ejemplo
+que pueden parecer correctos, ya que no contienen errores de
+compilación, pero que sí presentan algunos problemas.
+En el primer ejemplo, estamos intentando obtener el factorial
+de un número generado aleatoriamente. Creamos la clase "Factorial"
+con un método principal, método "main".
+Este método "main" almacena en la variable "n" un número aleatorio
+de cero a nueve, tiene un bucle "while" para calcular el factorial
+e imprime el resultado por pantalla. El código parece ser
+correcto y si lo guardas en Eclipse no dará ningún error
+de compilación, pero si lo ejecutadas múltiples veces
+verás que la mayoría de veces no está imprimiendo la segunda
+línea, valor de n factorial, "Value of n!",
+más el resultado. Si miras un poquito más de cerca la barra
+de la consola, donde se imprime el resultado, verás que el botón
+"stop" está resaltado. Esto significa que el programa todavía
+se está ejecutando. Así que tenemos un bucle infinito.
+Pongamos un "break point" dentro del "while" y depuremos
+código para ver qué sucede.
+Si recorremos el bucle varias veces, podemos ver que "n" no
+cambia. Es por ello que tenemos este bucle infinito.
+Simplemente actualizando el valor de "n" se resolverá el problema.
+Ahora, ejecutemos el programa varias veces para ver que todo
+está correcto.
+Tomemos otro ejemplo. Creamos la clase "Jumping",
+destinada a calcular el mayor divisor de un número generado
+aleatoriamente entre uno y cien.
+Tenemos un bucle "for", que comprueba si el divisor de un número
+que se va decrementando obtiene cero como resto.
+Finalmente, se imprime por pantalla el divisor más alto.
+Aunque el código compila bien, en algunos casos el resultado
+no es correcto, ya que el programa dice que uno es el divisor
+mayor de ciertos números, lo cual no es cierto.
+Podemos intentar analizar este código depurándolo.
+El "break point" aquí podría estar, por ejemplo, al comienzo del bucle.
+Al depurar, podemos ver que estamos haciendo solo una vez este
+bucle "for". Esto es extraño; tenemos una condición inicial,
+una condición fina,l por lo que el bucle debería hacerse más
+de una vez. Entonces, ¿qué está pasando? Si vamos dentro del
+bucle "for" y depuramos el código, podemos ver que no estamos
+cumpliendo la condición "if" en la primera iteración, como debería
+ser, pero aun así estamos intentando alcanzar la sentencia
+"i = 1".
+Entonces, ¿qué está pasando aquí? Si vamos dentro del bucle
+"for" y depuramos el código, podemos ver que no estamos
+cumpliendo la condición "if" en la primera iteración,
+como debería ser, pero igualmente estamos ejecutando la sentencia
+"i = 1". Esto hace que la ejecución del bucle "for"
+finalice sin importar si esta condición se cumple o no.
+El problema aquí es que estamos olvidando las llaves en la sentencia del "if".
+Si las añadimos cerrando el "if" con la sentencia "i = 1",
+conseguiremos resolver el problema que tenemos.
+Podemos ejecutar el código varias veces para ver que todo es correcto.
+Finalmente, en el tercer ejemplo, tenemos la clase "Array" con
+el método "main", que crea un "array" de números enteros generados
+aleatoriamente entre cero y nueve y luego imprime el "array"
+por pantalla. Si ejecutamos el código, Eclipse
+nos mostrará un error. Este error es una excepción.
+"Array index out of bounds exception", excepción por haber excedido
+los límites del "array", así que tenemos un error en tiempo
+de ejecución. Si colocamos un "break poin"t en el bucle "for"
+y depuramos el código podemos ver que se está accediendo
+a la posición cinco del "array" en la quinta iteración,
+lo cual es un importante despiste. Nuestro bucle tiene que empezar
+con "i = 0" y terminar cuando "i" no sea menor que cinco.
+En ese caso el código será correcto. Podemos cambiar el código
+y ejecutarlo varias veces para comprobar que todo está bien.

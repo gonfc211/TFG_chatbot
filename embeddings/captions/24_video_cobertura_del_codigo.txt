@@ -1,0 +1,73 @@
+Bien, una vez que hemos escrito varios casos de prueba
+nos podemos preguntar, ¿hemos probado todas las posibilidades?
+¿O nos hemos olvidado de tener en cuenta alguna parte del código
+o alguna ruta, algún camino en el código? La cobertura de código,
+"code coverage", es una medida de cuántas parte del código
+se han sometido a prueba. Y aquí hay varios criterios posibles.
+La cobertura de métodos se refiere a si todos los métodos
+ha sido probados o no.
+La cobertura de sentencias mide si todas sentencias han
+sido cubiertas por el texto o solo un porcentaje de ellas.
+La cobertura de ramas o "branch coverage"
+se refiere a las ramas que la ejecución de un programa puede
+tomar debido a condicionales. La cobertura de condiciones
+es parecida, pero se refiere a todas las condiciones booleanas,
+tanto verdaderas o falsas, que pueden probarse.
+Bien, veamos este ejemplo, en el que queremos imprimir en cuál
+de los cuatro cuadrantes de un tablero de ajedrez se encuentra posicionada
+una pieza.
+Y aquí tenemos el método.
+Queremos averiguar la cobertura de sentencias
+y vemos que hay cinco sentencias. Todas son tendencias de impresión,
+que están aquí indicadas en rojo. Y revisemos estos cuatro
+casos de prueba, estas cuatro posiciones
+que se ven en la imagen y vamos a comprobar si se ejecutan todas
+las sentencias al menos una vez. Para la pieza en la posición (2,1)
+ejecutamos las sentencias que vemos aquí señaladas con
+la fecha roja.
+Sólo dos de ellas no se prueban, debido precisamente a las condiciones que hay.
+A continuación probamos con la posición (1,5)
+y se ve que se ejecuta una sentencia más,
+la que imprime N. Lo indicamos aquí con una flecha roja.
+También se han probado otras sentencias, pero como ya han sido cubiertas
+por la posición anterior, pues no las reflejamos.
+Las sentencias probadas anteriormente las indicamos aquí
+con flechas azules, independientemente de si ahora se prueban o no.
+A continuación, posición (6,2). Se cubre una sentencia más,
+la que imprime E. Bien, hemos cubierto ya las cinco sentencias.
+Bueno, si probáramos ahora con la posición (5,6)
+pues también estarían cubiertas todas las sentencias.
+Por tanto, tenemos un cien por cien de cobertura de sentencias.
+Por tanto, con los cuatro tests hemos visto que hemos cubierto
+todas las sentencias. En realidad hemos visto que con tres
+de esos tests tendríamos también el cien por cien de cobertura
+de sentencias del código.
+Además, y eso se puede ver aparte, con los cuatro tests tendremos
+el cien por cien de la cobertura de métodos,
+cobertura de ramas y cobertura de condiciones.
+Pero, ¿qué significa esto en realidad? El cien por cien de cobertura,
+¿es una garantía de que el código es correcto?
+¡No! Porque podemos tener el cien por cien de cobertura de código
+y a pesar de ello tener errores, y lo vamos a ver con un ejemplo.
+Supongamos que sustituimos dos de los operadores,
+dos ">=" por operadores ">",
+haciendo que el código, por tanto, sea incorrecto
+(vemos aquí los operadores en rojo). Entonces, con los mismos cuatro
+valores seguimos teniendo el cien por cien de cobertura
+de código y además, para esos valores, los resultados esperados
+coinciden con los correctos en los cuatro casos.
+Por tanto, es importante recordar que una cobertura de código
+al cien por cien y de resultados correctos
+no es ninguna garantía de corrección. Como hemos visto en este
+ejemplo no se ha detectado ningún error
+a pesar del cien por cien de cobertura de código,
+pero el método era incorrecto.
+Podríamos haber detectado el error si hubiéramos comprobado con
+la posición (4,6), pero eso es otra historia.
+Pero lo que debemos recordar es que si no tenemos cobertura
+de código al cien por cien sabemos que algunas parte del código
+se han dejado sin probar y deberíamos seguir intentando.
+Sin embargo, con un cien por cien de cobertura
+no tenemos una garantía de corrección.
+Recordemos a Dijkstra: sólo podemos demostrar la presencia errores,
+no su ausencia.

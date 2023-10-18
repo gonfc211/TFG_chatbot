@@ -1,0 +1,100 @@
+Bien, veamos un ejemplo completo con pre y poscondiciones
+y con invariantes y cómo pueden ayudar a programar mejor.
+Pensemos en el depósito de combustible de un coche.
+Cuando el indicador de combustible señala un cuarto,
+podemos suponer que el contenido del depósito
+puede tener unos 15 litros, dos arriba, dos abajo.
+Si ahora añadimos 15 litros el contenido depósito estará
+entre 28 y 32 litros, así que
+qué "tankLevel" esté entre 13 y 17 es la precondición
+y "tankLevel" entre 28 y 32 la poscondición
+del código que sirve para incrementar "tankLevel" en 15.
+De la misma forma puede haber una invariante.
+Por ejemplo, que el nivel de depósito esté siempre entre cero
+y la capacidad máxima del depósito.
+Por tanto, el código ha de cumplir el contrato.
+Tiene que satisfacer la poscondición siempre y cuando que
+la precondición se satisfaga, y además ha de mantener la invariante
+igual que estaba al principio. Modelemos ahora el depósito de combustible.
+Tiene dos atributos: "tankMax", que es la capacidad
+del depósito, y "tankLevel" es el nivel en un momento determinado.
+El constructor crea un depósito con una capacidad dada
+y un nivel de combustible determinado.
+Ahora podemos definir métodos para obtener los valores de
+estos atributos, "tankLevel" y "tankMax", y después podemos definir
+dos métodos con resultado booleano. Uno es el método "empty",
+que comprueba si el depósito está vacío, esto es, que "tankLevel"
+es igual a cero y el método "full",
+que comprueba si el nivel equivale a la capacidad.
+La cosa se pone un poco más interesante
+cuando permitimos llenar el depósito y cuando podemos consumir
+combustible. El método "fill" va a añadir al depósito la cantidad
+de combustible que recibimos como parámetro,
+por medio de la variable "amount", y el método "consume"
+eliminará del depósito la cantidad de combustible indicada
+en el parámetro. En ambos casos se modifica
+el nivel del depósito.
+Una precondición es un requisito que ha obedecer quien llame al método.
+Por ejemplo, el método "fill" de la clase "FuelTank"
+tiene una precondición y es que la cantidad de combustible
+que se va a depositar debe ser mayor que cero.
+Es responsabilidad de quien llama el no llamar nunca a un método
+si se viola alguna de sus precondiciones.
+Pero, si de todos modos se llama al método,
+el método llamado ya no es responsable de producir un resultado correcto.
+Por tanto, una precondición es una parte importante
+de un método y tendremos que documentarlo.
+Aquí lo hemos documentado de tal forma que el parámetro "amount"
+tiene que ser mayor que cero. Bueno... Un aviso importante:
+"@precondition" no es una etiqueta estándar
+de Javadoc, existe en una extensión, por tanto
+si tenemos esa extensión debemos escribir "@precondition",
+con el símbolo arroba (@). Pero si no la tenemos, en ese caso Javadoc
+eliminará toda etiqueta que no conoce, por tanto esta etiqueta
+no aparecerá en la documentación generada.
+En este caso, es mejor escribir "precondition"
+como texto plano, sin el símbolo "@".
+Bueno, este comentario aparte...
+El método "fill" de la clase "FuelTank" tiene otra precondición:
+que el depósito combustible no debe estar lleno.
+Si está lleno no podemos añadir combustible.
+De nuevo es responsabilidad de quien llama no intentar nunca añadir
+combustible en un depósito que ya está lleno.
+Ahora bien, esta última condición puede refinarse.
+¿Qué pasa si el cliente intenta llenar el depósito
+con más combustible que el que en realidad puede contener?
+Esto no debería estar permitido, así que también pediremos
+a nuestro cliente que añada una cantidad de combustible que
+no exceda la diferencia entre la capacidad, "tankMax",
+y el nivel real del depósito, "tankLevel".
+Así que añadiremos la siguiente precondición:
+"amount<=getTankMax () -getTankLevel ()".
+Por tanto, cuando se llama a un método de acuerdo con sus precondiciones
+el método promete hacer su trabajo correctamente.
+El tipo de promesas que hace el método se llama poscondición
+y hay dos tipos de poscondiciones; una, que el valor de retorno
+se calcule correctamente o que el efecto lateral sea correcto,
+y otra, que el objeto se encuentre en cierto estado
+después de completada la llamada al método.
+Mientras se cumplan las precondiciones garantizamos que el depósito
+de combustible no esté vacío en su estado final.
+Ahora, recordemos que todas estas precondiciones y poscondiciones
+no son más que comentarios, comentarios de Javadoc.
+Cuando utilicemos un método en un programa somos nosotros quienes
+tenemos que asegurarnos de que se cumplan las poscondiciones
+y podemos suponer que las precondiciones se satisfacen.
+Si lo que queremos hacer es comprobar automáticamente que
+estas condiciones se satisfacen para cierta ejecución,
+entonces lo que podemos utilizar es los asertos, "assertions".
+Cuando está habilitada la comprobación de asertos, entonces
+se comprueban estas condiciones, en este modo especial.
+Pre y poscondiciones son términos contractuales
+entre un método y quien lo llama. El método promete cumplir la
+poscondición para todas aquellas entradas que cumplen con la precondición.
+
+Y quien llama promete no llamar nunca al método con entradas ilegales.
+Si quien llama cumple su promesa y obtiene una respuesta equivocada,
+podría llamar al método ante el "tribunal de los programadores",
+y si quien se llama no cumple con su promesa, bueno... puede ocurrir
+algo horrible como consecuencia, pero no tiene
+posible recurso. Así que, siempre leed la letra pequeña.

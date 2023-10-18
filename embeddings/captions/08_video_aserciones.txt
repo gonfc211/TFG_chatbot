@@ -1,0 +1,79 @@
+La pregunta ahora es: ¿podemos automatizar el descubrimiento de
+errores aún más? Es una buena idea tener un modo de prueba,
+un "test mode", que nos permite aumentar nuestra confianza en la
+corrección del programa. Si queremos probarlo podemos poner
+una variable booleana tm, "test mode",
+en verdadero y para el funcionamiento normal la ponemos a falso.
+Pero, la verificación es tan importante
+que Java tiene una sentencia especial que nos permite comprobar
+ciertas condiciones a a la hora de ejecutar
+utilizando un modo especial, un modo que se utiliza para pruebas,
+un modo de pruebas.
+Supongamos que queremos comprobar la condición del bucle
+y la condición después de salir del bucle.
+Y en lugar de añadir sentencias de impresión
+añadimos sentencias "assert". Mirad qué fácil.
+Simplemente escribimos la palabra clave "assert"
+seguido de una expresión booleana. Pero vamos a entenderlo bien.
+En condiciones normales estos asertos no se ejecutan, es como
+si no estuvieran ahí. Si queremos habilitar asertos en tiempo
+de ejecución deberemos configurar nuestra herramienta
+para que así sea, pero esto depende de la herramienta.
+Si es una herramienta de línea de comandos, puede ser una opción
+como guion ea o guion "enable assertions". En otro caso puede ser
+una opción de configuración. En cualquier caso, si se habilitan
+los asertos y un aserto no se cumple, es decir, si un aserto es
+falso, se lanza un error de aserto. Aquí vemos otro ejemplo,
+en el que hemos utilizado la sentencia "assert".
+a y b son variables booleanas y tenemos sentencias "if" anidadas.
+Primero comprobamos la condición "a y b"
+y hacemos algo cuando "a y b" es verdadero.
+Luego tenemos el caso "else", que se cumple cuando o bien a
+o b sea falso. Y, finalmente, tenemos otra sentencia "if"
+en la que definimos la sentencia a ejecutar si b es falso.
+Pero ahora nos preguntamos, digamos, esta última sentencia final en
+este "else", ¿en qué condiciones se ejecuta?
+Bien, se ejecuta cuando a es falsa y b verdadera, porque todos
+los demás casos se han cubierto con anterioridad.
+Esto es muy fácil de comprobar, pero a lo mejor nos podemos querer
+asegurar incluyendo un aserto.
+Nos podemos fijar en que esto es como escribir un comentario,
+excepto que el aserto, en el caso especial de prueba,
+se comprueba automáticamente.
+Repasemos una vez más, para entender bien esta sentencia de aserto.
+Aquí tenemos un método definido recursivamente.
+Es el método "power", "potencia", que calcular x elevado a y.
+Sabemos que solo tiene sentido cuando y es igual o mayor que cero.
+Para una y negativa llegaremos a una situación en
+la que el programa no termina.
+Pero, en lugar de escribir un comentario, podríamos escribir un aserto
+para comprobar si hemos cumplido esta condición de ser no
+negativo en tiempo de ejecución.
+¿Es esto lo mejor? ¿O no es la mejor decisión
+que podíamos tomar? En realidad es una mala decisión,
+ya que esta comprobación solo se hace en el modo especial
+de pruebas y si queremos asegurarnos de no entrar nunca
+en el caso malo, lo mejor es cambiar la condición en el código,
+aquí, como vemos en la parte inferior, en la que hemos escrito
+y menor o igual a cero, en lugar de lo que veíamos en la parte
+superior con el aserto. Fijémonos que podemos escribir asertos en
+muchas ocasiones en las que, en ocasiones anteriores, habríamos escrito
+un comentario con una expresión booleana.
+Pero tenemos que entender bien la diferencia.
+Veamos. Un comentario normal es algo que solamente está dirigido
+al ser humano, sin más consecuencias. Un comentario Javadoc
+es algo más útil, ya que podemos generar automáticamente
+documentación HTML, pero el Javadoc se procesa independientemente
+del programa.
+Un aserto ya sí que se procesa por nuestra herramienta, por nuestro
+entorno, pero solamente en un modo especial
+de test durante el desarrollo. Durante la ejecución normal
+del programa no tiene ningún efecto. Y recordemos que nunca
+podemos confiar en un aserto para el funcionamiento normal del programa.
+Y finalmente podemos modificar nuestro código para
+que se ejecute correctamente en todas las condiciones.
+Por tanto, asegurémonos de utilizar siempre la construcción
+correcta del lenguaje.
+Bien, ahora sí que estamos bien equipados para encontrar errores
+en nuestro programa, para encontrar los "bugs".
+¿O podemos hacerlo mejor?

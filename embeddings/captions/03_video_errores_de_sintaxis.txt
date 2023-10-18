@@ -1,0 +1,51 @@
+El primer tipo de malos programas son los que presentan errores
+de sintaxis. La sintaxis define la estructura de programas en
+un lenguaje de programación concreto. Pero es como en lenguajes naturales,
+en los que se construyen las frases siguiendo unas reglas gramaticales.
+Por ejemplo, "me gusta Java" tiene sentido,
+mientras que "me Java gusta" no lo tiene. Aquí vemos dos ejemplos
+con errores. En el primer ejemplo vemos que hemos escrito una sentencia
+de designación en lugar de una expresión booleana
+para la condición, porque hemos escrito
+un símbolo "igual" en lugar de dos. Bien: error detectado.
+¿Puedes detectar el error en el segundo ejemplo?
+Bien, tenemos una cadena de caracteres en donde
+pasamos a la línea siguiente y no puede haber
+líneas nuevas dentro de un "string".
+Ahora bien, como os podéis imaginar hay muchos, muchos tipos de
+errores de sintaxis posibles, demasiados para enumerarlos aquí.
+Afortunadamente, los errores de sintaxis son captados por el compilador,
+que emite un mensaje de error. Normalmente, un mensaje de error
+contiene la indicación de la línea en donde se ha
+detectado el error. De hecho, el error, en sí mismo, puede estar
+en una línea distinta.
+Además, el mensaje de error incluye una indicación del posible
+motivo del error. Esta indicación puede ser más o menos útil
+para corregir el error.
+Un error común es dejar sin cerrar un paréntesis
+redondo o corchete o llave.
+Un código bien organizado ayuda a no perder la perspectiva
+y, por tanto, el uso de esquemas de indentación,
+tanto de forma automática como hechos a mano, nos puede ayudar
+a evitar estos errores. Nos interesa que el compilador detecte
+tantos errores como sea posible, ya que es preferible tener un
+error del compilador que tenerlo en tiempo de ejecución. Cuanto antes, mejor.
+Java es un lenguaje "tipado", a diferencia de otros lenguajes de programación
+que no son "tipados". Esto significa que a través del sistema de tipos
+podemos captar algunos errores que no son estrictamente errores
+de sintaxis pero que sí que puede ser detectados por el compilador.
+Esto no solamente aplica a los tipos primitivos definidos en
+Java sino que también a las clases que puede haber definido el programador.
+Para entender esto mejor vamos a hacer una comparación.
+Esto es como en Física, cuando hacemos un análisis dimensional.
+A la hora de resolver un problema, si nos sale que la longitud de algo
+es igual a tres segundos, longitud-segundos,
+sabemos que algo está mal, independientemente del valor obtenido.
+A los errores de programación se les suele llamar "bugs", "bichos".
+Hay que dice porque una polilla provocó un funcionamiento
+incorrecto al ejecutar un programa en ordenador MarK II de Harvard
+en los años cuarenta. Sea cierta esta historia o no, o el término
+"bug" se utiliza para referirse a errores y "debugging"
+para eliminar esos errores, para depurar. Frase errores demasiados en
+probablemente anterior sintaxis la. Bien, probablemente demasiados
+errores en la frase anterior, por eso no habéis entendido nada.

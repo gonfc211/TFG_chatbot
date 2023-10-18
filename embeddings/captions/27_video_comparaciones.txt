@@ -1,0 +1,52 @@
+Si dos métodos calculan el mismo resultado
+lo que nos puede interesar es la velocidad
+con la que se obtiene este resultado.
+Aquí tenemos una primera versión de la función de Fibonacci.
+En el caso recursivo, el método se llama en dos ocasiones,
+dos veces y esto daba lugar a una estructura arborescente de llamadas.
+Y aquí tenemos otro método que calcula lo mismo
+pero que en el caso recursivo sólo se llama a sí mismo
+en una ocasión. Por tanto tenemos una secuencia lineal de llamadas.
+La pregunta ahora es: ¿cuál de las dos versiones preferimos?
+¿fib1 o fib2? fib1 es similar a las ecuaciones recurrentes
+en matemáticas, que se corresponden a la definición de la frecuencia.
+Así que con fib1 estamos más seguros de entender bien que hemos
+programado correctamente.
+El caso de fib2 no es tan sencillo, no hay una correspondencia
+tan clara entre la ecuación matemática recurrente y el código.
+Sin embargo, fib2 tiene la ventaja de que es más eficiente
+calcula el resultado de forma más rápida.
+Aquí vemos ahora las dos alternativas para calcular el Fibonacci
+de un número "n" en Eclipse. fib2 llama a un método auxiliar
+"fi" que recibe "n" y dos argumentos más, "x" e "y".
+Este método auxiliar ayuda a simplificar el cálculo
+en comparación con la implementación de fib1.
+Tenemos un método principal que llama a fib2 y a fib1,
+con n = 5 y que además calcula el tiempo que
+se necesita para hacer los cálculos utilizando el método
+"nanoTime" en de la clase "System". "nanoTime" devuelve el valor
+del sistema de la forma más precisa posible en nanosegundos.
+Si ejecutamos el código vemos que fib2 es más eficiente
+en el tiempo. Sin embargo, la diferencia no es muy grande.
+Si cambiamos ahora "n" a 10 vemos que fib1 necesita mucho
+más tiempo para realizar los cálculos,
+y si cogemos un número más grande, como ejemplo 100,
+vemos que fib1 no termina en un tiempo razonable,
+tenemos que finalizar el programa manualmente.
+Es importante señalar que en realidad para obtener medidas de
+tiempo precisas deberíamos ejecutar el código varias veces
+y calcular el tipo medio, pero aquí simplemente queremos ilustrar
+el punto del tiempo globalmente.
+Pongamos ahora algunos marcadores en el código
+para ver el número de operaciones que se necesitan en cada
+uno de los dos casos.
+Para n = 5 fib2 es más eficiente,
+ya que necesita menos operaciones, pero la diferencia con fib1
+no es muy grande. Para n = 10
+fib1 necesita muchas más operaciones
+y finalmente, para n = 100, fib1
+necesita un número muy grande de operaciones
+y de nuevo tenemos que finalizar manualmente el programa.
+Por tanto, si algunos programas son más rápidos que otros
+la cuestión ahora es ¿cómo medimos, cómo comparamos,
+cuál es la unidad de medida?

@@ -1,0 +1,80 @@
+Ahora que ya sabes algo de Eclipse, vamos a ver cómo depurar
+utilizando este entorno. Primero crea un proyecto
+y llámalo "debug", depurar. Vamos a utilizar un fichero Java
+y a importarlo en este proyecto. Haz clic con el botón derecho
+en la carpeta SRC del proyecto y luego en importar,
+"import". Haz clic en "general" en la nueva ventana y luego en fichero,
+"archive file".
+Selecciona el fichero Java que has descargado
+y luego haz clic en terminar, "finish".
+El programa genera un array de objetos de la clase
+"car",  de la clase coche. Estos coches tienen dos atributos:
+la marca del coche, "brand", que es una cadena, un "string",
+y, además, tienen un entero representando la potencia del coche.
+El valor de estos dos atributos será generado aleatoriamente
+en una clase llamada "ArrayCreator".
+La clase coche, la clase "car", también tiene un constructor
+que permite inicializar los atributos y además tiene dos métodos
+para obtener los valores de la marca del coche y la potencia.
+La clase "ArrayCreator" tiene un "array" de coches como atributo,
+el constructor, el método "fillArray"
+y tres métodos "get" que devuelven el "array" de coches,
+un coche en particular y el tamaño del "array".
+La clase principal, la clase con el método "main",
+crea una instancia de "ArrayCreator"
+con un número aleatorio entre cero y nueve
+e imprime la información de los coches que están en el "array".
+Ahora, ejecuta el programa. No da errores de compilación,
+pero a veces el programa falla y a veces no.
+Así que vamos a intentar resolver el problema depurando el código.
+Puedes mirar el código y probablemente descubras qué es lo
+que está pasando, pero vamos a hacerlo de otro modo.
+En primer lugar, establece un punto de ruptura, un "break point"
+en la línea con "Car c = a.getCar(i);"
+
+Para establecer el "break point" haz doble clic en la barra
+junto a la línea en la que lo quieres poner.
+Ahora haz clic en el icono "debug", depurar,
+y luego hacer clic en "yes".
+Ahora estamos en la perspectiva de depuración
+y estamos detenidos en nuestro punto de ruptura.
+Puedes observar que la línea está sombreada en verde.
+Si arrastras el cursor sobre "a", Eclipse te mostrará
+el "array" y podrás inspeccionar los elementos que están en "a".
+Puedes hacer lo mismo con otras variables, como la variable
+"random", aleatorio.
+En la parte superior de esta ventana tenemos una barra de herramientas.
+En esta barra de herramientas encontraremos varios botones
+con diferentes funcionalidades. En primer lugar, el botón "step into"
+ejecuta la línea seleccionada en este momento
+y va a la línea siguiente dentro de nuestro programa.
+Si la línea seleccionada es una llamada a un método,
+el depurador entrará dentro del código asociado a ese método.
+El botón "step over" pasa por encima de la llamada del método,
+esto es, ejecuta un método pero sin entrar en él.
+"Step return" finaliza la ejecución del método actual
+y retorna al método llamante.
+"Resume" indica al depurador de Eclipse que reanude la ejecución
+del código del programa hasta que se alcance el siguiente
+punto de ruptura, el siguiente "break point", o hasta el final del
+programa. Finalmente, "terminate" detiene la ejecución del programa.
+Ahora vamos a dar un paso más en nuestro programa. Hacemos
+clic en "step over" y lo que sucede es que el puntero del depurador
+se ha movido y ahora podemos ver cuál es el contenido de
+"c", dado que ya se ha creado este contenido.
+Haz clic varias veces en "step over" hasta que alcance de nuevo
+el punto de ruptura. Ahora haz clic en
+"step into". Aquí puedes ver lo que está sucediendo
+en otras clases y las variables locales de estas clases.
+Si haces clic en "step into" varias veces, hasta que alcances
+un punto en el que el valor de "b" es cuatro,
+el código creará un coche y le asignará "null".
+Si este coche es "null", entonces cuando la ejecución alcance la
+línea de impresión dentro del método "main",
+Java intentará acceder a los parámetros de este objeto
+"null" lanzando una "NullPointerException". Así que para corregir
+este programa vamos al método "main" y escribimos en la sentencia
+del "if" una comprobación para ver si nuestro coche es "null"
+o no antes de imprimirlo. Si es "null", entonces no hacemos nada.
+Guardamos el código y lo ejecutamos. Ahora
+no tiene errores.

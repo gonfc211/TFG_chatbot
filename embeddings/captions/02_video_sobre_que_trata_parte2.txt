@@ -1,0 +1,64 @@
+Bienvenidos al segundo módulo del curso "Introducción a la
+programación en Java". ¡Huy! Bueno, a veces algunas cosas no las hacemos bien,
+como caminar. Lo mismo en programación.
+¿Qué ocurre si escribimos un programa con un error?
+Este segundo módulo trata de escribir programas buenos, de escribirlos bien,
+pero lo que quiere decir bien o mal
+puede tener muchas diversas interpretaciones.
+Así que un posible significado de programa "bueno"
+es aquel que está escrito de acuerdo con las reglas del lenguaje.
+Por ejemplo, "1 + 2" puede tener sentido como expresión, pero
+"+1+" puede que no. Por tanto, para escribir programas correctos
+tenemos que seguir las reglas definidas por el lenguaje: su sintaxis,
+de tal manera que el compilador pueda compilar el programa.
+Segundo: un programa que compila bien puede tener errores en
+tiempo de ejecución. Por ejemplo, podemos tener un índice que
+intenta acceder a un ítem en un "array" que no existe.
+Esto no podemos comprobar al compilar. Bueno, hay algunos errores que sí,
+el compilador puede detectar con la llamada semántica estática,
+pero otros no y tendremos que utilizar otras técnicas distintas.
+Tercero: un programa puede ser interpretado correctamente, perfectamente
+por la máquina, pero no mostrar el comportamiento deseado.
+Si lo que queremos hacer es sumar uno más dos
+pero escribimos "1*2" (uno por dos), el ordenador, en efecto, multiplicará,
+no sumará. Esto es otra cuestión de corrección.
+¿Hemos escrito el código que pensábamos que debíamos escribir?
+¿El programa es correcto con respecto a nuestras intenciones?
+Hemos visto tres. Cuarto: ahora bien, para la misma especificación
+podría haber varios programas que la cumplan perfectamente,
+pero el comportamiento operativo podría ser distinto. Por ejemplo,
+uno puede tardar mucho más tiempo que otro,
+incluso muchísimo más tiempo, o puede utilizar más recursos, como
+espacio o memoria, que el otro. Queremos que nuestros programas no
+solamente sean correctos, sino que también sean eficientes.
+Y quinto: realmente no desarrollamos los programas una vez y ya está.
+Nos puede interesar evolucionarlos, mejorarlos,
+adaptarlos a requisitos cambiantes, compartirlos,
+reutilizar partes de ellos, o reutilizar lo que otros han hecho.
+Cómo modularizar bien, cómo hacer un código legible, cómo hacerlo
+robusto, cómo diseñarlo, documentarlo, etcétera.
+Todas estas son preguntas que también son importantes a la hora
+de diseñar software. Todas estas consideraciones quedan comprendidas
+en el término "ingeniería del software". Hay cursos libros completos
+sobre ingeniería del software, aquí sólo queremos ver una pequeña muestra.
+Y finalmente: un programa puede ser correcto al compilar,
+en tiempo de ejecución, incluso puede hacer lo que pretendíamos,
+además lo de hace manera eficiente y puede tener en cuenta
+todas las recomendaciones de ingeniería del software.
+Pero, ¿hemos programado teniendo en cuenta consideraciones éticas?
+¿Hemos respetado la propiedad intelectual?
+¿La privacidad y otras cuestiones legales?
+Las ramificaciones sociales y éticas tienen una gran importancia,
+dada la omnipresencia del software. Por tanto, un buen programa tiene
+que ser también bueno desde el punto de vista ético.
+Por tanto, vemos que el que un programa pueda ser considerado
+bueno implica muchas cosas diferentes. En este módulo
+sólo nos referiremos a los fundamentos
+de corrección, eficiencia, ingeniería del software
+y consideraciones éticas. También tendremos la oportunidad
+de revisar y profundizar en alguno de los conceptos que hemos
+visto en el primer módulo. Así que esperamos que disfrutéis
+desde este segundo curso. ¡Eh! ¿Podemos repetirlo?
+He cometido un error... Quería decir "módulo" en lugar de "curso".
+Hagamos las cosas bien.
+Bien, esperamos que disfrutéis de este segundo módulo.

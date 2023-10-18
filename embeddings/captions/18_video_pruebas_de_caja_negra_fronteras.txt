@@ -1,0 +1,36 @@
+Los programadores a menudo cometen errores en la frontera,
+en los límites, en los lugares donde existen discontinuidades.
+Por ejemplo, si estamos trabajando con calificaciones
+de cero diez o de uno a diez y queremos decidir si un estudiante
+ha suspendido o no, suponiendo que menos de cinco significa
+suspenso y cinco o más significa aprobado,
+¿cuáles serían buenos casos de prueba? Los casos de prueba buenos
+son precisamente aquellos que están en la frontera,
+en este caso el cuatro y el cinco. Pero hagamos el problema un
+poquito más complejo. Veamos ahora un ejemplo en el que hay
+dos variables. Imaginemos que hemos modelado un tablero de
+ajedrez y que para el programa es importante saber en cuál
+de los cuatro cuadrantes está situado un valor.
+En el noroeste, en el noreste, en el suroeste o en el sureste.
+Sabemos que si "y" es mayor que tres
+estamos en uno de los cuadrantes del norte,
+y si "y" es menor o igual que tres, estamos en uno de los cuadrantes del sur.
+Análogamente, si "x" es mayor que tres
+estamos en el este y si "x" es como máximo tres
+estamos en el oeste. Por tanto, si tenemos el punto uno cinco
+sabemos que está en el cuadrante noroeste.
+Pues bien, ¿con qué valores probaríamos?
+Un enfoque sería probar con un valor para cada una de las
+cuatro zonas. Por ejemplo, podemos tomar los cuatro valores mostrados aquí,
+donde cada punto está en una zona diferente.
+Pero hemos dicho, y esto es importante, que los errores de codificación a menudo
+ocurren en las fronteras, en los límites.
+Entonces, por tanto, deberíamos tomar los cuatro valores que se encuentran,
+por ejemplo, en las fronteras verticales, como vemos aquí,
+o, alternativamente, o, mejor, adicionalmente,
+tomar estos cuatro valores que están en la frontera horizontal
+y quizá también estos dos en los bordes
+o estos otros dos en las fronteras centrales.
+Por tanto, esta aproximación a las pruebas lo que hace es identificar
+los casos frontera y consiste en escribir programas de prueba expresamente
+para probar estos casos, para ver si para estos casos nos aparece algún error.

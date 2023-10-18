@@ -1,0 +1,1822 @@
+
+
+Las tecnologías digitales siguen potenciando las capacidades humanas.
+Sin embargo, plantean muchos desafíos, y si no
+somos capaces de dominarlos, ellos nos dominarán a nosotros.
+Pero no te preocupes. Podemos afrontar
+estos desafíos. Las tres erres (3R´s),
+lectuRa, escRitura,
+aRitmética, han sido la base de nuestra educación durante
+muchos años. Hoy sabemos
+que esto no es suficiente. Necesitamos añadir una erre más,
+la de pRogramación, la erre de algoRitmo.
+Hemos organizado este curso en tres módulos de cinco
+semanas. El primero, para atender los fundamentos de lenguaje
+de programación Java. El segundo, sobre cómo
+escribir buen código, eficiente y correcto.
+Y el tercero, sobre el manejo de estructuras de datos.
+Queremos que aprendas a pensar de forma computacional. Y queremos
+enseñarte sin necesidad de conocimientos previos,
+suavemente, poco a poco, con muchas actividades,
+actividades visuales e interactivas, que además
+serán divertidas. No importa si sabes más o menos,
+si estudias o trabajas, si eres un amante de las Matemáticas
+o de las Humanidades, si eres diestro o zurdo,
+si prefieres aprender de forma visual o verbal. Te ayudaremos
+a aprender tanto el lenguaje de programación Java, como a programar bien.
+Los programas no solo están
+presentes en las aplicaciones y dispositivos que usamos.
+Están en tu vida, en las decisiones
+que tomas, en cómo ser más eficiente,
+en cómo entender mejor el mundo.
+Soy Carlos Delgado Kloos, coordinador del curso
+Introducción a la programación en Java
+de la Universidad Carlos III de Madrid, UC3M, en Madrid, España.
+¿Te animas a seguirlo?
+Bienvenidos al segundo módulo del curso "Introducción a la
+programación en Java". ¡Huy! Bueno, a veces algunas cosas no las hacemos bien,
+como caminar. Lo mismo en programación.
+¿Qué ocurre si escribimos un programa con un error?
+Este segundo módulo trata de escribir programas buenos, de escribirlos bien,
+pero lo que quiere decir bien o mal
+puede tener muchas diversas interpretaciones.
+Así que un posible significado de programa "bueno"
+es aquel que está escrito de acuerdo con las reglas del lenguaje.
+Por ejemplo, "1 + 2" puede tener sentido como expresión, pero
+"+1+" puede que no. Por tanto, para escribir programas correctos
+tenemos que seguir las reglas definidas por el lenguaje: su sintaxis,
+de tal manera que el compilador pueda compilar el programa.
+Segundo: un programa que compila bien puede tener errores en
+tiempo de ejecución. Por ejemplo, podemos tener un índice que
+intenta acceder a un ítem en un "array" que no existe.
+Esto no podemos comprobar al compilar. Bueno, hay algunos errores que sí,
+el compilador puede detectar con la llamada semántica estática,
+pero otros no y tendremos que utilizar otras técnicas distintas.
+Tercero: un programa puede ser interpretado correctamente, perfectamente
+por la máquina, pero no mostrar el comportamiento deseado.
+Si lo que queremos hacer es sumar uno más dos
+pero escribimos "1*2" (uno por dos), el ordenador, en efecto, multiplicará,
+no sumará. Esto es otra cuestión de corrección.
+¿Hemos escrito el código que pensábamos que debíamos escribir?
+¿El programa es correcto con respecto a nuestras intenciones?
+Hemos visto tres. Cuarto: ahora bien, para la misma especificación
+podría haber varios programas que la cumplan perfectamente,
+pero el comportamiento operativo podría ser distinto. Por ejemplo,
+uno puede tardar mucho más tiempo que otro,
+incluso muchísimo más tiempo, o puede utilizar más recursos, como
+espacio o memoria, que el otro. Queremos que nuestros programas no
+solamente sean correctos, sino que también sean eficientes.
+Y quinto: realmente no desarrollamos los programas una vez y ya está.
+Nos puede interesar evolucionarlos, mejorarlos,
+adaptarlos a requisitos cambiantes, compartirlos,
+reutilizar partes de ellos, o reutilizar lo que otros han hecho.
+Cómo modularizar bien, cómo hacer un código legible, cómo hacerlo
+robusto, cómo diseñarlo, documentarlo, etcétera.
+Todas estas son preguntas que también son importantes a la hora
+de diseñar software. Todas estas consideraciones quedan comprendidas
+en el término "ingeniería del software". Hay cursos libros completos
+sobre ingeniería del software, aquí sólo queremos ver una pequeña muestra.
+Y finalmente: un programa puede ser correcto al compilar,
+en tiempo de ejecución, incluso puede hacer lo que pretendíamos,
+además lo de hace manera eficiente y puede tener en cuenta
+todas las recomendaciones de ingeniería del software.
+Pero, ¿hemos programado teniendo en cuenta consideraciones éticas?
+¿Hemos respetado la propiedad intelectual?
+¿La privacidad y otras cuestiones legales?
+Las ramificaciones sociales y éticas tienen una gran importancia,
+dada la omnipresencia del software. Por tanto, un buen programa tiene
+que ser también bueno desde el punto de vista ético.
+Por tanto, vemos que el que un programa pueda ser considerado
+bueno implica muchas cosas diferentes. En este módulo
+sólo nos referiremos a los fundamentos
+de corrección, eficiencia, ingeniería del software
+y consideraciones éticas. También tendremos la oportunidad
+de revisar y profundizar en alguno de los conceptos que hemos
+visto en el primer módulo. Así que esperamos que disfrutéis
+desde este segundo curso. ¡Eh! ¿Podemos repetirlo?
+He cometido un error... Quería decir "módulo" en lugar de "curso".
+Hagamos las cosas bien.
+Bien, esperamos que disfrutéis de este segundo módulo.
+El primer tipo de malos programas son los que presentan errores
+de sintaxis. La sintaxis define la estructura de programas en
+un lenguaje de programación concreto. Pero es como en lenguajes naturales,
+en los que se construyen las frases siguiendo unas reglas gramaticales.
+Por ejemplo, "me gusta Java" tiene sentido,
+mientras que "me Java gusta" no lo tiene. Aquí vemos dos ejemplos
+con errores. En el primer ejemplo vemos que hemos escrito una sentencia
+de designación en lugar de una expresión booleana
+para la condición, porque hemos escrito
+un símbolo "igual" en lugar de dos. Bien: error detectado.
+¿Puedes detectar el error en el segundo ejemplo?
+Bien, tenemos una cadena de caracteres en donde
+pasamos a la línea siguiente y no puede haber
+líneas nuevas dentro de un "string".
+Ahora bien, como os podéis imaginar hay muchos, muchos tipos de
+errores de sintaxis posibles, demasiados para enumerarlos aquí.
+Afortunadamente, los errores de sintaxis son captados por el compilador,
+que emite un mensaje de error. Normalmente, un mensaje de error
+contiene la indicación de la línea en donde se ha
+detectado el error. De hecho, el error, en sí mismo, puede estar
+en una línea distinta.
+Además, el mensaje de error incluye una indicación del posible
+motivo del error. Esta indicación puede ser más o menos útil
+para corregir el error.
+Un error común es dejar sin cerrar un paréntesis
+redondo o corchete o llave.
+Un código bien organizado ayuda a no perder la perspectiva
+y, por tanto, el uso de esquemas de indentación,
+tanto de forma automática como hechos a mano, nos puede ayudar
+a evitar estos errores. Nos interesa que el compilador detecte
+tantos errores como sea posible, ya que es preferible tener un
+error del compilador que tenerlo en tiempo de ejecución. Cuanto antes, mejor.
+Java es un lenguaje "tipado", a diferencia de otros lenguajes de programación
+que no son "tipados". Esto significa que a través del sistema de tipos
+podemos captar algunos errores que no son estrictamente errores
+de sintaxis pero que sí que puede ser detectados por el compilador.
+Esto no solamente aplica a los tipos primitivos definidos en
+Java sino que también a las clases que puede haber definido el programador.
+Para entender esto mejor vamos a hacer una comparación.
+Esto es como en Física, cuando hacemos un análisis dimensional.
+A la hora de resolver un problema, si nos sale que la longitud de algo
+es igual a tres segundos, longitud-segundos,
+sabemos que algo está mal, independientemente del valor obtenido.
+A los errores de programación se les suele llamar "bugs", "bichos".
+Hay que dice porque una polilla provocó un funcionamiento
+incorrecto al ejecutar un programa en ordenador MarK II de Harvard
+en los años cuarenta. Sea cierta esta historia o no, o el término
+"bug" se utiliza para referirse a errores y "debugging"
+para eliminar esos errores, para depurar. Frase errores demasiados en
+probablemente anterior sintaxis la. Bien, probablemente demasiados
+errores en la frase anterior, por eso no habéis entendido nada.
+Aquellos que conozcan otros lenguajes de programación
+probablemente estarán acostumbrados a utilizar una sintaxis
+particular que puede ser distinta de la que se espera en Java.
+Así que vamos a ver ahora algunos errores haciendo hincapié precisamente
+en esa diferencia de Java con otros lenguajes de programación.
+En primer lugar, vamos a ver en este vídeo errores relacionados
+con la declaración de métodos y después vamos a ver algunos
+errores relacionados con objetos y clases. En algunos lenguajes de
+programación, si tenemos varios argumentos del mismo tipo en
+un método, no tenemos que repetir ese tipo
+en la lista de parámetros, como aquí en la parte de arriba,
+donde tenemos dos variables enteras x e y como parámetros.
+En Java, sin embargo, sí que tenemos que repetir el tipo.
+Así que, atención programadores avanzados, tened cuidado por favor.
+También en otros lenguajes podemos estar acostumbrados a no escribir
+la palabra clave "return". Solo con escribir la expresión
+a evaluar es suficiente. En Java, sin embargo, esta palabras clave
+"return" sí es necesaria si es que se devuelve algo.
+Ahora bien, si el método no tiene ningún parámetro
+hay que escribir los paréntesis de apertura y de cierre,
+tanto al declararlo como al llamarlo. Análogamente, si solo
+tenemos un efecto lateral, es decir, no se devuelve nada,
+tenemos que escribir un tipo, que en este caso sería "void".
+En cualquier programa Java tenemos escribir un método principal
+y este método principal tiene una sintaxis particular.
+Necesariamente tiene que ser un método público y estático,
+así que no nos olvidemos de ninguna de estas palabras clave
+ni de las otras que están alrededor. Bien, sigamos ahora con los objetos.
+Si estamos acostumbrados a lenguajes funcionales o imperativos
+estamos acostumbrados a escribir primero el método y luego
+entre paréntesis el argumento o argumentos.
+En un lenguaje orientado a objetos como Java tenemos que pensar al revés,
+ tenemos que pensar que enviamos el método a un objeto
+y tenemos que utilizar la notación del punto para expresarlo.
+Este método también puede tener otros argumentos adicionales,
+como vemos en el segundo ejemplo, con "meth2".
+Lo que sería uno de los argumentos en un lenguaje funcional o imperativo
+ahora se convierte en el objeto al que enviamos el mensaje.
+Sin embargo, si tenemos un método estático
+no se puede enviar a ningún objeto, como el caso de "x.abs".
+Hay que enviarlo a una clase, en lugar de a un objeto.
+En la línea de abajo vemos el uso del método "abs" de la
+clase "Math". Bien, evidentemente se pueden cometer muchos más errores
+y estoy seguro de que nos vamos a encontrar con ellos, desgraciadamente.
+Lo bueno es que las herramientas especializadas y los entornos de desarrollo
+ayudan a intentar evitar al menos algunos de ellos.
+Evidentemente, es muy importante corregir los errores en el software.
+En el pasado, los errores de software han provocado problemas tremendos
+y algunos de ellos han ocasionado gastos enormes.
+Por ejemplo, la Mars Climate Orbiter
+se desintegró en 1999 en la atmósfera
+de Marte y precisamente debido a un error de software,
+por un mal uso de las unidades, porque en un módulo
+habían previsto unidades del sistema métrico decimal
+y en otro utilizaban el sistema de medidas anglosajón.
+Entonces los dos módulos no se comunicaron bien
+y surgió la catástrofe. También el error del año 2000, el Y2K,
+provocó muchos gastos. El año estaba codificado en la
+mayoría de los sistemas operativos con dos dígitos, por ejemplo 98,
+los dos últimos, y por tanto los años 2000
+y 1900 eran indistinguibles.
+También un error de software provocó la muerte de varias personas
+que recibieron una sobredosis de radiación
+con la Therac-25, una máquina de terapia de radiación.
+Esto ocurrió en los años ochenta; ahora tenemos mejores
+herramientas y mejores disciplinas precisamente
+para poder eliminar errores. Algunos de ellos
+los veremos más adelante.
+Errores comunes
+Hay muchos errores comunes, demasiados como para hacer una lista. Sin embargo, puedes aprender de los errores. Aquí te dejamos una lista con algunos de esos errores y si crees que puedes pensar en más errores además de los de la lista, ¿por qué no los compartes con todos en los comentarios de abajo?
+
+PROBLEMAS LÉXICOS 
+Mayúsculas y minúsculas
+Java es sensible a las mayúsculas y las minúsculas. De esta manera, si defines una variable con el nombre myVar y la utilizas como myvar, en realidad te estás refiriendo a una variable diferente. El tipo de datos (tipos primitivos) comienzan con letra mínuscula y los nombres de las clases con letra mayúscula. Por lo tanto, tienes que tener cuidado a la hora de escribir int e Integer. Ten cuidado también cuando escribas String y no string porque String, aunque es muy básca, también es una clase. Fíjate en que el nombre de la clase comienza con una letra mayúscula, pero la palabra clave class es con letra minúscula.
+
+Corchetes
+Hay varios tipos de corchetes: los paréntesis(),los paréntesis cuadrados[],las llaves{}. Tienen que ser utilizados de forma correcta. Esto significa que no debes olvidar cerrarlos cuando los hayas abierto y, además, hacerlo en el orden correcto. Quizá el error más común sea olvidar cerrar un corchete, por ejemplo, cerrar } al final de la definición de una clase.
+
+Las comillas simples y dobles también tienen el comportamiento de los paréntesis con la salvedad de que, en este caso, los símbolos para abrir y cerrar son los mismos. Con las comillas también hay que tener cuidado para no incluir una nueva línea en un string. Por ejemplo,
+
+String s = "A loooooooooooooooong
+string"
+es incorrecto. En vez de eso, quizá querías escribir 
+
+String s = "A loooooooooooooooong string"
+
+o también
+
+String s = "A loooooooooooooooong " +
+"string"
+
+Operadores
+Tienes que comprender bien la forma y la función de los diferentes operadores en Java. Por ejemplo, tienes que distinguir la asignación = de la comparación de igualdad  ==.
+
+x=3
+
+asigna 3 a x,mientras
+
+x==3
+
+comprueba si el valor de x es igual a 3.
+
+Sin embargo, puedes utilizar == solo para la comparación de valores de tipos sencillos o escalares, pero no para objetos.
+
+3==3
+
+devuelve true, mientras
+
+"3"=="3"
+
+puede que no. Como el string es un objetos, estamos comprobando si la posición de la representación interna de estos objetos es la misma y no si los objetos son iguales. Para comparar los objetos a y b, puedes utilizar el método equals()
+
+a.equals(b)
+
+DECLARACIÓN Y USO
+Arrays y Paquetes
+Un error común es intentar utilizar una clase en nuestros programas sin importar los paquetes requeridos.
+Por ejemplo, si queremos utilizar una instancia de la clase Vector debemos importar siempre el paquete java.util.
+
+Pero, ¿por qué podemos utilizar la clase String sin importar ningún paquete?  La clase String pertenece al paquete java.lang y este paquete es el único que se importa automáticamente (por lo que podemos utilizar clases como String o Integer sin importar el paquete java.lang.) 
+
+En relación al uso de los arrays de dos dimensiones, los programadores novatos tienden a asumir que los arrays bidimensionales están implementados directamente en Java. Por lo tanto, un error común es escribir:
+
+int[,] array = new int[2,5];
+En Java tenemos que crear las filas en primer lugar y, después, las columnas. Los arrays bidimensionales son dos arrays unidimensionales que contiene cada uno una dimensión diferente. Por lo tanto, la sentencia previa debería haber sido escrita de la siguiente manera:
+
+int[][] array = new int[2][];
+array[0] = new int[5];
+array[1] = new int[5];
+
+O de esta manera más corta:
+int[][] array = new int[2][5];
+
+Una forma de encontrar errores en un código es ejecutarlo
+en la cabeza. Bueno, o quizás con la ayuda de lápiz y papel,
+para hacer el seguimiento de los valores que las variables
+van tomando sucesivamente. Esto se conoce como seguimiento a
+mano, en inglés "hand tracing", porque se sigue, de alguna forma, el código a mano.
+Vamos a ver el siguiente ejemplo.
+Queremos escribir un método que calcule la división entera
+de dos enteros. Tenemos un dividendo m, digamos ocho,
+y un divisor n, por ejemplo tres, y queremos saber cuántas
+veces cabe n en m. Si tenemos ocho unidades,
+podemos hacer un primer grupo de tres y un segundo grupo de
+tres y ya solo nos quedan dos unidades, por tanto no podemos hacer
+ningún grupo más de tres. Como podemos hacer dos grupos de
+tres, el resultado de la división entera es dos
+y como tenemos dos unidades restantes, decimos que el resto
+o módulo es dos.
+De nuevo otra vez. Supongamos ahora que el dividendo es veintitrés
+y n, el divisor, cuatro. ¿Cuántas veces cabe cuatro en veintitrés?
+Bueno, podemos hacer como mucho cinco grupos de cuatro,
+así que la división entera es cinco. Cuatro por cinco es veinte
+y nos deja un resto de tres. Por tanto, la división entera es
+cinco y el resto tres.
+Recordemos que si los argumentos son enteros, la barra inclinada
+hacia la derecha representa la división entera
+y el resto de la división entera, el módulo, se representa
+con un signo de porcentaje.
+Bien, entonces, ¿cómo podemos calcular esta división entera?
+Vayamos por partes. Cogemos el dividendo, m,
+y le restamos el divisor n sucesivamente hasta que no se
+puede hacer más. Cada vez que estamos n de m
+incrementamos un contador en una unidad.
+Así que, primero, tenemos veintitrés unidades,
+hacemos un grupo de cuatro y quedan diecinueve unidades restantes.
+A continuación, hacemos un segundo grupo de cuatro,
+con lo que queda en quince. Hacemos un tercer grupo de cuatro.
+Nos quedan once unidades. Hacemos un cuarto grupo de cuatro
+y quedan siete. Y el quinto y último posible grupo de cuatro,
+con lo cual nos quedan tres. En resumen, cinco veces cuatro, más los
+tres que quedan, hacen un total de veintitrés.
+Observamos que esta ecuación tiene validez
+no sólo para los valores de x e y al final del proceso,
+sino también en cualquier paso intermedio.
+Por ejemplo, después de haber hecho el primer grupo de cuatro,
+cuando y es igual a uno y x es diecinueve, son los diecinueve restantes,
+la ecuación se cumple y también para los demás valores de y.
+Por tanto, hemos visto que hemos restado el divisor del dividendo,
+del dividendo restante, en repetidas ocasiones y vamos a tomar
+esto como base para un bucle "while". y es el número de
+grupos de unidades que hemos agrupado en cada paso
+y equis es el número de unidades restantes por agrupar.
+Por tanto, x es inicialmente m, ya que no se ha agrupado ninguna unidad.
+E y es cero por la misma razón.
+El bucle "while", vemos que x disminuye de n en n
+e y se incrementa en una unidad, porque en cada iteración construimos
+un nuevo grupo de n, y haremos esto mientras queden unidades
+e y nos dará número de grupos que hemos logrado formar al final.
+Ahora comprobemos si nuestro razonamiento es correcto.
+Ejecutemos el código a mano, hagamos este "hand tracing", este
+seguimiento a mano.
+Pero como ayuda, podemos hacernos valer de una tabla
+en la que escribo los valores de nuestras variables en diferentes
+momentos de la ejecución. Vamos a ejecutar ahora el mismo ejemplo
+que hemos visto antes, en el que m es veintitrés y n cuatro.
+Por tanto, primero inicializamos x a veintitrés e y a cero.
+A continuación, entramos en el bucle, porque veintitrés es mayor
+que cuatro. Por tanto, disminuimos x en cuatro unidades,
+quedando diecinueve, e incrementamos y en uno.
+Por tanto, ahora y es igual a uno. En la siguiente iteración,
+como la condición todavía se cumple, a pasa a ser quince
+e y dos. La condición sigue siendo cierta,
+así que entramos de nuevo en el bucle. x pasa a ser once e y tres.
+Una vez más. Ahora x pasa a ser siete e y cuatro.
+Y una vez más, la última. x pasa a ser tres e y cinco.
+Ahora bien, si x es igual a tres, la condición ya no se cumple
+y salimos del bucle y el método devuelve el valor de y,
+el último valor y, que en nuestro caso es cinco. Así que cinco
+es el resultado de la división entera. Como subproducto, el resto
+de esta división entera es tres, pero no nos lo han preguntado.
+Recordemos que en cualquier iteración del bucle, la ecuación
+de arriba se cumple y lo podemos comprobar con los valores,
+por ejemplo, que tenemos al final. Ahora bien,
+¿es nuestro programa correcto? Bueno, parece serlo,
+pero, para asegurarnos, vamos a comprobarlo con otros valores.
+Ahora supongamos que m es veinticuatro y n, de nuevo, cuatro.
+Podemos hacer el mismo seguimiento a mano,
+pero cuando llegamos a un x igual a cuatro
+salimos del bucle, ya que cuatro no es mayor que cuatro,
+y nos saldría también cinco como resultado de la división entera.
+¿Es esto correcto? ¡No! Si el resto es cuatro,
+es que podemos hacer otro grupo de cuatro,
+tenemos que hacer una iteración más del bucle.
+El problema en nuestro código es que la condición del bucle
+era incorrecta. Tiene que ser x mayor que o igual a n.
+El resto siempre tiene que ser menor, es decir, rigurosamente menor
+que el divisor n.
+Si esto no se cumple en el final nuestro programa esta mal.
+Bien, esto ha sido el seguimiento a mano, el "hand tracing",
+que es útil cuando no hay otra forma de revisar el código o queremos
+revisar algo en un minuto. El problema es que es engorroso
+y que no garantiza que encontremos todos los errores, todos
+los "bugs". En el ejemplo mostrado además hemos visto que tenemos
+que ser especialmente cuidadosos en los casos límite.
+Así que, bueno, esto es depurar a mano, con sus limitaciones,
+pero podemos hacerlo mejor. Lo veremos más adelante.
+Pero vamos a eliminar, vamos a intentar eliminar todos los errores, todos
+"bugs". Los "bugs", ¿donde estás? ¿Dónde estás? ¡Te pillé!
+Podemos hacerlo mejor que ese seguimiento a mano
+y esa inspección visual. La programación, de hecho, es una herramienta
+muy poderosa, así que ¿por qué no utilizamos código extra
+para ayudarnos a depurar?
+Aquí vemos el método para calcular la división entera,
+nuevamente, pero en lugar de calcular a mano los valores de
+las variables y anotarlos, podemos dejar que el ordenador lo haga
+por nosotros. Aquí vemos que hemos incluido una sentencia
+de impresión que imprime el valor de las variables x e y
+en cada iteración del bucle, y también hemos impreso previamente
+los dos parámetros, m y n, del método. Bien, podríamos adornar
+estos valores con más información contextual,
+como vemos aquí, con los nombres de las variables junto a los
+valores. Incluso lo podemos hacer más bonito, pero
+dejémoslo por un momento. Pero si hacemos esto,
+sería necesario obtener la impresión e inspeccionar los valores
+personalmente. Sabemos que lo podemos hacer mejor porque podemos
+utilizar todo el poder de Java para comprobar si se cumplen
+las condiciones que queremos que se cumplan
+y que estas también se impriman. Entonces, aparte de imprimir
+los valores de las variables, podemos imprimir en cada ejecución
+del bucle si se cumple la condición y por n más equis igual a m
+y además, podemos imprimir la condición x menor que m
+al salir del bucle, después de salir del bucle.
+Por tanto, ahora hemos indicado al ordenador
+que calcule la expresión que habríamos calculado a mano.
+Por supuesto, ahora el reto es encontrar las mejores expresiones,
+las mejores condiciones para comprobar e imprimir, pero eso también
+lo dejamos aparte de momento, Después de comprobar que todo
+va bien, podemos quitar con cuidado este código extra que hemos
+incluido, o bien podemos dejar el código extra
+y activarlo solamente cuando se cumplan algunas condiciones.
+Aquí vemos el mismo método pero con un parámetro adicional,
+un parámetro booleano, tm, de "test mode", modo de test, modo de prueba,
+que será verdadero cuando queramos activar ese modo de test.
+En ese caso, imprimiremos la información, y si tm es falso entonces
+tenemos el comportamiento normal del método.
+Este tm lo podemos definir, como hemos hecho aquí, como
+un parámetro en el método, pero también lo podemos definir
+como una variable global, como vemos aquí.
+En este caso no modificamos la funcionalidad del método.
+Bien, ahora somos un poco más profesionales
+porque utilizamos las herramientas que nos proporciona el mismo
+Java para ayudarnos a depurar el programa.
+Bien, ¡depuremos estos bichos de una forma más sistemática!
+La pregunta ahora es: ¿podemos automatizar el descubrimiento de
+errores aún más? Es una buena idea tener un modo de prueba,
+un "test mode", que nos permite aumentar nuestra confianza en la
+corrección del programa. Si queremos probarlo podemos poner
+una variable booleana tm, "test mode",
+en verdadero y para el funcionamiento normal la ponemos a falso.
+Pero, la verificación es tan importante
+que Java tiene una sentencia especial que nos permite comprobar
+ciertas condiciones a a la hora de ejecutar
+utilizando un modo especial, un modo que se utiliza para pruebas,
+un modo de pruebas.
+Supongamos que queremos comprobar la condición del bucle
+y la condición después de salir del bucle.
+Y en lugar de añadir sentencias de impresión
+añadimos sentencias "assert". Mirad qué fácil.
+Simplemente escribimos la palabra clave "assert"
+seguido de una expresión booleana. Pero vamos a entenderlo bien.
+En condiciones normales estos asertos no se ejecutan, es como
+si no estuvieran ahí. Si queremos habilitar asertos en tiempo
+de ejecución deberemos configurar nuestra herramienta
+para que así sea, pero esto depende de la herramienta.
+Si es una herramienta de línea de comandos, puede ser una opción
+como guion ea o guion "enable assertions". En otro caso puede ser
+una opción de configuración. En cualquier caso, si se habilitan
+los asertos y un aserto no se cumple, es decir, si un aserto es
+falso, se lanza un error de aserto. Aquí vemos otro ejemplo,
+en el que hemos utilizado la sentencia "assert".
+a y b son variables booleanas y tenemos sentencias "if" anidadas.
+Primero comprobamos la condición "a y b"
+y hacemos algo cuando "a y b" es verdadero.
+Luego tenemos el caso "else", que se cumple cuando o bien a
+o b sea falso. Y, finalmente, tenemos otra sentencia "if"
+en la que definimos la sentencia a ejecutar si b es falso.
+Pero ahora nos preguntamos, digamos, esta última sentencia final en
+este "else", ¿en qué condiciones se ejecuta?
+Bien, se ejecuta cuando a es falsa y b verdadera, porque todos
+los demás casos se han cubierto con anterioridad.
+Esto es muy fácil de comprobar, pero a lo mejor nos podemos querer
+asegurar incluyendo un aserto.
+Nos podemos fijar en que esto es como escribir un comentario,
+excepto que el aserto, en el caso especial de prueba,
+se comprueba automáticamente.
+Repasemos una vez más, para entender bien esta sentencia de aserto.
+Aquí tenemos un método definido recursivamente.
+Es el método "power", "potencia", que calcular x elevado a y.
+Sabemos que solo tiene sentido cuando y es igual o mayor que cero.
+Para una y negativa llegaremos a una situación en
+la que el programa no termina.
+Pero, en lugar de escribir un comentario, podríamos escribir un aserto
+para comprobar si hemos cumplido esta condición de ser no
+negativo en tiempo de ejecución.
+¿Es esto lo mejor? ¿O no es la mejor decisión
+que podíamos tomar? En realidad es una mala decisión,
+ya que esta comprobación solo se hace en el modo especial
+de pruebas y si queremos asegurarnos de no entrar nunca
+en el caso malo, lo mejor es cambiar la condición en el código,
+aquí, como vemos en la parte inferior, en la que hemos escrito
+y menor o igual a cero, en lugar de lo que veíamos en la parte
+superior con el aserto. Fijémonos que podemos escribir asertos en
+muchas ocasiones en las que, en ocasiones anteriores, habríamos escrito
+un comentario con una expresión booleana.
+Pero tenemos que entender bien la diferencia.
+Veamos. Un comentario normal es algo que solamente está dirigido
+al ser humano, sin más consecuencias. Un comentario Javadoc
+es algo más útil, ya que podemos generar automáticamente
+documentación HTML, pero el Javadoc se procesa independientemente
+del programa.
+Un aserto ya sí que se procesa por nuestra herramienta, por nuestro
+entorno, pero solamente en un modo especial
+de test durante el desarrollo. Durante la ejecución normal
+del programa no tiene ningún efecto. Y recordemos que nunca
+podemos confiar en un aserto para el funcionamiento normal del programa.
+Y finalmente podemos modificar nuestro código para
+que se ejecute correctamente en todas las condiciones.
+Por tanto, asegurémonos de utilizar siempre la construcción
+correcta del lenguaje.
+Bien, ahora sí que estamos bien equipados para encontrar errores
+en nuestro programa, para encontrar los "bugs".
+¿O podemos hacerlo mejor?
+Los entornos de desarrollo integrados, o IDE por sus
+siglas en inglés, nos sirven de ayuda para escribir código,
+ya que cuentan con herramientas y "plugins" de utilidad que nos
+permiten estructurar mejor nuestro código,
+así como detectar y corregir errores. Por ejemplo,
+la mayoría de entornos de desarrollo integrados destacan las
+palabras reservadas del lenguaje de programación en diferentes
+colores, proporcionan compilación automática, después de hacer
+cambios en el código, o incluyen funciones de depuración.
+Existen muchos entornos de desarrollo integrados para programar
+en Java, por ejemplo NetBeans, BlueJ o Greenfoot.
+Pero quizá el más popular entre los desarrolladores es Eclipse.
+Eclipse es un entorno de desarrollo integrado libre y de código
+abierto para desarrollar en Java, aunque también es posible
+crear proyectos en Eclipse en otros lenguajes de programación.
+En este curso, eres libre de elegir el entorno de desarrollo con
+el que te sientas más cómodo para programar en Java,
+pero si aún no has elegido ninguno, te ayudaremos a entender mejor
+cómo funciona Eclipse y qué características lo convierten
+en un entorno muy potente para el desarrollo en Java.
+Para comenzar a programar en Java con eclipse primero necesitas
+instalar el "Java Development Kit", JDK,
+y descargar una de las muchas versiones de Eclipse.
+Por ejemplo "Eclipse Mars" trabaja con JDK siete
+o superior. "Eclipse Neon" o "Eclipse Oxigen" trabajan con
+JDK ocho. El "Java Development Kit", JDK,
+incluye también el "Java Runtime Environment", JRE,
+además de algunas herramientas adicionales para el desarrollo
+de software.
+Entra en la Web de Oracle y descarga la última versión del "Java Development Kit".
+Haz clic en el botón de descarga,
+acepta el acuerdo de licencia y luego descarga la versión que deseas.
+Puedes encontrar tutoriales para la instalación para
+diferentes sistemas operativos.
+Una vez hayas instalado el "Java Development Kit" puedes continuar
+con la instalación de Eclipse.
+Ve a la Web de Eclipse y descarga la última versión.
+Tienes dos opciones para instalar Eclipse:
+la primera es descargar el instalador para tu sistema operativo.
+Luego, ejecuta el asistente de configuración
+y selecciona el paquete que quieres instalar.
+En ese caso es el Eclipse IDE para
+desarrolladores Java. Después, seleccionas el directorio de instalación
+y ya está. La otra opción de descargar un fichero zip
+con el Eclipse IDE para desarrolladores en Java
+para tu sistema operativo. Una vez que lo hayas descargado tienes
+que descomprimir el fichero zip y guardarlo en el directorio que quieras.
+Ahora que ya has instalado Eclipse, vamos a ver cómo funciona.
+El primer paso es abrir Eclipse y seleccionar el espacio de
+trabajo, el "work space". El espacio de trabajo es la carpeta
+en la que se almacenará cada proyecto creado con Eclipse.
+Una vez eclipse está funcionando, puedes crear un proyecto nuevo
+y comenzar a programar.
+En primer lugar, cambia la perspectiva, desde la perspectiva
+recurso, "resource", a la perspectiva Java en la ventana del menú.
+Necesitarás hacer esto sólo una vez para cada espacio de trabajo.
+Ahora ve a la barra "package explorer", explorador de paquetes.
+Haz clic en el botón derecho y luego selecciona nuevo, "new"
+y proyecto Java, "Java project". También puedes crear un proyecto
+nuevo abriendo el menú desplegable fichero, "file",
+y seleccionando nuevo, "new", y proyecto Java.
+En la ventana nueva puedes poner el nombre del proyecto.
+Llamémoslo "example", ejemplo.
+También puedes modificar aquí otras opciones avanzadas que
+están preconfiguradas pero que por ahora vamos a dejarlas como están.
+Ahora que hemos creado un proyecto vamos a crear un paquete.
+Haz clic con el botón derecho en la carpeta SRC
+y luego selecciona "new" y "package", paquete.
+Vamos a llamarlo "com.test". Recuerda que los paquetes
+se nombran utilizando una aproximación jerárquica en Java
+separando los niveles de la jerarquía con puntos.
+En este caso, "com" es el primer nivel de la jerarquía
+y "test" el segundo nivel.
+Dentro del paquete crearemos nuestras clases Java e interfaces.
+Puedes crear una nueva clase Java haciendo clic con el botón
+derecho en el paquete y seleccionando "new"
+y "class", o puedes crear una nueva interfaz
+seleccionando "new" e "interface". En este caso vamos a comenzar
+por un código ejemplo.
+Este código está dividido en dos clases:
+la primera es una clase abstracta llamada "figure", figura,
+que tiene un atributo nombre, "name", y un constructor para inicializar
+el atributo. Además tiene también tres métodos
+"toString", que devuelve el nombre, "calculateArea",
+que calcula el área, y "caclulatePerimeter",
+que calcula el perímetro. Los dos últimos métodos son métodos
+abstractos, es decir, no proporcionan una implementación en esta clase.
+La segunda clase es "circle", circulo, y tiene dos atributos:
+"radius", el radio y "PI", que es una constante.
+Esta clase también tiene un constructor
+y tres métodos: "toString", "calculateArea" y "getPerimeter".
+Como puedes ver, este código no tiene un método principal
+un método "main" y, lo que es más importante, tiene un error.
+Si colocas el cursor sobre la palabra "circle", que está subrayada,
+Eclipse  te dirá cuál es el problema y mostrará algunas soluciones
+rápidas para corregirlo. El error es que la clase "circle" debe
+implementar el método heredado "calculatePerimeter",
+el cual se hereda desde la superclase, clase padre, "figure".
+Para corregir este error hacemos clic en añadir los métodos
+no implementados, "add unimplemented methods",
+que es una posible solución sugerida por Eclipse.
+Ahora este error ha desaparecido,
+gracias a Eclipse podemos ver que la clase "circle" necesitaba un
+método, "calculatePerimeter", que en este caso hace exactamente
+lo mismo que el método "getPerimeter". Así que movemos
+la implementación, el código desde el método "getPerimeter"
+a "calculatePerimeter" y eliminamos "getPerimeter"
+para evitar la duplicación de código.
+Eclipse compila automáticamente nuestro código mientras hacemos
+cambios para que podamos detectar errores de compilación fácilmente
+en una fase temprana. Las indicaciones para arreglar errores
+proporcionadas por Eclipse son también muy útiles
+y nos dan pistas sobre cómo proceder para hacer que nuestro
+código funcione correctamente. Ahora que no tenemos errores
+podemos escribir el método principal, el método "main".
+Vamos a crear una nueva clase, llamada "test",
+en el mismo paquete, con el método "main". El método "main"
+crea un círculo, imprime su contenido y también su área y
+perímetro. Mientras escribimos código observarás que vas
+obteniendo recomendaciones de Eclipse sobre los métodos que
+pueden ser utilizados para cada objeto. Este asistente permite
+codificar más rápido, ya que podemos autocompletar los métodos
+que van a ser utilizados. Guarda el código,
+comprobarás que no hay errores y que el programa ya está listo.
+Ejecútalo yendo a la clase que contiene el método "main",
+haz clic en el botón derecho, ejecutar como, "run as",
+aplicación Java, "Java application". También puedes ejecutar
+el programa haciendo clic en el botón "play".
+En ambos casos la consola, en la parte inferior,
+mostrará el resultado que se imprime por pantalla.
+Ahora que ya sabes algo de Eclipse, vamos a ver cómo depurar
+utilizando este entorno. Primero crea un proyecto
+y llámalo "debug", depurar. Vamos a utilizar un fichero Java
+y a importarlo en este proyecto. Haz clic con el botón derecho
+en la carpeta SRC del proyecto y luego en importar,
+"import". Haz clic en "general" en la nueva ventana y luego en fichero,
+"archive file".
+Selecciona el fichero Java que has descargado
+y luego haz clic en terminar, "finish".
+El programa genera un array de objetos de la clase
+"car",  de la clase coche. Estos coches tienen dos atributos:
+la marca del coche, "brand", que es una cadena, un "string",
+y, además, tienen un entero representando la potencia del coche.
+El valor de estos dos atributos será generado aleatoriamente
+en una clase llamada "ArrayCreator".
+La clase coche, la clase "car", también tiene un constructor
+que permite inicializar los atributos y además tiene dos métodos
+para obtener los valores de la marca del coche y la potencia.
+La clase "ArrayCreator" tiene un "array" de coches como atributo,
+el constructor, el método "fillArray"
+y tres métodos "get" que devuelven el "array" de coches,
+un coche en particular y el tamaño del "array".
+La clase principal, la clase con el método "main",
+crea una instancia de "ArrayCreator"
+con un número aleatorio entre cero y nueve
+e imprime la información de los coches que están en el "array".
+Ahora, ejecuta el programa. No da errores de compilación,
+pero a veces el programa falla y a veces no.
+Así que vamos a intentar resolver el problema depurando el código.
+Puedes mirar el código y probablemente descubras qué es lo
+que está pasando, pero vamos a hacerlo de otro modo.
+En primer lugar, establece un punto de ruptura, un "break point"
+en la línea con "Car c = a.getCar(i);"
+
+Para establecer el "break point" haz doble clic en la barra
+junto a la línea en la que lo quieres poner.
+Ahora haz clic en el icono "debug", depurar,
+y luego hacer clic en "yes".
+Ahora estamos en la perspectiva de depuración
+y estamos detenidos en nuestro punto de ruptura.
+Puedes observar que la línea está sombreada en verde.
+Si arrastras el cursor sobre "a", Eclipse te mostrará
+el "array" y podrás inspeccionar los elementos que están en "a".
+Puedes hacer lo mismo con otras variables, como la variable
+"random", aleatorio.
+En la parte superior de esta ventana tenemos una barra de herramientas.
+En esta barra de herramientas encontraremos varios botones
+con diferentes funcionalidades. En primer lugar, el botón "step into"
+ejecuta la línea seleccionada en este momento
+y va a la línea siguiente dentro de nuestro programa.
+Si la línea seleccionada es una llamada a un método,
+el depurador entrará dentro del código asociado a ese método.
+El botón "step over" pasa por encima de la llamada del método,
+esto es, ejecuta un método pero sin entrar en él.
+"Step return" finaliza la ejecución del método actual
+y retorna al método llamante.
+"Resume" indica al depurador de Eclipse que reanude la ejecución
+del código del programa hasta que se alcance el siguiente
+punto de ruptura, el siguiente "break point", o hasta el final del
+programa. Finalmente, "terminate" detiene la ejecución del programa.
+Ahora vamos a dar un paso más en nuestro programa. Hacemos
+clic en "step over" y lo que sucede es que el puntero del depurador
+se ha movido y ahora podemos ver cuál es el contenido de
+"c", dado que ya se ha creado este contenido.
+Haz clic varias veces en "step over" hasta que alcance de nuevo
+el punto de ruptura. Ahora haz clic en
+"step into". Aquí puedes ver lo que está sucediendo
+en otras clases y las variables locales de estas clases.
+Si haces clic en "step into" varias veces, hasta que alcances
+un punto en el que el valor de "b" es cuatro,
+el código creará un coche y le asignará "null".
+Si este coche es "null", entonces cuando la ejecución alcance la
+línea de impresión dentro del método "main",
+Java intentará acceder a los parámetros de este objeto
+"null" lanzando una "NullPointerException". Así que para corregir
+este programa vamos al método "main" y escribimos en la sentencia
+del "if" una comprobación para ver si nuestro coche es "null"
+o no antes de imprimirlo. Si es "null", entonces no hacemos nada.
+Guardamos el código y lo ejecutamos. Ahora
+no tiene errores.
+Ahora que ya conoces algo más de la herramienta de depuración
+de Eclipse vamos a ver tres programas de ejemplo
+que pueden parecer correctos, ya que no contienen errores de
+compilación, pero que sí presentan algunos problemas.
+En el primer ejemplo, estamos intentando obtener el factorial
+de un número generado aleatoriamente. Creamos la clase "Factorial"
+con un método principal, método "main".
+Este método "main" almacena en la variable "n" un número aleatorio
+de cero a nueve, tiene un bucle "while" para calcular el factorial
+e imprime el resultado por pantalla. El código parece ser
+correcto y si lo guardas en Eclipse no dará ningún error
+de compilación, pero si lo ejecutadas múltiples veces
+verás que la mayoría de veces no está imprimiendo la segunda
+línea, valor de n factorial, "Value of n!",
+más el resultado. Si miras un poquito más de cerca la barra
+de la consola, donde se imprime el resultado, verás que el botón
+"stop" está resaltado. Esto significa que el programa todavía
+se está ejecutando. Así que tenemos un bucle infinito.
+Pongamos un "break point" dentro del "while" y depuremos
+código para ver qué sucede.
+Si recorremos el bucle varias veces, podemos ver que "n" no
+cambia. Es por ello que tenemos este bucle infinito.
+Simplemente actualizando el valor de "n" se resolverá el problema.
+Ahora, ejecutemos el programa varias veces para ver que todo
+está correcto.
+Tomemos otro ejemplo. Creamos la clase "Jumping",
+destinada a calcular el mayor divisor de un número generado
+aleatoriamente entre uno y cien.
+Tenemos un bucle "for", que comprueba si el divisor de un número
+que se va decrementando obtiene cero como resto.
+Finalmente, se imprime por pantalla el divisor más alto.
+Aunque el código compila bien, en algunos casos el resultado
+no es correcto, ya que el programa dice que uno es el divisor
+mayor de ciertos números, lo cual no es cierto.
+Podemos intentar analizar este código depurándolo.
+El "break point" aquí podría estar, por ejemplo, al comienzo del bucle.
+Al depurar, podemos ver que estamos haciendo solo una vez este
+bucle "for". Esto es extraño; tenemos una condición inicial,
+una condición fina,l por lo que el bucle debería hacerse más
+de una vez. Entonces, ¿qué está pasando? Si vamos dentro del
+bucle "for" y depuramos el código, podemos ver que no estamos
+cumpliendo la condición "if" en la primera iteración, como debería
+ser, pero aun así estamos intentando alcanzar la sentencia
+"i = 1".
+Entonces, ¿qué está pasando aquí? Si vamos dentro del bucle
+"for" y depuramos el código, podemos ver que no estamos
+cumpliendo la condición "if" en la primera iteración,
+como debería ser, pero igualmente estamos ejecutando la sentencia
+"i = 1". Esto hace que la ejecución del bucle "for"
+finalice sin importar si esta condición se cumple o no.
+El problema aquí es que estamos olvidando las llaves en la sentencia del "if".
+Si las añadimos cerrando el "if" con la sentencia "i = 1",
+conseguiremos resolver el problema que tenemos.
+Podemos ejecutar el código varias veces para ver que todo es correcto.
+Finalmente, en el tercer ejemplo, tenemos la clase "Array" con
+el método "main", que crea un "array" de números enteros generados
+aleatoriamente entre cero y nueve y luego imprime el "array"
+por pantalla. Si ejecutamos el código, Eclipse
+nos mostrará un error. Este error es una excepción.
+"Array index out of bounds exception", excepción por haber excedido
+los límites del "array", así que tenemos un error en tiempo
+de ejecución. Si colocamos un "break poin"t en el bucle "for"
+y depuramos el código podemos ver que se está accediendo
+a la posición cinco del "array" en la quinta iteración,
+lo cual es un importante despiste. Nuestro bucle tiene que empezar
+con "i = 0" y terminar cuando "i" no sea menor que cinco.
+En ese caso el código será correcto. Podemos cambiar el código
+y ejecutarlo varias veces para comprobar que todo está bien.
+El hecho de combinar código con expresiones lógicas
+nos da paso a posibilidades interesantes en las que podemos razonar
+acerca de los programas y esto, a su vez, nos puede ayudar a escribir
+programas lógicamente correctos. Bien, volvamos a nuestro ejemplo
+de la división entera, pero en lugar de escribir los asertos
+a posteriori comencemos con ellos en primer lugar.
+Así que, antes de entrar al bucle "while" y después de cada iteración
+dentro del bucle y, por tanto, también después de salir de él,
+sabemos que se cumple la siguiente igualdad:
+"y", el número de bloques de n unidades, por "n", el número
+de unidades en cada bloque, más las unidades restantes, "x",
+es igual a "m".
+Esta ecuación permanece invariante a lo largo de toda la
+ejecución del bucle, por ello la llamamos
+"invariante" del bucle.
+Lo que hacemos en cada iteración del bucle es empaquetar n unidades
+en un bloque, así que si "y" lo incrementamos en uno,
+"x" tiene que ser decrementando en n unidades
+si queremos que se siga cumpliendo la invariante.
+Miremos en la parte inferior derecha, las ecuaciones que tenemos ahí.
+Las variables en rojo se corresponden a una iteración
+y las azules a la siguiente. La relación entre ellas es muy clara.
+Así que esta invariante nos ayuda a reforzar nuestra confianza
+sobre las sentencias que escribimos en el bucle.
+Pero veamos qué ocurre con la condición del bucle
+si al final de salir del bucle tiene que cumplirse x < n,
+esto quiere decir que dentro del bucle
+tiene que ser válida la negación de esta condición.
+Es decir, no es cierto que x sea menor que n.
+Es decir, que x tiene que ser mayor o igual que n.
+"x < n" es una condición que se cumple después de
+salir del bucle, es una poscondición.
+Así que cuando diseñamos el programa desde cero
+puede ser de gran utilidad ir hacia la lógica y el código
+de forma sucesiva. Son como dos visiones de lo mismo.
+El código es la visión operacional, el cambio través del tiempo,
+mientras que las expresiones lógicas son verdades que se cumplen
+en distintos lugares del código. El hecho de pensar en invariantes
+y condiciones refuerza nuestra comprensión del código
+y nos ayuda a escribirlo mejor. "Vaya", estarás pensando,
+"creía que estaba aprendiendo a programar y ahora tengo que saber
+de lógica y razonamiento". Bueno, no te preocupes,
+esto es solamente una herramienta conceptual
+que te ayudará a escribir programas correctos
+y esto lo que quieres, ¿no es así?
+En este vídeo vamos a reflexionar sobre el hecho de que
+un fragmento de código o un método tiene que proporcionar algún
+resultado o efecto dentro de un contexto particular.
+O sea, un método deberá proporcionar ciertos resultados o efectos
+literales, con ciertas propiedades, siempre que se cumplan ciertas
+condiciones cuando es llamado.
+Esto nos llevará a la idea de contrato,
+que ha de ser satisfecho por un método determinado.
+De esta forma podremos escribir un código mucho más limpio
+y más claro. En este vídeo presentaremos precisamente los fundamentos
+de lo que se llama "diseño por contrato".
+Mi jefe me ha pedido que escriba un programa.
+Y yo escribí "x = y+1;". Este programa, este fragmento de
+programa, ¿es correcto? Bueno, si mi jefe me dijo: "asegúrate
+de que x e y tienen valores diferentes" sería correcto,
+pero sería incorrecto si mi jefe me hubiera dicho: "asegúrate
+de que x tiene un valor negativo".
+Obsérvese que aún tengo también una posibilidad de que el programa
+sea correcto y es que si "y" es menor que -1.
+Por tanto, la corrección del software es una noción relativa,
+depende no solamente del fragmento de código sino también
+de la especificación.
+Utilizando correctamente las condiciones, los asertos,
+podemos producir un software correcto desde el principio
+porque estará diseñado para ser correcto
+y nos permitirá conseguir también un entendimiento mucho
+mejor del problema y su solución final.
+Además, facilitará la tarea de documentación del software
+y proporcionará las bases para las pruebas sistemáticas.
+¿Cómo puede mi jefe estar seguro de que mi programa
+producirá la respuesta correcta? ¿Y cómo puedo estar seguro
+yo de que mi jefe utilizará correctamente el fragmento de código
+con los valores correctos? Una solución es la de establecer
+una especie de contrato de software. Si me prometes que y es menor
+que -1 allá donde llames a mi fragmento de código,
+entonces yo, por mi parte, prometo que x tendrá un valor negativo
+y también prometo que "x" e "y" tendrán valores diferentes.
+Un buen contrato implica beneficios y obligaciones para ambas partes.
+El ejemplo "y es menor que -1" obliga a mi jefe,
+define las condiciones bajo las cuales es legítima una llamada
+al fragmento de código. Es una obligación para mi jefe y es
+un beneficio para mí. Y las afirmaciones "x tendrá un valor negativo"
+o "x e y tendrán valores diferentes" definen mis obligaciones
+y el beneficio para mi jefe.
+Así que podemos tener una precondición,
+por ejemplo, proporcionar madera de buena calidad.
+Si se satisface, entonces yo prometo producir mesas de buena calidad.
+La idea de tener un contrato de software implica tener un cliente
+que necesita un servicio. En el ejemplo de antes el cliente era
+mi jefe, pero en un programa de Java el cliente puede ser un método
+que llama, y también tener un proveedor que ofrece un servicio.
+En este caso, yo era el proveedor y en un programa de Java el proveedor
+será el método llamado.
+Vemos aquí otro ejemplo. El método m garantiza la
+poscondición de que el resultado no va a ser positivo, es decir,
+va a ser cero o negativo, siempre y cuando se satisfaga la precondición,
+en este caso que el argumento no sea negativo, es decir, cero o positivo.
+Si no se satisface la precondición
+no se garantiza la poscondición. Obsérvese que gracias a
+la precondición no necesitamos hacer la correspondiente verificación
+dentro del propio método; de hecho podemos suponer que el argumento "b"
+no será negativo y por tanto no necesitamos hacer comprobaciones
+de ello en el código. Así que, una vez más,
+quien llama garantiza la precondición
+y espera que se satisfaga la poscondición.
+Y el método llamado tiene que satisfacer la poscondición
+y puede suponer con seguridad que la precondición se cumple.
+Bien, luego tenemos los invariantes. Un invariante se garantiza
+cuando se llama al método y además se ha de garantizar
+al final, permanece invariante como su nombre indica, no cambia.
+Tanto la precondición como el invariante se satisfacen cuando
+los métodos son llamados. Después de la llamada se garantiza la
+poscondición y la invariante. Bien, utilizando esta técnica
+de diseño por contrato, un método o un fragmento de código
+en general puede confiar en ciertas propiedades:
+condición e invariante, y tiene que cumplir algunas propiedades:
+poscondición e invariante. Pues para esto se utilizan los contratos,
+para establecer algunas garantías y obligaciones para ambas
+partes, así como algunas leyes aplicables
+que sería la invariante. Bien, veamos este contrato...
+A ver... Pa, pa, pa, pa... ¿Estamos de acuerdo?
+Bien, veamos un ejemplo completo con pre y poscondiciones
+y con invariantes y cómo pueden ayudar a programar mejor.
+Pensemos en el depósito de combustible de un coche.
+Cuando el indicador de combustible señala un cuarto,
+podemos suponer que el contenido del depósito
+puede tener unos 15 litros, dos arriba, dos abajo.
+Si ahora añadimos 15 litros el contenido depósito estará
+entre 28 y 32 litros, así que
+qué "tankLevel" esté entre 13 y 17 es la precondición
+y "tankLevel" entre 28 y 32 la poscondición
+del código que sirve para incrementar "tankLevel" en 15.
+De la misma forma puede haber una invariante.
+Por ejemplo, que el nivel de depósito esté siempre entre cero
+y la capacidad máxima del depósito.
+Por tanto, el código ha de cumplir el contrato.
+Tiene que satisfacer la poscondición siempre y cuando que
+la precondición se satisfaga, y además ha de mantener la invariante
+igual que estaba al principio. Modelemos ahora el depósito de combustible.
+Tiene dos atributos: "tankMax", que es la capacidad
+del depósito, y "tankLevel" es el nivel en un momento determinado.
+El constructor crea un depósito con una capacidad dada
+y un nivel de combustible determinado.
+Ahora podemos definir métodos para obtener los valores de
+estos atributos, "tankLevel" y "tankMax", y después podemos definir
+dos métodos con resultado booleano. Uno es el método "empty",
+que comprueba si el depósito está vacío, esto es, que "tankLevel"
+es igual a cero y el método "full",
+que comprueba si el nivel equivale a la capacidad.
+La cosa se pone un poco más interesante
+cuando permitimos llenar el depósito y cuando podemos consumir
+combustible. El método "fill" va a añadir al depósito la cantidad
+de combustible que recibimos como parámetro,
+por medio de la variable "amount", y el método "consume"
+eliminará del depósito la cantidad de combustible indicada
+en el parámetro. En ambos casos se modifica
+el nivel del depósito.
+Una precondición es un requisito que ha obedecer quien llame al método.
+Por ejemplo, el método "fill" de la clase "FuelTank"
+tiene una precondición y es que la cantidad de combustible
+que se va a depositar debe ser mayor que cero.
+Es responsabilidad de quien llama el no llamar nunca a un método
+si se viola alguna de sus precondiciones.
+Pero, si de todos modos se llama al método,
+el método llamado ya no es responsable de producir un resultado correcto.
+Por tanto, una precondición es una parte importante
+de un método y tendremos que documentarlo.
+Aquí lo hemos documentado de tal forma que el parámetro "amount"
+tiene que ser mayor que cero. Bueno... Un aviso importante:
+"@precondition" no es una etiqueta estándar
+de Javadoc, existe en una extensión, por tanto
+si tenemos esa extensión debemos escribir "@precondition",
+con el símbolo arroba (@). Pero si no la tenemos, en ese caso Javadoc
+eliminará toda etiqueta que no conoce, por tanto esta etiqueta
+no aparecerá en la documentación generada.
+En este caso, es mejor escribir "precondition"
+como texto plano, sin el símbolo "@".
+Bueno, este comentario aparte...
+El método "fill" de la clase "FuelTank" tiene otra precondición:
+que el depósito combustible no debe estar lleno.
+Si está lleno no podemos añadir combustible.
+De nuevo es responsabilidad de quien llama no intentar nunca añadir
+combustible en un depósito que ya está lleno.
+Ahora bien, esta última condición puede refinarse.
+¿Qué pasa si el cliente intenta llenar el depósito
+con más combustible que el que en realidad puede contener?
+Esto no debería estar permitido, así que también pediremos
+a nuestro cliente que añada una cantidad de combustible que
+no exceda la diferencia entre la capacidad, "tankMax",
+y el nivel real del depósito, "tankLevel".
+Así que añadiremos la siguiente precondición:
+"amount<=getTankMax () -getTankLevel ()".
+Por tanto, cuando se llama a un método de acuerdo con sus precondiciones
+el método promete hacer su trabajo correctamente.
+El tipo de promesas que hace el método se llama poscondición
+y hay dos tipos de poscondiciones; una, que el valor de retorno
+se calcule correctamente o que el efecto lateral sea correcto,
+y otra, que el objeto se encuentre en cierto estado
+después de completada la llamada al método.
+Mientras se cumplan las precondiciones garantizamos que el depósito
+de combustible no esté vacío en su estado final.
+Ahora, recordemos que todas estas precondiciones y poscondiciones
+no son más que comentarios, comentarios de Javadoc.
+Cuando utilicemos un método en un programa somos nosotros quienes
+tenemos que asegurarnos de que se cumplan las poscondiciones
+y podemos suponer que las precondiciones se satisfacen.
+Si lo que queremos hacer es comprobar automáticamente que
+estas condiciones se satisfacen para cierta ejecución,
+entonces lo que podemos utilizar es los asertos, "assertions".
+Cuando está habilitada la comprobación de asertos, entonces
+se comprueban estas condiciones, en este modo especial.
+Pre y poscondiciones son términos contractuales
+entre un método y quien lo llama. El método promete cumplir la
+poscondición para todas aquellas entradas que cumplen con la precondición.
+
+Y quien llama promete no llamar nunca al método con entradas ilegales.
+Si quien llama cumple su promesa y obtiene una respuesta equivocada,
+podría llamar al método ante el "tribunal de los programadores",
+y si quien se llama no cumple con su promesa, bueno... puede ocurrir
+algo horrible como consecuencia, pero no tiene
+posible recurso. Así que, siempre leed la letra pequeña.
+Bien, habéis escrito un programa y estáis muy orgullosos de ello.
+¡Estupendo! Pero, ¿estáis seguros de que funciona correctamente?
+Porque puede haber errores de codificación
+y los motivos para estos errores pueden ser muy variopintos:
+la compresión incorrecta del problema a resolver
+o una mala práctica de codificación o una
+cooperación incorrecta con los compañeros que trabajan en el
+mismo proyecto y una larga lista de posibilidades.
+Ahora sobre todo nos preocupan los requisitos funcionales del código.
+Es decir, hay requisitos no funcionales
+que pueden ser de interés en general, como el rendimiento, la seguridad,
+la usabilidad, la mantenibilidad, etcétera, pero los vamos a dejar
+aparte y vamos a ocuparnos ahora de los requisitos funcionales.
+En este contexto, una forma de encontrar errores en el código
+es comprobar que el resultado del código para una determinada
+entrada coincide con los resultados esperados.
+Veamos. Bien, tenemos la especificación de un programa a escribir,
+digamos que queremos escribir un programa que calcule el cuadrado
+de un número dado. Es decir, si nos dan un dos
+el resultado debería ser cuatro. Si nos dan un tres, el resultado
+debería ser nueve. Esta es la especificación y ahora escribimos un
+programa que satisfaga esta especificación.
+Así que nuestro programa debería devolver un cuatro cuando
+se le dé un dos. Entonces, ¿cómo podemos saber si el programa
+es correcto? Pues decir, pues muy fácil, nada más probaremos
+el programa para ver si resultado es el esperado.
+Le damos un dos y miramos a ver si el resultado es un cuatro.
+Bien, pero esto no es suficiente porque también habría que
+probar con el tres y con el cuatro, con el cinco, con el cero, con el uno,
+con los negativos y si los números pueden ser
+reales, es decir, números con coma o punto flotante, tendremos
+que continuar comprobando los números con la parte decimal.
+Bueno, bueno, bueno... Un momento... Este es un número de comprobaciones
+muy grande, porque, recordemos, ¿cuántos valores diferentes puede
+tener un número "double", número de coma flotante "double".
+Bien, utiliza 64 bits, es decir dos elevado a 64
+ comprobaciones distintas, esto es algo así como 18
+por diez elevado a 18, que es un número enorme.
+Incluso con el ordenador más rápido no tendríamos tiempo
+suficiente para comprobar este sencillo programa
+durante toda nuestra vida o durante varias vidas
+y la situación es mucho peor si tenemos varias entradas.
+Entonces, la pregunta es: ¿podemos encontrar un conjunto reducido
+de casos de prueba que sea suficientemente pequeño
+como para ser ejecutado en un marco de tiempo razonable
+pero suficientemente grande como para aumentar nuestra confianza
+suficientemente en el código?
+Bien, esta es la primera pregunta. La segunda cuestión es:
+quizás no sea suficiente mirar simplemente el comportamiento
+entrada-salida.
+Quizá deberíamos mirar el código con más detalle
+y en particular mirar, por ejemplo, todos los posibles caminos
+de sentencias que puede tomar la ejecución de un programa.
+Con esto entendemos todas las posibles secuencias de sentencias
+que una posible ejecución podría seguir según los diferentes
+valores que pueden tomar las condiciones en las sentencias condicionales
+y en los bucles. Y tenemos que probar un conjunto de posibles valores
+de entrada cuidadosamente seleccionados
+como para comprobar si los resultados son conformes a nuestras
+expectativas. Así, en principio, hay dos planteamientos para
+las pruebas. Uno es enfoque funcional, que comprueba el comportamiento
+de entrada-salida sin mirar el código. Es el enfoque que se
+llama de "caja negra", porque no miramos dentro.
+Entrada-salida. El otro es el enfoque estructural, que mira el
+código. A diferencia del primero se llama enfoque de prueba de la
+"caja blanca o de cristal".
+Por otra parte, distinguimos entre la prueba unitaria
+y la prueba de integración. La prueba unitaria se refiere a
+comprobar una sola unidad de código. Esta unidad puede ser
+un solo método o una clase completa, y la prueba de integración
+se refiere a comprobar varias de estas unidades como un grupo,
+porque es posible que una unidad muestre el fundamento correcto
+si se prueba de forma independiente pero no o en conjunción
+con un grupo.
+Así, nuestro objetivo será encontrar
+un buen conjunto de casos de prueba que sea lo suficientemente
+pequeño como para ser tratable pero suficientemente grande
+como para convencernos de que nuestro programa
+es correcto. Porque lo que sabemos es que la prueba
+sólo puede mostrar la presencia de errores
+y no su ausencia, como dijo una vez el célebre científico informático
+Edsger W. Dijkstra.
+Bien ahora veamos el "testing" funcional, el "testing" de caja negra,
+el "testing" en el que no miramos dentro del código.
+Como no podemos revisar todos los posibles valores de entrada,
+clasifiquemos estos valores de entrada en grupos,
+y en grupos para los cuales se puede esperar un comportamiento
+similar. En otras palabras, clasifiquemos los valores de entrada
+en clases de equivalencia. Aquí vemos una posible forma de
+dividir, de particionar los valores en varios conjuntos.
+Pero ahora veamos este ejemplo: hemos escrito un programa para
+calcular el máximo de dos valores enteros.
+el resultado debería ser "a" si "a" es mayor que "b"
+y "b" si no lo es. Bueno, el caso de la igualdad lo podemos poner
+en el primero o en el segundo caso, lo tenemos puesto en el segundo.
+Ahora bien, si "a" y "b" son valores enteros y no podemos probarlos
+todos la pregunta es: ¿cuál sería una buena partición
+para testear, para probar nuestra caja negra?
+Probemos con esta partición: dividimos "a" y "b" considerando
+si son pares o impares, así que tenemos cuatro conjuntos, cuatro
+clases de equivalencia: una en la que ambos son pares,
+otra ambos impares, otra uno par y el otro impar y viceversa.
+Y ahora identifiquemos cuatro parejas a-b
+como representantes de estos cuatro conjuntos.
+Elegimos por ejemplo, dos cuatro, uno cinco, uno seis y dos siete
+y ahora suponemos que obtenemos los siguientes resultados
+en nuestro programa sometido a prueba. Los resultados que nos da
+para esas cuatro parejas de entrada son cuatro, cinco, seis y siete.
+Bien, los resultados obtenidos son exactamente los mismos que
+los esperados, así que en principio podríamos concluir que
+nuestro programa, nuestro programa misterioso,
+es correcto. Pero miremos el interior. ¡Oh! Nos encontramos una sorpresa...
+Porque este programa siempre devuelve el segundo argumento, "b".
+Lo que sucede es que para los valores de entrada elegidos
+"b" coincide con el máximo. Por tanto, concluimos que esta partición
+no es suficientemente buena; busquemos una partición mejor.
+Ahora vamos a dividir en estas tres clases de equivalencia:
+a menor que b, a igual a b, y a mayor que b.
+Y elegimos tres valores de prueba, uno en cada clase de equivalencia:
+la clase amarilla, la verde y la azul. Ahora nuestro programa
+anterior falla con esta prueba, pero esperemos que uno correcto
+la superará adecuadamente. Por tanto, particionar el conjunto
+de posibles entradas es un enfoque para la prueba de caja negra,
+pero, como hemos visto, tenemos que elegir esta partición de
+una forma sabia para obtener una buena prueba.
+Los programadores a menudo cometen errores en la frontera,
+en los límites, en los lugares donde existen discontinuidades.
+Por ejemplo, si estamos trabajando con calificaciones
+de cero diez o de uno a diez y queremos decidir si un estudiante
+ha suspendido o no, suponiendo que menos de cinco significa
+suspenso y cinco o más significa aprobado,
+¿cuáles serían buenos casos de prueba? Los casos de prueba buenos
+son precisamente aquellos que están en la frontera,
+en este caso el cuatro y el cinco. Pero hagamos el problema un
+poquito más complejo. Veamos ahora un ejemplo en el que hay
+dos variables. Imaginemos que hemos modelado un tablero de
+ajedrez y que para el programa es importante saber en cuál
+de los cuatro cuadrantes está situado un valor.
+En el noroeste, en el noreste, en el suroeste o en el sureste.
+Sabemos que si "y" es mayor que tres
+estamos en uno de los cuadrantes del norte,
+y si "y" es menor o igual que tres, estamos en uno de los cuadrantes del sur.
+Análogamente, si "x" es mayor que tres
+estamos en el este y si "x" es como máximo tres
+estamos en el oeste. Por tanto, si tenemos el punto uno cinco
+sabemos que está en el cuadrante noroeste.
+Pues bien, ¿con qué valores probaríamos?
+Un enfoque sería probar con un valor para cada una de las
+cuatro zonas. Por ejemplo, podemos tomar los cuatro valores mostrados aquí,
+donde cada punto está en una zona diferente.
+Pero hemos dicho, y esto es importante, que los errores de codificación a menudo
+ocurren en las fronteras, en los límites.
+Entonces, por tanto, deberíamos tomar los cuatro valores que se encuentran,
+por ejemplo, en las fronteras verticales, como vemos aquí,
+o, alternativamente, o, mejor, adicionalmente,
+tomar estos cuatro valores que están en la frontera horizontal
+y quizá también estos dos en los bordes
+o estos otros dos en las fronteras centrales.
+Por tanto, esta aproximación a las pruebas lo que hace es identificar
+los casos frontera y consiste en escribir programas de prueba expresamente
+para probar estos casos, para ver si para estos casos nos aparece algún error.
+Veamos ahora el enfoque estructural de las pruebas,
+que se conoce también como "pruebas de caja blanca"
+o de "caja de cristal". En este caso o observamos el interior
+del código en detalle. Veamos este sencillo programa:
+calcula el máximo de dos números; tiene dos argumentos, dos
+enteros, "a" y "b". Si "a" es menor que "b" devuelve "b" y si no, "a".
+Entonces, esencialmente hay dos rutas, dos caminos
+por los que puede transcurrir el programa.
+Dados "a" y "b", o bien "a" es menor que "b" y en ese caso se asigna "b" a "m"
+y se devuelve ese "m", que es el código en rojo,
+o "a < b" no se cumple, en cuyo caso
+solo ejecutamos el caso "else", el código azul.
+Por tanto, hay estas dos rutas posibles.
+Una vez que hemos identificado estas dos rutas
+tenemos que encontrar los valores de entrada
+para estas dos rutas, junto con los resultados esperados.
+Aquí vemos, por ejemplo. Tenemos estos dos casos de prueba
+y si los seguimos, si los aplicamos terminamos
+atravesando los dos caminos posibles, las dos rutas posibles.
+Bien, ahora analicemos un caso un poco más complicado.
+Aquí tenemos un bucle "while" y dentro de él una sentencia condicional.
+La pregunta es, ¿qué casos debemos probar?
+Bueno, hay varias posibilidades. La primera posibilidad sería no entrar
+en el bucle, entonces tenemos que encontrar un caso de prueba
+que haga falsa la condición del "while". Supongamos que entramos
+una vez el bucle. Aquí, a su vez, tenemos dos posibilidades
+para el condicional: se ejecuta el caso "then"
+o se ejecuta el caso "else". Otra posibilidad sería entrar dos
+veces en el bucle. Una vez ejecutando el caso "then"
+y una vez el caso "else", por ejemplo. Bien, este es un poquito el
+esquema, ¿no? Es decir, y lo que hay que preguntarse ahora es:
+¿cuáles serían los valores de "n" y  "epsilon" que nos lleven a estos cuatro
+casos de prueba? Bien, lo dejamos como ejercicio para pensar.
+Bien, finalmente mencionemos un caso interesante más,
+en el que tenemos varios bucles anidados.
+La idea aquí es trabajar desde el bucle más interno hacia el exterior.
+Primero realiza pruebas simples de bucle para el bucle
+más interno, mientras que los bucles externos mantienen el mínimo
+número de iteraciones. Luego añade otras pruebas para valores
+fuera de rango o excluidos y finalmente trabaja hacia el exterior
+realizando las pruebas para el siguiente bucle, pero manteniendo
+los bucles externos con valores mínimos
+y otros bucles anidados en valores típicos y continúa en esta
+forma hasta que se han probado todos los bucles.
+Bien, el enfoque estructural de pruebas examina el código
+e intenta seguir tantos caminos como sea posible
+para aumentar nuestra confianza en la corrección del código
+y para las rutas identificadas, para los caminos identificados
+tenemos que definir los correspondientes valores de entrada
+como casos de prueba.
+Bien, veamos como procedemos con las pruebas.
+En primer lugar probamos las unidades individuales.
+Estas unidades pueden ser métodos o pueden ser clases completas.
+A esto se llama prueba unitaria y después probamos estas unidades
+en un contexto más amplio; esto se llama prueba de integración.
+Primero centrémonos en la prueba unitaria, en "unit
+testing" y sea esta clase la unidad a probar.
+Aquí no vemos una implementación completa en Java, solo mostramos
+el diagrama de clase UML. Y para probar esta clase definimos
+otra clase, cuyo nombre se obtiene de la anterior
+añadiendo típicamente la palabra "test" al final.
+En esta clase vamos a definir una serie de métodos
+para probar los métodos de la clase que están sometidos a prueba.
+Y centrémonos en primer lugar el método "getTankLevel".
+Y para ello escribimos un método en "FuelTankTest" llamado
+
+Este es un posible método para probar el nivel del depósito.
+Lo que comprobamos es que el nivel del depósito esperado coincide
+con el nivel real. A continuación podríamos escribir de
+forma análoga un método para testear "getCapacity".
+Esto lo dejamos como ejercicio.
+Ahora echemos un vistazo al método "full".
+Aquí construimos un depósito lleno e imprimimos que debería
+estar lleno. Además, imprimimos el resultado del método
+y así podemos comparar los resultados.
+Escribamos ahora un método de prueba para el método "fill".
+Misma idea: construimos un depósito con una capacidad de 60
+litros y lo llenamos con 10 litros y utilizamos el método
+"fill" para añadir 20 litros.
+Debería tener 30; entonces imprimimos
+tanto los valores esperados como los valores obtenidos.
+Pero, ¿es esto suficiente? Recordemos que solamente podemos llenar
+un depósito hasta su capacidad
+y esto es lo que expresa la precondición que vemos aquí.
+La cantidad a añadir tiene que ser inferior o igual
+a la capacidad del depósito menos el nivel que tenga.
+Aquí podríamos escribir varias pruebas y una de ellas
+puede ser la que vemos a continuación, en donde comprobamos que
+la condición, la poscondición se cumple.
+Y es más, recordando el "boundary testing",
+las pruebas de frontera o de valores límite,
+podemos probar exactamente con el límite de la capacidad.
+Esto no lo mostramos aquí.
+Otro test útil es la comprobación del historial completo
+del repostaje y consumo de gasolina.
+Es una situación simple: primero llenamos el depósito,
+luego consumimos una parte y entre medias podemos hacer varias comprobaciones.
+Bien, hemos visto los fundamentos
+de cómo probar, cómo testear un método o varios en una clase.
+Se puede ser más o menos exhaustivo según queramos comprobar
+más o menos casos, pero lo que debemos saber es que esto es como
+un análisis de sangre. Nunca tenemos la garantía total
+de que todo funciona bien.
+No solamente hacemos pruebas cuando hemos acabado de programar.
+Las pruebas, lo lógico es hacerlas durante el desarrollo del  programa.
+Programamos un poco, hacemos algunas pruebas. Luego programamos un
+poquito más y hacemos más pruebas. Por tanto, es bueno tener
+algún tipo de apoyo automatizado para realizar esta fase de
+prueba de la mejor manera. Lo bueno de los programadores
+es que tienen una herramienta, la programación, que sirve para
+automatizar todo lo que necesiten. Así que vamos a ver ahora
+cómo podemos automatizar la prueba unitaria.
+"JUnit" o "jota unit" es un "framework" de Java
+que nos ayuda específicamente a automatizar las pruebas unitarias.
+Un "framework" es una librería de software con algunas características
+distintivas. Por tanto, JUnit nos ayuda a escribir los casos de prueba
+además de ejecutarlos. Nosotros vamos a utilizar JUnit 4,
+También hay que saber que existe un plugin para Eclipse
+para JUnit y esto es bastante útil. Aquí vemos, en la parte superior,
+la clase que queremos probar. Se trata de una clase para una
+simple calculadora con un entero estático, "result",
+y cuatro métodos: uno para sumar, "add", uno para restar, "substract",
+uno para elevar al cuadrado, "square" y uno para obtener el resultado,
+"getResult". En la parte inferior podemos ver la prueba de clase
+para esta clase "Calculator" tal como se escribiría
+para el "framework" JUnit. Solo mostramos dos métodos,
+uno para probar el método "add" y uno para probar el método "substract".
+Bien, vamos a centrarnos ahora en tres cosas.
+Primero, delante de cada método hay una notación de JUnit,
+"@Test", que señala estos métodos como métodos de prueba.
+En segundo lugar, en cada uno de los métodos
+lo que tenemos que hacer es crear un entorno controlado,
+es decir, que tenemos que poner, tenemos que llegar a un estado
+en el que sabemos qué esperar. Esto se llaman en inglés "fixture",
+"fixture" de prueba, es decir algo así como "sujeción de prueba".
+En nuestro ejemplo creamos un nuevo objeto de la clase "Calculator",
+esta es nuestra "fixture", y entonces llamamos al método "add"
+o al método "substract".
+Una vez lo hemos hecho vemos abajo una sentencia "assert".
+Este es el tercer elemento. Estas son las sentencias "assert" de JUnit,
+en las que comprobamos si los valores obtenidos coinciden o no
+con los esperados. Bueno, vamos a revisar estos tres conceptos
+uno por uno. Bien, conocemos el aserto de Java, "assert",
+que sirve para comprobar ciertas condiciones.
+El "framework" JUnit introduce asertos adicionales.
+Aquí vemos alguno de los asertos más frecuentes que están
+disponibles en JUnit. Por ejemplo, "assertTrue"
+comprueba si una determinada condición
+es verdadera. Análogamente, "assertFalse" comprueba si esta condición
+booleana es falsa. En caso contrario se reportaría un fallo.
+"assertEquals" comprueba si el valor obtenido coincide con el esperado
+y esta igualdad se entiende con una determinada precisión
+"delta" que también se indica. Finalmente, "assertNull" comprueba si
+un objeto es nulo. Siempre puede haber un primer argumento opcional
+que contenga un mensaje. Bien, hay muchísimos más asertos en JUnit,
+pero con esto ya tenemos una primera idea.
+Un "fixture" de prueba es un dispositivo, una sujeción que nos
+permite probar algo de una manera consistente bajo condiciones
+controladas. Por ejemplo, si queremos probar, testear algún dispositivo
+físico lo que haremos es coger una sujeción
+para sus sujetarlo de una manera conocida, controlada.
+Análogamente, en pruebas de software, un "fixture" de prueba
+pone el código en un estado conocido para probarlo de una forma
+reproducible. Por tanto, una secuencia de eventos de un test
+son normalmente siempre los mismos. En primer lugar,
+obtener este estado controlado estableciendo un "fixture" de
+prueba. En el ejemplo de la calculadora era sólo para crear
+un nuevo objeto calculadora. En segundo lugar,
+interactuamos con este método que queremos probar
+y después comprobamos si se obtiene el valor esperado.
+Esto se hace con los asertos. Finalmente podría ser necesario
+retirar, eliminar este "fixture" de prueba
+si fuera necesario restaurar un cierto estado inicial.
+Ahora, esta puesta y retirada de "fixtures"
+realmente puede ser habitual en varios métodos.
+Por eso JUnit también nos ayuda en esto. Aquí tenemos un método
+"setUp" que lo vemos precedido por la notación "@Before".
+Este método se ejecuta antes de cualquiera de los métodos
+de prueba. También podríamos tener un método marcado con
+"@After" para eliminar, retirar el "fixture" después de
+que se haya ejecutado el método de prueba.
+Ahora bien, una advertencia importante. No podemos suponer
+ningún orden de ejecución en los métodos de prueba.
+Se podrían ejecutar en cualquier orden.
+Por tanto, debemos tener la precaución
+de crear ese estado adecuado para la ejecución de cada uno
+de los tests. Bien, veamos las anotaciones, ya hemos visto varias
+de ellas. Tenemos la anotación "@Test", para indicar el siguiente
+método es un método de prueba, la anotación "@Before",
+que señala un método a ejecutar antes de cada método de prueba
+en una clase, y existe también "@After", que se ejecuta
+después de cada método de prueba, sirve para retirar
+este "fixture" de prueba. Si tenemos métodos
+con "@BeforeClass" y "@AfterClass",
+esto indica que sólo son ejecutados cuando entramos y salimos,
+respectivamente, de una clase. ¿Realmente necesitamos escribir
+un método de prueba para todos y cada uno de los posibles
+valores? ¿O podemos mejorar esto un poco? Para esto para lo que
+son buenos los tests parametrizados. Les damos los valores de entrada
+junto con los valores de salida esperados.
+Veamos un momento los valores marcados con fondo amarillo.
+Aquí estamos dando los valores de entrada junto con los valores
+de salida esperados en el caso del método "square",
+es decir, si la entrada es dos la salida esperada debe ser cuatro,
+para tres es nueve y para cuatro debería ser 16.
+Pero vamos a introducir un error, en este caso en el método
+de prueba, y vamos a escribir 17 de momento.
+Ejecutemos ahora la prueba del método "square" con los valores
+de entrada indicados y los valores de salida esperados
+y vamos a ver que la prueba ha fallado.
+El caso de prueba número cero, con entrada dos,
+ha ido bien, salida cuatro, lo mismo para valor de entrada tres, salida nueve,
+pero para el caso de prueba con "input", con entrada cuatro
+vemos en la parte inferior que ha habido un fallo.
+Luego, o bien el caso de prueba es erróneo,
+como en nuestro caso, o bien el método sometido a prueba tiene
+un error. ¿Qué ocurre, pues, si queremos hacer no sólo una,
+sino todo un conjunto de pruebas? Los podemos empaquetar, podemos
+empaquetar pruebas en lo que se llama "Test Suite".
+O sea, un "Test Suite" es un conjunto de pruebas para varias clases.
+¿Que es lo que ocurre a la hora de ejecutar una prueba?
+Bien, JUnit proporciona clases de Java que ejecuten estas
+pruebas por nosotros. Estas se llaman "runners".
+La prueba normalmente se ejecuta en JUnit con una clase por defecto,
+sin embargo este comportamiento se puede modificar.
+Hay dos "runners" de relevancia que merece la pena mencionar aquí.
+Una es la clase "Suite", que nos permite ejecutar varias clases
+de prueba reunidas en un "Test Suite" y el otro es la clase "Parameterized",
+que nos permite ejecutar tests parametrizados
+como hemos visto antes. Bien, hemos aprendido muchas cosas en este vídeo.
+Hemos aprendido cómo el "framework" JUnit nos ayuda
+en la definición de pruebas unitarias. Hemos visto los asertos
+y las anotaciones especializadas que nos ofrece este "framework"
+y también hemos aprendido sobre los "fixtures" de prueba.
+Hemos aprendido cómo reunir pruebas en un "Test Suite"
+y cómo ejecutar pruebas parametrizadas.
+De esta forma podemos ejecutar pruebas fácilmente de una forma
+automatizada y se apoya el desarrollo de programas,
+porque, como hemos dicho al principio, no es recomendable hacer
+las pruebas cuando hemos terminado de programar
+sino durante el propio proceso de programación,
+como herramienta para aumentar nuestra confianza en nuestro programa.
+Eclipse soporta la creación de casos de prueba y "Suites" de prueba,
+tests, por medio de asistentes con JUnit.
+Eclipse proporciona soporte para la creación
+y ejecución de estos tests de forma interactiva.
+Vamos a utilizar el proyecto "Calculator", calculadora, de Java
+en Eclipse para comprender cómo funciona JUnit.
+Este proyecto tiene una clase, "Calculator", con un atributo
+estático llamado "result", resultado, y cuatro métodos:
+sumar, "add", restar, "substract", elevar al cuadrado, "square"
+y obtener un resultado, "getResult".
+Si tenemos un proyecto creado con al menos una clase,
+entonces podemos crear una clase de prueba en JUnit.
+En la vista "package explorer", explorador de paquetes,
+haz clic con el botón derecho en una clase
+y selecciona "New", "JUnit Test Case", caso de prueba en JUnit.
+Alternativamente también puedes usar la barra del menú,
+"File", "New", "JUnit Test Case".
+Después, en el asistente, debes comprobar la versión que está
+habilitada, en este caso la versión 4, y también la carpeta
+de origen. Debes añadir un nombre al paquete
+y escribir un nombre para la clase del caso de prueba.
+Este nombre es generalmente el nombre de la clase que queremos
+probar junto con "test".
+Puedes utilizar "stubs", que son trozos de código usados como
+sustituto del código real para el método que te gustaría crear.
+También debes especificar la clase sometida a prueba,
+"Class under test". El botón examinar, "Browse..." puede ayudarte a encontrar
+esta clase en tus sistema de ficheros.
+Ahora, haz clic en el botón "next", siguiente,
+y en la siguiente pantalla el asistente muestra los métodos disponibles
+para probar.
+Selecciona aquellos que quieras. En este caso, vamos a seleccionar
+"add" y "substract". Finalmente, haz clic en el botón "Finish" para terminar.
+Ahora puedes implementar los "stubs" y los tests del método.
+Eclipse normalmente añade sentencias de importación
+y busca de forma automática todas aquellas importaciones estáticas
+que sean necesarias. En este caso la importación estática
+se usa para sentencias del tipo "assert", "assertions".
+La importación estática acepta como públicos y estáticos
+los atributos y métodos definidos en una clase
+para ser utilizados en código Java sin especificar la clase
+en la que el atributo está definido.
+Igualmente, Eclipse añade la sentencia "fail("Not yet implemented");",
+fallo todavía no implementado, en los métodos de prueba.
+Esta sentencia debe ser sustituida por tu implementación.
+Para ejecutar un test, selecciona la clase que contiene los
+tests, haz clic con el botón derecho y luego selecciona "Run As",
+ejecutar como, "JUnit Test", test de JUnit.
+Este proceso inicia JUnit y ejecuta todos los métodos
+de prueba en esta clase. También puedes utilizar el atajo de
+teclado Alt + Shift + X y T para ejecutar el test
+en la clase seleccionada.
+Observa que si la posición del cursor está en el panel de
+edición sobre un nombre de método de prueba,
+este atajo ejecuta sólo ese método de prueba.
+El resultado de las pruebas de JUnit se muestra en la
+vista de JUnit, "JUnit View".
+En esta vista tienes información sobre el número de tests
+ejecutados, "Runs", los errores y los fallos.
+Los resultados de los tests se muestran individualmente
+indicando el éxito o el fallo, además del tiempo empleado.
+Si hay errores o fallos, la información adicional con el detalle
+se mostrará en el panel inferior.
+En el método "testSubstract" la prueba asido modificada
+para dar lugar a un fallo, "assertTrue(calc.getResult()==2);".
+El resultado puede verse en la vista de JUnit.
+En este caso hay un fallo en el método
+y su rastro indica que es un "AssertionError".
+La vista JUnit por defecto también puede ser configurada
+para mostrar, por ejemplo, sólo pruebas fallidas.
+Puedes añadir otro caso de prueba en JUnit,
+por ejemplo, la clase "ParameterizedSquareTest",
+siguiendo los pasos anteriores. En este caso, Eclipse
+te ayuda a importar las nuevas clases. Por ejemplo,
+"RunWith", ejecutar con, "Parameterized",
+"Parameterized.Parameters" de los paquetes "org.junit.runner"
+y "org.junit.runners".
+Puedes ejecutar este test y ver el resultado en la vista de JUnit.
+De nuevo, si hay fallos, los verás en la parte inferior
+en el panel de rastreo de fallos, "Failure Trace".
+Una vez que todos los casos de prueba están implementados
+puedes crear una "suite" de pruebas, "Test Suite",
+de JUnit, que ejecutará todas las clases de prueba en
+el orden especificado. En la vista "package explorer",
+selecciona las clases de prueba que deberían ser incluidas,
+haz clic con el botón derecho y selecciona "New",
+"Other...", "Java", "JUnit", "JUnit Test Suite".
+Con esto se iniciará el asistente "JUnit Test Suite".
+Puedes comprobar el nombre de la clase y las clases de prueba
+incluidas en la "suite".
+Haz clic en el botón "Finish" y ahora pues ejecutar la clase "AllTests".
+Bien, suponemos que hemos probado todas las unidades
+y ahora queremos saber si funcionan bien juntas.
+Esto es lo que se conoce como pruebas de integración.
+Veamos qué opciones tenemos. Normalmente tendremos una jerarquía
+como la que se muestra aquí, por ejemplo.
+Tenemos una clase superior, A, que usa B y C
+y luego C utiliza las clases D, E y F, por ejemplo.
+Pues bien, hay varias técnicas que podemos hacer para abordar
+las pruebas de integración. Las dos principales son la descendente
+y la ascendente. Descendente de arriba a abajo
+y la ascendente de abajo a arriba, para proceder sucesivamente a probar
+las unidades. Pero además de estas dos existen muchas más,
+como la "Sándwich", que es una combinación de ascendente y descendente,
+u otra que podría ser primero elegir la clase que sea más
+conflictiva, más arriesgada o la más difícil de probar.
+En el enfoque descendente probamos primero A,
+la clase de más arriba.
+Tengamos en cuenta que el resto de las clases
+pueden no haber sido implementadas todavía.
+Entonces, para probar A lo que necesitamos son versiones simplificadas
+de B y C, que de alguna forma actúan como sus representantes.
+A estos representantes a veces se les llama "stubs" en inglés.
+A continuación probaríamos B, con un "stub" para C
+y luego probamos C con "stubs" para D, E y F
+y finalmente probamos D, E y F en cualquier orden.
+Finalmente, probamos todo el sistema
+a la vez. El enfoque ascendente es más sencillo, de alguna forma.
+Primero probamos D, E y F, de forma independiente, en cualquier orden.
+Luego borramos C sabiendo que D, E y F ya han sido probados,
+luego probamos B y luego A y finalmente podríamos
+también probar con el sistema completo.
+La prueba de integración es muy importante
+porque los fallos pueden ocurrir durante la interacción de
+las diferentes partes de un sistema.
+Recordemos el Mars Climate Orbiter, que se desintegró
+a causa de suposiciones contradictorias en los sistemas unitarios utilizados.
+Un modelo estaba suponiendo que utilizaba el sistema
+métrico decimal, mientras que otro el sistema anglosajón.
+Los dos módulos trabajaban bien de forma independiente,
+pero al ponerlos a trabajar juntos el resultado fue catastrófico.
+Bien, una vez que hemos escrito varios casos de prueba
+nos podemos preguntar, ¿hemos probado todas las posibilidades?
+¿O nos hemos olvidado de tener en cuenta alguna parte del código
+o alguna ruta, algún camino en el código? La cobertura de código,
+"code coverage", es una medida de cuántas parte del código
+se han sometido a prueba. Y aquí hay varios criterios posibles.
+La cobertura de métodos se refiere a si todos los métodos
+ha sido probados o no.
+La cobertura de sentencias mide si todas sentencias han
+sido cubiertas por el texto o solo un porcentaje de ellas.
+La cobertura de ramas o "branch coverage"
+se refiere a las ramas que la ejecución de un programa puede
+tomar debido a condicionales. La cobertura de condiciones
+es parecida, pero se refiere a todas las condiciones booleanas,
+tanto verdaderas o falsas, que pueden probarse.
+Bien, veamos este ejemplo, en el que queremos imprimir en cuál
+de los cuatro cuadrantes de un tablero de ajedrez se encuentra posicionada
+una pieza.
+Y aquí tenemos el método.
+Queremos averiguar la cobertura de sentencias
+y vemos que hay cinco sentencias. Todas son tendencias de impresión,
+que están aquí indicadas en rojo. Y revisemos estos cuatro
+casos de prueba, estas cuatro posiciones
+que se ven en la imagen y vamos a comprobar si se ejecutan todas
+las sentencias al menos una vez. Para la pieza en la posición (2,1)
+ejecutamos las sentencias que vemos aquí señaladas con
+la fecha roja.
+Sólo dos de ellas no se prueban, debido precisamente a las condiciones que hay.
+A continuación probamos con la posición (1,5)
+y se ve que se ejecuta una sentencia más,
+la que imprime N. Lo indicamos aquí con una flecha roja.
+También se han probado otras sentencias, pero como ya han sido cubiertas
+por la posición anterior, pues no las reflejamos.
+Las sentencias probadas anteriormente las indicamos aquí
+con flechas azules, independientemente de si ahora se prueban o no.
+A continuación, posición (6,2). Se cubre una sentencia más,
+la que imprime E. Bien, hemos cubierto ya las cinco sentencias.
+Bueno, si probáramos ahora con la posición (5,6)
+pues también estarían cubiertas todas las sentencias.
+Por tanto, tenemos un cien por cien de cobertura de sentencias.
+Por tanto, con los cuatro tests hemos visto que hemos cubierto
+todas las sentencias. En realidad hemos visto que con tres
+de esos tests tendríamos también el cien por cien de cobertura
+de sentencias del código.
+Además, y eso se puede ver aparte, con los cuatro tests tendremos
+el cien por cien de la cobertura de métodos,
+cobertura de ramas y cobertura de condiciones.
+Pero, ¿qué significa esto en realidad? El cien por cien de cobertura,
+¿es una garantía de que el código es correcto?
+¡No! Porque podemos tener el cien por cien de cobertura de código
+y a pesar de ello tener errores, y lo vamos a ver con un ejemplo.
+Supongamos que sustituimos dos de los operadores,
+dos ">=" por operadores ">",
+haciendo que el código, por tanto, sea incorrecto
+(vemos aquí los operadores en rojo). Entonces, con los mismos cuatro
+valores seguimos teniendo el cien por cien de cobertura
+de código y además, para esos valores, los resultados esperados
+coinciden con los correctos en los cuatro casos.
+Por tanto, es importante recordar que una cobertura de código
+al cien por cien y de resultados correctos
+no es ninguna garantía de corrección. Como hemos visto en este
+ejemplo no se ha detectado ningún error
+a pesar del cien por cien de cobertura de código,
+pero el método era incorrecto.
+Podríamos haber detectado el error si hubiéramos comprobado con
+la posición (4,6), pero eso es otra historia.
+Pero lo que debemos recordar es que si no tenemos cobertura
+de código al cien por cien sabemos que algunas parte del código
+se han dejado sin probar y deberíamos seguir intentando.
+Sin embargo, con un cien por cien de cobertura
+no tenemos una garantía de corrección.
+Recordemos a Dijkstra: sólo podemos demostrar la presencia errores,
+no su ausencia.
+El plugin de cobertura de código EclEmma
+fue creado en 2006 y su código se abrió bajo una
+licencia pública Eclipse EPL. EclEmma recupera métricas
+de cobertura de código al mismo tiempo que se ejecutan pruebas
+de programa directamente en Eclipse.
+El plugin se puede instalar de dos formas:
+la primera es desde el "Marketplace" de Eclipse.
+Podemos pulsar en "Help", "Eclipse Marketplace"
+y después buscar EclEmma. La segunda opción es utilizar
+los sitios web de actualización. Podemos poner la URL
+en cualquier instalación de Eclipse de la versión 3.5
+o superior en el menú "Help", "Install New Software", instalar
+software nuevo. Cuando se instala el plugin hay que reiniciar Eclipse.
+A partir de ese momento se pueden ejecutar pruebas utilizando
+la nueva opción de lanzamiento, "Launch Coverage As".
+EclEmma añade un nuevo modo de lanzamiento,
+"Coverage", al mismo nivel que "Run" y Debug", ejecutar y depurar,
+que ya están disponibles desde el menú
+"Run" y en la barra de herramientas. La opción "Coverage Configurations"
+también está disponible para establecer el ámbito empleado
+en el análisis de cobertura. Es posible seleccionar el código
+fuente en Java que se desea analizar en la prueba de cobertura.
+En este ejemplo podemos ver en el panel de la izquierda
+las clases de prueba creadas para los proyectos
+"Calculator" y "SquareGrid". Vamos a seleccionar las fuentes
+del proyecto "SquareGrid" en el panel de la derecha.
+A continuación vamos a lanzar el modo de cobertura de código
+utilizando el proyecto "SquareGrid" como ejemplo.
+En primer lugar seleccionamos la clase de prueba "SquareGridTest",
+que está en el paquete "Test". Después pulsamos la pestaña
+"Coverage" y seleccionamos la opción "Coverage As"
+y después "JUnit Test".
+Si hubiéramos seleccionado la clase "SquareGrid"
+podríamos haber seleccionado "Coverage As"
+"Java Application", aplicación Java.
+La vista de cobertura del código, "Coverage",
+aparece automáticamente cuando se lanza una nueva sesión.
+Se puede abrir manualmente así como también desde el menú
+"Window", "Show view", "Other" en la categoría Java.
+Esta vista muestra informes de cobertura para la sesión que
+se encuentra activa. La vista "Coverage" muestra todos los elementos
+de Java analizados dentro de la jerarquía común.
+Las columnas individuales contienen el grado de cobertura,
+"Coverage", las instrucciones cubiertas, "Covered Instructions",
+las instrucciones no cubiertas, "Missed Instructions",
+y el total instrucciones, "Total Instructions".
+La cobertura se mide, por defecto, en términos de números y
+porcentaje de instrucciones, pero esto se puede cambiar
+de acuerdo con el tipo de cobertura deseado
+utilizando la pestaña "View Menu".
+Podemos seleccionar "Branch Counters" para ver las coberturas
+de ramas, "Line Counters" para ver la cobertura de líneas
+de código, "Method Counters" para ver la cobertura de métodos
+y algunas otras opciones adicionales. La cobertura de líneas
+y de ramas de las sesiones activas también se muestra directamente
+en los editores del código fuente de Java
+utilizando líneas de color resaltadas.
+Color verde se utiliza para líneas o ramas que se han cubierto
+completamente. Color amarillo se utiliza para líneas o ramas
+parcialmente cubiertas en las cuales hay algunas instrucciones
+o ramas que no se cubren. Finalmente, el color rojo se usa para
+líneas o ramas que no se han ejecutado. En las clases de prueba
+también se resalta la cobertura. En el caso de la clase "SquareGrid",
+el resultado sería similar, con el color verde mostrando
+las pruebas exitosas y el color rojo mostrando las pruebas
+fallidas. En este ejemplo podemos ver que la cobertura no es
+del cien por cien. Si quisiéramos cubrir un cien por cien entonces
+deberíamos añadir pruebas para los valores no permitidos
+de "x" e "y" y para el método "Main".
+Hola. Vamos a estudiar un método que está muy presente en
+la Naturaleza. Es conocido como la secuencia de Fibonacci
+o la función de Fibonacci. Este tipo es Leonardo de Pisa, también
+conocido como Fibonacci o, para algunos, el matemático más
+grande de todos los tiempos. Vivió en Italia entre los siglos XII y XIII
+y analizó la secuencia de números que vemos aquí,
+que se conoce hoy como la secuencia de Fibonacci. Esta secuencia se forma
+de la siguiente manera: los dos primeros números son cero y
+uno y a partir de ahí cada número de la secuencia es la suma
+de los dos anteriores. Por ejemplo cojamos el 13, que es la
+suma de cinco y ocho o el 55, vemos que los anteriores
+son 21 y 34, cuya suma es 55. Compruébalo
+con alguno más, bueno, excepto con los dos primeros, que estos
+se dan porque de lo contrario no sabríamos cómo empezar.
+Así que, a excepción de los dos primeros, que se nos dan, el número
+enésimo de Fibonacci, fib(n), es la suma de los dos anteriores,
+esto es, de fib(n-1) y fib(n-2). Esto se cumple
+para todos los números enteros mayores que uno,
+o, en otras palabras, podríamos escribir lo siguiente: siempre que n
+sea mayor o igual que cero, esta es la precondición, fib(n)
+es n siempre que n sea menor o igual que uno, o dicho de otro
+modo, que n sea cero o uno. Y fib(n) es fib(n-1)
+más fib(n-2).
+Bien, las ecuaciones anteriores, matemáticas, pueden convertirse
+muy fácilmente a código Java. Vamos a escribir la precondición
+como comentario. A continuación tenemos un condicional: si n
+es menor o igual que uno, el resultado de n. Obsérvese que
+esto cubre también el caso prohibido de los negativos
+dando un número fijo en lugar de entrar en una recursión infinita.
+Pero bueno, en el caso recursivo devolvemos la suma de fib(n-1)
+y fib(n-2). Vamos a calcular un caso sencillo,
+fib(4). fib(4) es fib(3) más fib(2). Pero para
+poder sumar fib(3) y fib(2) necesitamos conocer los valores
+de fib(3) y fib(2). Por eso, comencemos calculando el valor de
+fib(3). Es un cálculo que vamos a hacer aparte. fib(3)
+es fib(2) más fib(1). Pues bien, vamos a hacer otro cálculo
+aparte para calcular fib(2), que es fib(1) más fib(0),
+pero estos valores los conocemos: fib(1) es uno y fib(0) es cero.
+Por tanto, fib(2) es uno más cero, es decir, uno.
+Bien, vamos avanzando lentamente. Y si conocemos fib(2), podemos
+sumar fib(1), que es uno, para obtener fib(3), que es, por tanto,
+uno más uno, fib(3) es igual a dos. Bien,
+a continuación tenemos que calcular fib(2), que está aquí
+en rojo y después de algunos cálculos, obtenemos lo que ya
+hemos visto antes, que es 1. Entonces podemos finalmente añadir
+los valores, sumar los valores de fib(3) y fib (2), es decir,
+dos y uno, para obtener el resultado tres, que es resultado de fib(4).
+Bueno... ¡Menudo trabajo! Estamos cansados... Bien, quizás
+nos hemos dado cuenta de que la estructura de este algoritmo
+a la hora de ejecutarlo es como un árbol. Para cada llamada
+recursiva, se producen dos nuevas llamadas, excepto en el caso de
+fib(1) y fib(0), cuyos valores conocemos.
+Claro, hemos visto un ejemplo con un n pequeño. No nos queremos
+ni imaginar lo que va a pasar cuando leemos fib(4000),
+un árbol inmenso con muchísimas llamadas. Y lo malo, además,
+es que el mismo cálculo lo hacemos muchas veces. Por ejemplo,
+aquí hemos calculado fib(2) en dos ocasiones. Pues nos lo encontraremos
+muchísimas más veces si lo que queremos calcular es fib(4000).
+Ahora, fijémonos en este par de métodos.
+Supongamos que ahora definimos fib como vemos aquí abajo. fib llama
+al método "fi" con tres argumentos: el primero es n, el segundo 0
+y el tercero 1, y ahora "fi" es el que definimos en la
+parte superior recursivamente. Si n es cero o uno el resultado es n.
+Cero, uno, igual que antes. En caso contrario, llamamos
+al mismo método "fi" en donde contamos hacia atrás, descontamos,
+n-1. Y la nueva x es y, segundo argumento, y el tercer
+argumento, el nuevo y, es x más y.
+Pues bien, resulta que este método, o estos dos métodos juntos
+en realidad, calculan el número n de Fibonacci igual que antes,
+pero hay una pequeña diferencia: el número de llamadas es
+mucho menor. En el caso recursivo solo tenemos una llamada nueva
+en lugar de dos, por tanto, el número de llamadas en total
+es aproximadamente n. Por tanto, el resultado es el mismo, matemáticamente,
+pero el tiempo transcurrido para dar ese resultado es distinto.
+Hemos visto dos formas distintas de calcular el mismo valor,
+el enésimo número de Fibonacci. ¿Cuáles son las ventajas de
+hacerlo de una forma o de otra? Piénsalo en un momento.
+Si dos métodos calculan el mismo resultado
+lo que nos puede interesar es la velocidad
+con la que se obtiene este resultado.
+Aquí tenemos una primera versión de la función de Fibonacci.
+En el caso recursivo, el método se llama en dos ocasiones,
+dos veces y esto daba lugar a una estructura arborescente de llamadas.
+Y aquí tenemos otro método que calcula lo mismo
+pero que en el caso recursivo sólo se llama a sí mismo
+en una ocasión. Por tanto tenemos una secuencia lineal de llamadas.
+La pregunta ahora es: ¿cuál de las dos versiones preferimos?
+¿fib1 o fib2? fib1 es similar a las ecuaciones recurrentes
+en matemáticas, que se corresponden a la definición de la frecuencia.
+Así que con fib1 estamos más seguros de entender bien que hemos
+programado correctamente.
+El caso de fib2 no es tan sencillo, no hay una correspondencia
+tan clara entre la ecuación matemática recurrente y el código.
+Sin embargo, fib2 tiene la ventaja de que es más eficiente
+calcula el resultado de forma más rápida.
+Aquí vemos ahora las dos alternativas para calcular el Fibonacci
+de un número "n" en Eclipse. fib2 llama a un método auxiliar
+"fi" que recibe "n" y dos argumentos más, "x" e "y".
+Este método auxiliar ayuda a simplificar el cálculo
+en comparación con la implementación de fib1.
+Tenemos un método principal que llama a fib2 y a fib1,
+con n = 5 y que además calcula el tiempo que
+se necesita para hacer los cálculos utilizando el método
+"nanoTime" en de la clase "System". "nanoTime" devuelve el valor
+del sistema de la forma más precisa posible en nanosegundos.
+Si ejecutamos el código vemos que fib2 es más eficiente
+en el tiempo. Sin embargo, la diferencia no es muy grande.
+Si cambiamos ahora "n" a 10 vemos que fib1 necesita mucho
+más tiempo para realizar los cálculos,
+y si cogemos un número más grande, como ejemplo 100,
+vemos que fib1 no termina en un tiempo razonable,
+tenemos que finalizar el programa manualmente.
+Es importante señalar que en realidad para obtener medidas de
+tiempo precisas deberíamos ejecutar el código varias veces
+y calcular el tipo medio, pero aquí simplemente queremos ilustrar
+el punto del tiempo globalmente.
+Pongamos ahora algunos marcadores en el código
+para ver el número de operaciones que se necesitan en cada
+uno de los dos casos.
+Para n = 5 fib2 es más eficiente,
+ya que necesita menos operaciones, pero la diferencia con fib1
+no es muy grande. Para n = 10
+fib1 necesita muchas más operaciones
+y finalmente, para n = 100, fib1
+necesita un número muy grande de operaciones
+y de nuevo tenemos que finalizar manualmente el programa.
+Por tanto, si algunos programas son más rápidos que otros
+la cuestión ahora es ¿cómo medimos, cómo comparamos,
+cuál es la unidad de medida?

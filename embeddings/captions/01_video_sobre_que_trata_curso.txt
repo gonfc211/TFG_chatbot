@@ -1,1 +1,35 @@
 
+
+Las tecnologías digitales siguen potenciando las capacidades humanas.
+Sin embargo, plantean muchos desafíos, y si no
+somos capaces de dominarlos, ellos nos dominarán a nosotros.
+Pero no te preocupes. Podemos afrontar
+estos desafíos. Las tres erres (3R´s),
+lectuRa, escRitura,
+aRitmética, han sido la base de nuestra educación durante
+muchos años. Hoy sabemos
+que esto no es suficiente. Necesitamos añadir una erre más,
+la de pRogramación, la erre de algoRitmo.
+Hemos organizado este curso en tres módulos de cinco
+semanas. El primero, para atender los fundamentos de lenguaje
+de programación Java. El segundo, sobre cómo
+escribir buen código, eficiente y correcto.
+Y el tercero, sobre el manejo de estructuras de datos.
+Queremos que aprendas a pensar de forma computacional. Y queremos
+enseñarte sin necesidad de conocimientos previos,
+suavemente, poco a poco, con muchas actividades,
+actividades visuales e interactivas, que además
+serán divertidas. No importa si sabes más o menos,
+si estudias o trabajas, si eres un amante de las Matemáticas
+o de las Humanidades, si eres diestro o zurdo,
+si prefieres aprender de forma visual o verbal. Te ayudaremos
+a aprender tanto el lenguaje de programación Java, como a programar bien.
+Los programas no solo están
+presentes en las aplicaciones y dispositivos que usamos.
+Están en tu vida, en las decisiones
+que tomas, en cómo ser más eficiente,
+en cómo entender mejor el mundo.
+Soy Carlos Delgado Kloos, coordinador del curso
+Introducción a la programación en Java
+de la Universidad Carlos III de Madrid, UC3M, en Madrid, España.
+¿Te animas a seguirlo?

@@ -1,0 +1,83 @@
+Ahora que ya has instalado Eclipse, vamos a ver cómo funciona.
+El primer paso es abrir Eclipse y seleccionar el espacio de
+trabajo, el "work space". El espacio de trabajo es la carpeta
+en la que se almacenará cada proyecto creado con Eclipse.
+Una vez eclipse está funcionando, puedes crear un proyecto nuevo
+y comenzar a programar.
+En primer lugar, cambia la perspectiva, desde la perspectiva
+recurso, "resource", a la perspectiva Java en la ventana del menú.
+Necesitarás hacer esto sólo una vez para cada espacio de trabajo.
+Ahora ve a la barra "package explorer", explorador de paquetes.
+Haz clic en el botón derecho y luego selecciona nuevo, "new"
+y proyecto Java, "Java project". También puedes crear un proyecto
+nuevo abriendo el menú desplegable fichero, "file",
+y seleccionando nuevo, "new", y proyecto Java.
+En la ventana nueva puedes poner el nombre del proyecto.
+Llamémoslo "example", ejemplo.
+También puedes modificar aquí otras opciones avanzadas que
+están preconfiguradas pero que por ahora vamos a dejarlas como están.
+Ahora que hemos creado un proyecto vamos a crear un paquete.
+Haz clic con el botón derecho en la carpeta SRC
+y luego selecciona "new" y "package", paquete.
+Vamos a llamarlo "com.test". Recuerda que los paquetes
+se nombran utilizando una aproximación jerárquica en Java
+separando los niveles de la jerarquía con puntos.
+En este caso, "com" es el primer nivel de la jerarquía
+y "test" el segundo nivel.
+Dentro del paquete crearemos nuestras clases Java e interfaces.
+Puedes crear una nueva clase Java haciendo clic con el botón
+derecho en el paquete y seleccionando "new"
+y "class", o puedes crear una nueva interfaz
+seleccionando "new" e "interface". En este caso vamos a comenzar
+por un código ejemplo.
+Este código está dividido en dos clases:
+la primera es una clase abstracta llamada "figure", figura,
+que tiene un atributo nombre, "name", y un constructor para inicializar
+el atributo. Además tiene también tres métodos
+"toString", que devuelve el nombre, "calculateArea",
+que calcula el área, y "caclulatePerimeter",
+que calcula el perímetro. Los dos últimos métodos son métodos
+abstractos, es decir, no proporcionan una implementación en esta clase.
+La segunda clase es "circle", circulo, y tiene dos atributos:
+"radius", el radio y "PI", que es una constante.
+Esta clase también tiene un constructor
+y tres métodos: "toString", "calculateArea" y "getPerimeter".
+Como puedes ver, este código no tiene un método principal
+un método "main" y, lo que es más importante, tiene un error.
+Si colocas el cursor sobre la palabra "circle", que está subrayada,
+Eclipse  te dirá cuál es el problema y mostrará algunas soluciones
+rápidas para corregirlo. El error es que la clase "circle" debe
+implementar el método heredado "calculatePerimeter",
+el cual se hereda desde la superclase, clase padre, "figure".
+Para corregir este error hacemos clic en añadir los métodos
+no implementados, "add unimplemented methods",
+que es una posible solución sugerida por Eclipse.
+Ahora este error ha desaparecido,
+gracias a Eclipse podemos ver que la clase "circle" necesitaba un
+método, "calculatePerimeter", que en este caso hace exactamente
+lo mismo que el método "getPerimeter". Así que movemos
+la implementación, el código desde el método "getPerimeter"
+a "calculatePerimeter" y eliminamos "getPerimeter"
+para evitar la duplicación de código.
+Eclipse compila automáticamente nuestro código mientras hacemos
+cambios para que podamos detectar errores de compilación fácilmente
+en una fase temprana. Las indicaciones para arreglar errores
+proporcionadas por Eclipse son también muy útiles
+y nos dan pistas sobre cómo proceder para hacer que nuestro
+código funcione correctamente. Ahora que no tenemos errores
+podemos escribir el método principal, el método "main".
+Vamos a crear una nueva clase, llamada "test",
+en el mismo paquete, con el método "main". El método "main"
+crea un círculo, imprime su contenido y también su área y
+perímetro. Mientras escribimos código observarás que vas
+obteniendo recomendaciones de Eclipse sobre los métodos que
+pueden ser utilizados para cada objeto. Este asistente permite
+codificar más rápido, ya que podemos autocompletar los métodos
+que van a ser utilizados. Guarda el código,
+comprobarás que no hay errores y que el programa ya está listo.
+Ejecútalo yendo a la clase que contiene el método "main",
+haz clic en el botón derecho, ejecutar como, "run as",
+aplicación Java, "Java application". También puedes ejecutar
+el programa haciendo clic en el botón "play".
+En ambos casos la consola, en la parte inferior,
+mostrará el resultado que se imprime por pantalla.

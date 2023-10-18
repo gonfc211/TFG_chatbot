@@ -1,0 +1,64 @@
+Errores comunes
+Hay muchos errores comunes, demasiados como para hacer una lista. Sin embargo, puedes aprender de los errores. Aquí te dejamos una lista con algunos de esos errores y si crees que puedes pensar en más errores además de los de la lista, ¿por qué no los compartes con todos en los comentarios de abajo?
+
+PROBLEMAS LÉXICOS 
+Mayúsculas y minúsculas
+Java es sensible a las mayúsculas y las minúsculas. De esta manera, si defines una variable con el nombre myVar y la utilizas como myvar, en realidad te estás refiriendo a una variable diferente. El tipo de datos (tipos primitivos) comienzan con letra mínuscula y los nombres de las clases con letra mayúscula. Por lo tanto, tienes que tener cuidado a la hora de escribir int e Integer. Ten cuidado también cuando escribas String y no string porque String, aunque es muy básca, también es una clase. Fíjate en que el nombre de la clase comienza con una letra mayúscula, pero la palabra clave class es con letra minúscula.
+
+Corchetes
+Hay varios tipos de corchetes: los paréntesis(),los paréntesis cuadrados[],las llaves{}. Tienen que ser utilizados de forma correcta. Esto significa que no debes olvidar cerrarlos cuando los hayas abierto y, además, hacerlo en el orden correcto. Quizá el error más común sea olvidar cerrar un corchete, por ejemplo, cerrar } al final de la definición de una clase.
+
+Las comillas simples y dobles también tienen el comportamiento de los paréntesis con la salvedad de que, en este caso, los símbolos para abrir y cerrar son los mismos. Con las comillas también hay que tener cuidado para no incluir una nueva línea en un string. Por ejemplo,
+
+String s = "A loooooooooooooooong
+string"
+es incorrecto. En vez de eso, quizá querías escribir 
+
+String s = "A loooooooooooooooong string"
+
+o también
+
+String s = "A loooooooooooooooong " +
+"string"
+
+Operadores
+Tienes que comprender bien la forma y la función de los diferentes operadores en Java. Por ejemplo, tienes que distinguir la asignación = de la comparación de igualdad  ==.
+
+x=3
+
+asigna 3 a x,mientras
+
+x==3
+
+comprueba si el valor de x es igual a 3.
+
+Sin embargo, puedes utilizar == solo para la comparación de valores de tipos sencillos o escalares, pero no para objetos.
+
+3==3
+
+devuelve true, mientras
+
+"3"=="3"
+
+puede que no. Como el string es un objetos, estamos comprobando si la posición de la representación interna de estos objetos es la misma y no si los objetos son iguales. Para comparar los objetos a y b, puedes utilizar el método equals()
+
+a.equals(b)
+
+DECLARACIÓN Y USO
+Arrays y Paquetes
+Un error común es intentar utilizar una clase en nuestros programas sin importar los paquetes requeridos.
+Por ejemplo, si queremos utilizar una instancia de la clase Vector debemos importar siempre el paquete java.util.
+
+Pero, ¿por qué podemos utilizar la clase String sin importar ningún paquete?  La clase String pertenece al paquete java.lang y este paquete es el único que se importa automáticamente (por lo que podemos utilizar clases como String o Integer sin importar el paquete java.lang.) 
+
+En relación al uso de los arrays de dos dimensiones, los programadores novatos tienden a asumir que los arrays bidimensionales están implementados directamente en Java. Por lo tanto, un error común es escribir:
+
+int[,] array = new int[2,5];
+En Java tenemos que crear las filas en primer lugar y, después, las columnas. Los arrays bidimensionales son dos arrays unidimensionales que contiene cada uno una dimensión diferente. Por lo tanto, la sentencia previa debería haber sido escrita de la siguiente manera:
+
+int[][] array = new int[2][];
+array[0] = new int[5];
+array[1] = new int[5];
+
+O de esta manera más corta:
+int[][] array = new int[2][5];

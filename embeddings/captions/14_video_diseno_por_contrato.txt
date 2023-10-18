@@ -1,0 +1,81 @@
+En este vídeo vamos a reflexionar sobre el hecho de que
+un fragmento de código o un método tiene que proporcionar algún
+resultado o efecto dentro de un contexto particular.
+O sea, un método deberá proporcionar ciertos resultados o efectos
+literales, con ciertas propiedades, siempre que se cumplan ciertas
+condiciones cuando es llamado.
+Esto nos llevará a la idea de contrato,
+que ha de ser satisfecho por un método determinado.
+De esta forma podremos escribir un código mucho más limpio
+y más claro. En este vídeo presentaremos precisamente los fundamentos
+de lo que se llama "diseño por contrato".
+Mi jefe me ha pedido que escriba un programa.
+Y yo escribí "x = y+1;". Este programa, este fragmento de
+programa, ¿es correcto? Bueno, si mi jefe me dijo: "asegúrate
+de que x e y tienen valores diferentes" sería correcto,
+pero sería incorrecto si mi jefe me hubiera dicho: "asegúrate
+de que x tiene un valor negativo".
+Obsérvese que aún tengo también una posibilidad de que el programa
+sea correcto y es que si "y" es menor que -1.
+Por tanto, la corrección del software es una noción relativa,
+depende no solamente del fragmento de código sino también
+de la especificación.
+Utilizando correctamente las condiciones, los asertos,
+podemos producir un software correcto desde el principio
+porque estará diseñado para ser correcto
+y nos permitirá conseguir también un entendimiento mucho
+mejor del problema y su solución final.
+Además, facilitará la tarea de documentación del software
+y proporcionará las bases para las pruebas sistemáticas.
+¿Cómo puede mi jefe estar seguro de que mi programa
+producirá la respuesta correcta? ¿Y cómo puedo estar seguro
+yo de que mi jefe utilizará correctamente el fragmento de código
+con los valores correctos? Una solución es la de establecer
+una especie de contrato de software. Si me prometes que y es menor
+que -1 allá donde llames a mi fragmento de código,
+entonces yo, por mi parte, prometo que x tendrá un valor negativo
+y también prometo que "x" e "y" tendrán valores diferentes.
+Un buen contrato implica beneficios y obligaciones para ambas partes.
+El ejemplo "y es menor que -1" obliga a mi jefe,
+define las condiciones bajo las cuales es legítima una llamada
+al fragmento de código. Es una obligación para mi jefe y es
+un beneficio para mí. Y las afirmaciones "x tendrá un valor negativo"
+o "x e y tendrán valores diferentes" definen mis obligaciones
+y el beneficio para mi jefe.
+Así que podemos tener una precondición,
+por ejemplo, proporcionar madera de buena calidad.
+Si se satisface, entonces yo prometo producir mesas de buena calidad.
+La idea de tener un contrato de software implica tener un cliente
+que necesita un servicio. En el ejemplo de antes el cliente era
+mi jefe, pero en un programa de Java el cliente puede ser un método
+que llama, y también tener un proveedor que ofrece un servicio.
+En este caso, yo era el proveedor y en un programa de Java el proveedor
+será el método llamado.
+Vemos aquí otro ejemplo. El método m garantiza la
+poscondición de que el resultado no va a ser positivo, es decir,
+va a ser cero o negativo, siempre y cuando se satisfaga la precondición,
+en este caso que el argumento no sea negativo, es decir, cero o positivo.
+Si no se satisface la precondición
+no se garantiza la poscondición. Obsérvese que gracias a
+la precondición no necesitamos hacer la correspondiente verificación
+dentro del propio método; de hecho podemos suponer que el argumento "b"
+no será negativo y por tanto no necesitamos hacer comprobaciones
+de ello en el código. Así que, una vez más,
+quien llama garantiza la precondición
+y espera que se satisfaga la poscondición.
+Y el método llamado tiene que satisfacer la poscondición
+y puede suponer con seguridad que la precondición se cumple.
+Bien, luego tenemos los invariantes. Un invariante se garantiza
+cuando se llama al método y además se ha de garantizar
+al final, permanece invariante como su nombre indica, no cambia.
+Tanto la precondición como el invariante se satisfacen cuando
+los métodos son llamados. Después de la llamada se garantiza la
+poscondición y la invariante. Bien, utilizando esta técnica
+de diseño por contrato, un método o un fragmento de código
+en general puede confiar en ciertas propiedades:
+condición e invariante, y tiene que cumplir algunas propiedades:
+poscondición e invariante. Pues para esto se utilizan los contratos,
+para establecer algunas garantías y obligaciones para ambas
+partes, así como algunas leyes aplicables
+que sería la invariante. Bien, veamos este contrato...
+A ver... Pa, pa, pa, pa... ¿Estamos de acuerdo?

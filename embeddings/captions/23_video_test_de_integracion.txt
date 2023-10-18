@@ -1,0 +1,40 @@
+Bien, suponemos que hemos probado todas las unidades
+y ahora queremos saber si funcionan bien juntas.
+Esto es lo que se conoce como pruebas de integración.
+Veamos qué opciones tenemos. Normalmente tendremos una jerarquía
+como la que se muestra aquí, por ejemplo.
+Tenemos una clase superior, A, que usa B y C
+y luego C utiliza las clases D, E y F, por ejemplo.
+Pues bien, hay varias técnicas que podemos hacer para abordar
+las pruebas de integración. Las dos principales son la descendente
+y la ascendente. Descendente de arriba a abajo
+y la ascendente de abajo a arriba, para proceder sucesivamente a probar
+las unidades. Pero además de estas dos existen muchas más,
+como la "Sándwich", que es una combinación de ascendente y descendente,
+u otra que podría ser primero elegir la clase que sea más
+conflictiva, más arriesgada o la más difícil de probar.
+En el enfoque descendente probamos primero A,
+la clase de más arriba.
+Tengamos en cuenta que el resto de las clases
+pueden no haber sido implementadas todavía.
+Entonces, para probar A lo que necesitamos son versiones simplificadas
+de B y C, que de alguna forma actúan como sus representantes.
+A estos representantes a veces se les llama "stubs" en inglés.
+A continuación probaríamos B, con un "stub" para C
+y luego probamos C con "stubs" para D, E y F
+y finalmente probamos D, E y F en cualquier orden.
+Finalmente, probamos todo el sistema
+a la vez. El enfoque ascendente es más sencillo, de alguna forma.
+Primero probamos D, E y F, de forma independiente, en cualquier orden.
+Luego borramos C sabiendo que D, E y F ya han sido probados,
+luego probamos B y luego A y finalmente podríamos
+también probar con el sistema completo.
+La prueba de integración es muy importante
+porque los fallos pueden ocurrir durante la interacción de
+las diferentes partes de un sistema.
+Recordemos el Mars Climate Orbiter, que se desintegró
+a causa de suposiciones contradictorias en los sistemas unitarios utilizados.
+Un modelo estaba suponiendo que utilizaba el sistema
+métrico decimal, mientras que otro el sistema anglosajón.
+Los dos módulos trabajaban bien de forma independiente,
+pero al ponerlos a trabajar juntos el resultado fue catastrófico.

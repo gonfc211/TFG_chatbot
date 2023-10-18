@@ -1,0 +1,77 @@
+Hola. Vamos a estudiar un método que está muy presente en
+la Naturaleza. Es conocido como la secuencia de Fibonacci
+o la función de Fibonacci. Este tipo es Leonardo de Pisa, también
+conocido como Fibonacci o, para algunos, el matemático más
+grande de todos los tiempos. Vivió en Italia entre los siglos XII y XIII
+y analizó la secuencia de números que vemos aquí,
+que se conoce hoy como la secuencia de Fibonacci. Esta secuencia se forma
+de la siguiente manera: los dos primeros números son cero y
+uno y a partir de ahí cada número de la secuencia es la suma
+de los dos anteriores. Por ejemplo cojamos el 13, que es la
+suma de cinco y ocho o el 55, vemos que los anteriores
+son 21 y 34, cuya suma es 55. Compruébalo
+con alguno más, bueno, excepto con los dos primeros, que estos
+se dan porque de lo contrario no sabríamos cómo empezar.
+Así que, a excepción de los dos primeros, que se nos dan, el número
+enésimo de Fibonacci, fib(n), es la suma de los dos anteriores,
+esto es, de fib(n-1) y fib(n-2). Esto se cumple
+para todos los números enteros mayores que uno,
+o, en otras palabras, podríamos escribir lo siguiente: siempre que n
+sea mayor o igual que cero, esta es la precondición, fib(n)
+es n siempre que n sea menor o igual que uno, o dicho de otro
+modo, que n sea cero o uno. Y fib(n) es fib(n-1)
+más fib(n-2).
+Bien, las ecuaciones anteriores, matemáticas, pueden convertirse
+muy fácilmente a código Java. Vamos a escribir la precondición
+como comentario. A continuación tenemos un condicional: si n
+es menor o igual que uno, el resultado de n. Obsérvese que
+esto cubre también el caso prohibido de los negativos
+dando un número fijo en lugar de entrar en una recursión infinita.
+Pero bueno, en el caso recursivo devolvemos la suma de fib(n-1)
+y fib(n-2). Vamos a calcular un caso sencillo,
+fib(4). fib(4) es fib(3) más fib(2). Pero para
+poder sumar fib(3) y fib(2) necesitamos conocer los valores
+de fib(3) y fib(2). Por eso, comencemos calculando el valor de
+fib(3). Es un cálculo que vamos a hacer aparte. fib(3)
+es fib(2) más fib(1). Pues bien, vamos a hacer otro cálculo
+aparte para calcular fib(2), que es fib(1) más fib(0),
+pero estos valores los conocemos: fib(1) es uno y fib(0) es cero.
+Por tanto, fib(2) es uno más cero, es decir, uno.
+Bien, vamos avanzando lentamente. Y si conocemos fib(2), podemos
+sumar fib(1), que es uno, para obtener fib(3), que es, por tanto,
+uno más uno, fib(3) es igual a dos. Bien,
+a continuación tenemos que calcular fib(2), que está aquí
+en rojo y después de algunos cálculos, obtenemos lo que ya
+hemos visto antes, que es 1. Entonces podemos finalmente añadir
+los valores, sumar los valores de fib(3) y fib (2), es decir,
+dos y uno, para obtener el resultado tres, que es resultado de fib(4).
+Bueno... ¡Menudo trabajo! Estamos cansados... Bien, quizás
+nos hemos dado cuenta de que la estructura de este algoritmo
+a la hora de ejecutarlo es como un árbol. Para cada llamada
+recursiva, se producen dos nuevas llamadas, excepto en el caso de
+fib(1) y fib(0), cuyos valores conocemos.
+Claro, hemos visto un ejemplo con un n pequeño. No nos queremos
+ni imaginar lo que va a pasar cuando leemos fib(4000),
+un árbol inmenso con muchísimas llamadas. Y lo malo, además,
+es que el mismo cálculo lo hacemos muchas veces. Por ejemplo,
+aquí hemos calculado fib(2) en dos ocasiones. Pues nos lo encontraremos
+muchísimas más veces si lo que queremos calcular es fib(4000).
+Ahora, fijémonos en este par de métodos.
+Supongamos que ahora definimos fib como vemos aquí abajo. fib llama
+al método "fi" con tres argumentos: el primero es n, el segundo 0
+y el tercero 1, y ahora "fi" es el que definimos en la
+parte superior recursivamente. Si n es cero o uno el resultado es n.
+Cero, uno, igual que antes. En caso contrario, llamamos
+al mismo método "fi" en donde contamos hacia atrás, descontamos,
+n-1. Y la nueva x es y, segundo argumento, y el tercer
+argumento, el nuevo y, es x más y.
+Pues bien, resulta que este método, o estos dos métodos juntos
+en realidad, calculan el número n de Fibonacci igual que antes,
+pero hay una pequeña diferencia: el número de llamadas es
+mucho menor. En el caso recursivo solo tenemos una llamada nueva
+en lugar de dos, por tanto, el número de llamadas en total
+es aproximadamente n. Por tanto, el resultado es el mismo, matemáticamente,
+pero el tiempo transcurrido para dar ese resultado es distinto.
+Hemos visto dos formas distintas de calcular el mismo valor,
+el enésimo número de Fibonacci. ¿Cuáles son las ventajas de
+hacerlo de una forma o de otra? Piénsalo en un momento.

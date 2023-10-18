@@ -1,0 +1,45 @@
+Podemos hacerlo mejor que ese seguimiento a mano
+y esa inspección visual. La programación, de hecho, es una herramienta
+muy poderosa, así que ¿por qué no utilizamos código extra
+para ayudarnos a depurar?
+Aquí vemos el método para calcular la división entera,
+nuevamente, pero en lugar de calcular a mano los valores de
+las variables y anotarlos, podemos dejar que el ordenador lo haga
+por nosotros. Aquí vemos que hemos incluido una sentencia
+de impresión que imprime el valor de las variables x e y
+en cada iteración del bucle, y también hemos impreso previamente
+los dos parámetros, m y n, del método. Bien, podríamos adornar
+estos valores con más información contextual,
+como vemos aquí, con los nombres de las variables junto a los
+valores. Incluso lo podemos hacer más bonito, pero
+dejémoslo por un momento. Pero si hacemos esto,
+sería necesario obtener la impresión e inspeccionar los valores
+personalmente. Sabemos que lo podemos hacer mejor porque podemos
+utilizar todo el poder de Java para comprobar si se cumplen
+las condiciones que queremos que se cumplan
+y que estas también se impriman. Entonces, aparte de imprimir
+los valores de las variables, podemos imprimir en cada ejecución
+del bucle si se cumple la condición y por n más equis igual a m
+y además, podemos imprimir la condición x menor que m
+al salir del bucle, después de salir del bucle.
+Por tanto, ahora hemos indicado al ordenador
+que calcule la expresión que habríamos calculado a mano.
+Por supuesto, ahora el reto es encontrar las mejores expresiones,
+las mejores condiciones para comprobar e imprimir, pero eso también
+lo dejamos aparte de momento, Después de comprobar que todo
+va bien, podemos quitar con cuidado este código extra que hemos
+incluido, o bien podemos dejar el código extra
+y activarlo solamente cuando se cumplan algunas condiciones.
+Aquí vemos el mismo método pero con un parámetro adicional,
+un parámetro booleano, tm, de "test mode", modo de test, modo de prueba,
+que será verdadero cuando queramos activar ese modo de test.
+En ese caso, imprimiremos la información, y si tm es falso entonces
+tenemos el comportamiento normal del método.
+Este tm lo podemos definir, como hemos hecho aquí, como
+un parámetro en el método, pero también lo podemos definir
+como una variable global, como vemos aquí.
+En este caso no modificamos la funcionalidad del método.
+Bien, ahora somos un poco más profesionales
+porque utilizamos las herramientas que nos proporciona el mismo
+Java para ayudarnos a depurar el programa.
+Bien, ¡depuremos estos bichos de una forma más sistemática!

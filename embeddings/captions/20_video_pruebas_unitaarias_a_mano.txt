@@ -1,0 +1,53 @@
+Bien, veamos como procedemos con las pruebas.
+En primer lugar probamos las unidades individuales.
+Estas unidades pueden ser métodos o pueden ser clases completas.
+A esto se llama prueba unitaria y después probamos estas unidades
+en un contexto más amplio; esto se llama prueba de integración.
+Primero centrémonos en la prueba unitaria, en "unit
+testing" y sea esta clase la unidad a probar.
+Aquí no vemos una implementación completa en Java, solo mostramos
+el diagrama de clase UML. Y para probar esta clase definimos
+otra clase, cuyo nombre se obtiene de la anterior
+añadiendo típicamente la palabra "test" al final.
+En esta clase vamos a definir una serie de métodos
+para probar los métodos de la clase que están sometidos a prueba.
+Y centrémonos en primer lugar el método "getTankLevel".
+Y para ello escribimos un método en "FuelTankTest" llamado
+
+Este es un posible método para probar el nivel del depósito.
+Lo que comprobamos es que el nivel del depósito esperado coincide
+con el nivel real. A continuación podríamos escribir de
+forma análoga un método para testear "getCapacity".
+Esto lo dejamos como ejercicio.
+Ahora echemos un vistazo al método "full".
+Aquí construimos un depósito lleno e imprimimos que debería
+estar lleno. Además, imprimimos el resultado del método
+y así podemos comparar los resultados.
+Escribamos ahora un método de prueba para el método "fill".
+Misma idea: construimos un depósito con una capacidad de 60
+litros y lo llenamos con 10 litros y utilizamos el método
+"fill" para añadir 20 litros.
+Debería tener 30; entonces imprimimos
+tanto los valores esperados como los valores obtenidos.
+Pero, ¿es esto suficiente? Recordemos que solamente podemos llenar
+un depósito hasta su capacidad
+y esto es lo que expresa la precondición que vemos aquí.
+La cantidad a añadir tiene que ser inferior o igual
+a la capacidad del depósito menos el nivel que tenga.
+Aquí podríamos escribir varias pruebas y una de ellas
+puede ser la que vemos a continuación, en donde comprobamos que
+la condición, la poscondición se cumple.
+Y es más, recordando el "boundary testing",
+las pruebas de frontera o de valores límite,
+podemos probar exactamente con el límite de la capacidad.
+Esto no lo mostramos aquí.
+Otro test útil es la comprobación del historial completo
+del repostaje y consumo de gasolina.
+Es una situación simple: primero llenamos el depósito,
+luego consumimos una parte y entre medias podemos hacer varias comprobaciones.
+Bien, hemos visto los fundamentos
+de cómo probar, cómo testear un método o varios en una clase.
+Se puede ser más o menos exhaustivo según queramos comprobar
+más o menos casos, pero lo que debemos saber es que esto es como
+un análisis de sangre. Nunca tenemos la garantía total
+de que todo funciona bien.

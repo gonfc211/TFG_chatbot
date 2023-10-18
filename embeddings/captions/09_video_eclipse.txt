@@ -1,0 +1,47 @@
+Los entornos de desarrollo integrados, o IDE por sus
+siglas en inglés, nos sirven de ayuda para escribir código,
+ya que cuentan con herramientas y "plugins" de utilidad que nos
+permiten estructurar mejor nuestro código,
+así como detectar y corregir errores. Por ejemplo,
+la mayoría de entornos de desarrollo integrados destacan las
+palabras reservadas del lenguaje de programación en diferentes
+colores, proporcionan compilación automática, después de hacer
+cambios en el código, o incluyen funciones de depuración.
+Existen muchos entornos de desarrollo integrados para programar
+en Java, por ejemplo NetBeans, BlueJ o Greenfoot.
+Pero quizá el más popular entre los desarrolladores es Eclipse.
+Eclipse es un entorno de desarrollo integrado libre y de código
+abierto para desarrollar en Java, aunque también es posible
+crear proyectos en Eclipse en otros lenguajes de programación.
+En este curso, eres libre de elegir el entorno de desarrollo con
+el que te sientas más cómodo para programar en Java,
+pero si aún no has elegido ninguno, te ayudaremos a entender mejor
+cómo funciona Eclipse y qué características lo convierten
+en un entorno muy potente para el desarrollo en Java.
+Para comenzar a programar en Java con eclipse primero necesitas
+instalar el "Java Development Kit", JDK,
+y descargar una de las muchas versiones de Eclipse.
+Por ejemplo "Eclipse Mars" trabaja con JDK siete
+o superior. "Eclipse Neon" o "Eclipse Oxigen" trabajan con
+JDK ocho. El "Java Development Kit", JDK,
+incluye también el "Java Runtime Environment", JRE,
+además de algunas herramientas adicionales para el desarrollo
+de software.
+Entra en la Web de Oracle y descarga la última versión del "Java Development Kit".
+Haz clic en el botón de descarga,
+acepta el acuerdo de licencia y luego descarga la versión que deseas.
+Puedes encontrar tutoriales para la instalación para
+diferentes sistemas operativos.
+Una vez hayas instalado el "Java Development Kit" puedes continuar
+con la instalación de Eclipse.
+Ve a la Web de Eclipse y descarga la última versión.
+Tienes dos opciones para instalar Eclipse:
+la primera es descargar el instalador para tu sistema operativo.
+Luego, ejecuta el asistente de configuración
+y selecciona el paquete que quieres instalar.
+En ese caso es el Eclipse IDE para
+desarrolladores Java. Después, seleccionas el directorio de instalación
+y ya está. La otra opción de descargar un fichero zip
+con el Eclipse IDE para desarrolladores en Java
+para tu sistema operativo. Una vez que lo hayas descargado tienes
+que descomprimir el fichero zip y guardarlo en el directorio que quieras.

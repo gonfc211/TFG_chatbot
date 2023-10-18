@@ -1,0 +1,139 @@
+No solamente hacemos pruebas cuando hemos acabado de programar.
+Las pruebas, lo lógico es hacerlas durante el desarrollo del  programa.
+Programamos un poco, hacemos algunas pruebas. Luego programamos un
+poquito más y hacemos más pruebas. Por tanto, es bueno tener
+algún tipo de apoyo automatizado para realizar esta fase de
+prueba de la mejor manera. Lo bueno de los programadores
+es que tienen una herramienta, la programación, que sirve para
+automatizar todo lo que necesiten. Así que vamos a ver ahora
+cómo podemos automatizar la prueba unitaria.
+"JUnit" o "jota unit" es un "framework" de Java
+que nos ayuda específicamente a automatizar las pruebas unitarias.
+Un "framework" es una librería de software con algunas características
+distintivas. Por tanto, JUnit nos ayuda a escribir los casos de prueba
+además de ejecutarlos. Nosotros vamos a utilizar JUnit 4,
+También hay que saber que existe un plugin para Eclipse
+para JUnit y esto es bastante útil. Aquí vemos, en la parte superior,
+la clase que queremos probar. Se trata de una clase para una
+simple calculadora con un entero estático, "result",
+y cuatro métodos: uno para sumar, "add", uno para restar, "substract",
+uno para elevar al cuadrado, "square" y uno para obtener el resultado,
+"getResult". En la parte inferior podemos ver la prueba de clase
+para esta clase "Calculator" tal como se escribiría
+para el "framework" JUnit. Solo mostramos dos métodos,
+uno para probar el método "add" y uno para probar el método "substract".
+Bien, vamos a centrarnos ahora en tres cosas.
+Primero, delante de cada método hay una notación de JUnit,
+"@Test", que señala estos métodos como métodos de prueba.
+En segundo lugar, en cada uno de los métodos
+lo que tenemos que hacer es crear un entorno controlado,
+es decir, que tenemos que poner, tenemos que llegar a un estado
+en el que sabemos qué esperar. Esto se llaman en inglés "fixture",
+"fixture" de prueba, es decir algo así como "sujeción de prueba".
+En nuestro ejemplo creamos un nuevo objeto de la clase "Calculator",
+esta es nuestra "fixture", y entonces llamamos al método "add"
+o al método "substract".
+Una vez lo hemos hecho vemos abajo una sentencia "assert".
+Este es el tercer elemento. Estas son las sentencias "assert" de JUnit,
+en las que comprobamos si los valores obtenidos coinciden o no
+con los esperados. Bueno, vamos a revisar estos tres conceptos
+uno por uno. Bien, conocemos el aserto de Java, "assert",
+que sirve para comprobar ciertas condiciones.
+El "framework" JUnit introduce asertos adicionales.
+Aquí vemos alguno de los asertos más frecuentes que están
+disponibles en JUnit. Por ejemplo, "assertTrue"
+comprueba si una determinada condición
+es verdadera. Análogamente, "assertFalse" comprueba si esta condición
+booleana es falsa. En caso contrario se reportaría un fallo.
+"assertEquals" comprueba si el valor obtenido coincide con el esperado
+y esta igualdad se entiende con una determinada precisión
+"delta" que también se indica. Finalmente, "assertNull" comprueba si
+un objeto es nulo. Siempre puede haber un primer argumento opcional
+que contenga un mensaje. Bien, hay muchísimos más asertos en JUnit,
+pero con esto ya tenemos una primera idea.
+Un "fixture" de prueba es un dispositivo, una sujeción que nos
+permite probar algo de una manera consistente bajo condiciones
+controladas. Por ejemplo, si queremos probar, testear algún dispositivo
+físico lo que haremos es coger una sujeción
+para sus sujetarlo de una manera conocida, controlada.
+Análogamente, en pruebas de software, un "fixture" de prueba
+pone el código en un estado conocido para probarlo de una forma
+reproducible. Por tanto, una secuencia de eventos de un test
+son normalmente siempre los mismos. En primer lugar,
+obtener este estado controlado estableciendo un "fixture" de
+prueba. En el ejemplo de la calculadora era sólo para crear
+un nuevo objeto calculadora. En segundo lugar,
+interactuamos con este método que queremos probar
+y después comprobamos si se obtiene el valor esperado.
+Esto se hace con los asertos. Finalmente podría ser necesario
+retirar, eliminar este "fixture" de prueba
+si fuera necesario restaurar un cierto estado inicial.
+Ahora, esta puesta y retirada de "fixtures"
+realmente puede ser habitual en varios métodos.
+Por eso JUnit también nos ayuda en esto. Aquí tenemos un método
+"setUp" que lo vemos precedido por la notación "@Before".
+Este método se ejecuta antes de cualquiera de los métodos
+de prueba. También podríamos tener un método marcado con
+"@After" para eliminar, retirar el "fixture" después de
+que se haya ejecutado el método de prueba.
+Ahora bien, una advertencia importante. No podemos suponer
+ningún orden de ejecución en los métodos de prueba.
+Se podrían ejecutar en cualquier orden.
+Por tanto, debemos tener la precaución
+de crear ese estado adecuado para la ejecución de cada uno
+de los tests. Bien, veamos las anotaciones, ya hemos visto varias
+de ellas. Tenemos la anotación "@Test", para indicar el siguiente
+método es un método de prueba, la anotación "@Before",
+que señala un método a ejecutar antes de cada método de prueba
+en una clase, y existe también "@After", que se ejecuta
+después de cada método de prueba, sirve para retirar
+este "fixture" de prueba. Si tenemos métodos
+con "@BeforeClass" y "@AfterClass",
+esto indica que sólo son ejecutados cuando entramos y salimos,
+respectivamente, de una clase. ¿Realmente necesitamos escribir
+un método de prueba para todos y cada uno de los posibles
+valores? ¿O podemos mejorar esto un poco? Para esto para lo que
+son buenos los tests parametrizados. Les damos los valores de entrada
+junto con los valores de salida esperados.
+Veamos un momento los valores marcados con fondo amarillo.
+Aquí estamos dando los valores de entrada junto con los valores
+de salida esperados en el caso del método "square",
+es decir, si la entrada es dos la salida esperada debe ser cuatro,
+para tres es nueve y para cuatro debería ser 16.
+Pero vamos a introducir un error, en este caso en el método
+de prueba, y vamos a escribir 17 de momento.
+Ejecutemos ahora la prueba del método "square" con los valores
+de entrada indicados y los valores de salida esperados
+y vamos a ver que la prueba ha fallado.
+El caso de prueba número cero, con entrada dos,
+ha ido bien, salida cuatro, lo mismo para valor de entrada tres, salida nueve,
+pero para el caso de prueba con "input", con entrada cuatro
+vemos en la parte inferior que ha habido un fallo.
+Luego, o bien el caso de prueba es erróneo,
+como en nuestro caso, o bien el método sometido a prueba tiene
+un error. ¿Qué ocurre, pues, si queremos hacer no sólo una,
+sino todo un conjunto de pruebas? Los podemos empaquetar, podemos
+empaquetar pruebas en lo que se llama "Test Suite".
+O sea, un "Test Suite" es un conjunto de pruebas para varias clases.
+¿Que es lo que ocurre a la hora de ejecutar una prueba?
+Bien, JUnit proporciona clases de Java que ejecuten estas
+pruebas por nosotros. Estas se llaman "runners".
+La prueba normalmente se ejecuta en JUnit con una clase por defecto,
+sin embargo este comportamiento se puede modificar.
+Hay dos "runners" de relevancia que merece la pena mencionar aquí.
+Una es la clase "Suite", que nos permite ejecutar varias clases
+de prueba reunidas en un "Test Suite" y el otro es la clase "Parameterized",
+que nos permite ejecutar tests parametrizados
+como hemos visto antes. Bien, hemos aprendido muchas cosas en este vídeo.
+Hemos aprendido cómo el "framework" JUnit nos ayuda
+en la definición de pruebas unitarias. Hemos visto los asertos
+y las anotaciones especializadas que nos ofrece este "framework"
+y también hemos aprendido sobre los "fixtures" de prueba.
+Hemos aprendido cómo reunir pruebas en un "Test Suite"
+y cómo ejecutar pruebas parametrizadas.
+De esta forma podemos ejecutar pruebas fácilmente de una forma
+automatizada y se apoya el desarrollo de programas,
+porque, como hemos dicho al principio, no es recomendable hacer
+las pruebas cuando hemos terminado de programar
+sino durante el propio proceso de programación,
+como herramienta para aumentar nuestra confianza en nuestro programa.

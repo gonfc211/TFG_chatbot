@@ -1,0 +1,68 @@
+Aquellos que conozcan otros lenguajes de programación
+probablemente estarán acostumbrados a utilizar una sintaxis
+particular que puede ser distinta de la que se espera en Java.
+Así que vamos a ver ahora algunos errores haciendo hincapié precisamente
+en esa diferencia de Java con otros lenguajes de programación.
+En primer lugar, vamos a ver en este vídeo errores relacionados
+con la declaración de métodos y después vamos a ver algunos
+errores relacionados con objetos y clases. En algunos lenguajes de
+programación, si tenemos varios argumentos del mismo tipo en
+un método, no tenemos que repetir ese tipo
+en la lista de parámetros, como aquí en la parte de arriba,
+donde tenemos dos variables enteras x e y como parámetros.
+En Java, sin embargo, sí que tenemos que repetir el tipo.
+Así que, atención programadores avanzados, tened cuidado por favor.
+También en otros lenguajes podemos estar acostumbrados a no escribir
+la palabra clave "return". Solo con escribir la expresión
+a evaluar es suficiente. En Java, sin embargo, esta palabras clave
+"return" sí es necesaria si es que se devuelve algo.
+Ahora bien, si el método no tiene ningún parámetro
+hay que escribir los paréntesis de apertura y de cierre,
+tanto al declararlo como al llamarlo. Análogamente, si solo
+tenemos un efecto lateral, es decir, no se devuelve nada,
+tenemos que escribir un tipo, que en este caso sería "void".
+En cualquier programa Java tenemos escribir un método principal
+y este método principal tiene una sintaxis particular.
+Necesariamente tiene que ser un método público y estático,
+así que no nos olvidemos de ninguna de estas palabras clave
+ni de las otras que están alrededor. Bien, sigamos ahora con los objetos.
+Si estamos acostumbrados a lenguajes funcionales o imperativos
+estamos acostumbrados a escribir primero el método y luego
+entre paréntesis el argumento o argumentos.
+En un lenguaje orientado a objetos como Java tenemos que pensar al revés,
+ tenemos que pensar que enviamos el método a un objeto
+y tenemos que utilizar la notación del punto para expresarlo.
+Este método también puede tener otros argumentos adicionales,
+como vemos en el segundo ejemplo, con "meth2".
+Lo que sería uno de los argumentos en un lenguaje funcional o imperativo
+ahora se convierte en el objeto al que enviamos el mensaje.
+Sin embargo, si tenemos un método estático
+no se puede enviar a ningún objeto, como el caso de "x.abs".
+Hay que enviarlo a una clase, en lugar de a un objeto.
+En la línea de abajo vemos el uso del método "abs" de la
+clase "Math". Bien, evidentemente se pueden cometer muchos más errores
+y estoy seguro de que nos vamos a encontrar con ellos, desgraciadamente.
+Lo bueno es que las herramientas especializadas y los entornos de desarrollo
+ayudan a intentar evitar al menos algunos de ellos.
+Evidentemente, es muy importante corregir los errores en el software.
+En el pasado, los errores de software han provocado problemas tremendos
+y algunos de ellos han ocasionado gastos enormes.
+Por ejemplo, la Mars Climate Orbiter
+se desintegró en 1999 en la atmósfera
+de Marte y precisamente debido a un error de software,
+por un mal uso de las unidades, porque en un módulo
+habían previsto unidades del sistema métrico decimal
+y en otro utilizaban el sistema de medidas anglosajón.
+Entonces los dos módulos no se comunicaron bien
+y surgió la catástrofe. También el error del año 2000, el Y2K,
+provocó muchos gastos. El año estaba codificado en la
+mayoría de los sistemas operativos con dos dígitos, por ejemplo 98,
+los dos últimos, y por tanto los años 2000
+y 1900 eran indistinguibles.
+También un error de software provocó la muerte de varias personas
+que recibieron una sobredosis de radiación
+con la Therac-25, una máquina de terapia de radiación.
+Esto ocurrió en los años ochenta; ahora tenemos mejores
+herramientas y mejores disciplinas precisamente
+para poder eliminar errores. Algunos de ellos
+los veremos más adelante.
