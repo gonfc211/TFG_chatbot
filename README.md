@@ -21,3 +21,6 @@ Access it through http://localhost:8080
 
 ### Embeddings
 The `embeddings` folder contains some captions of the course videos. The file `make_chunks.py` creates the `video_embedd.csv`, the file containing the embeddings for the captions, which is then loaded in the `search_embedd.py` file. 
+
+
+![flow](https://github.com/gonfc211/TFG_chatbot/assets/61994178/71dec550-f8c2-474a-b569-ebfd0887e0c0)
