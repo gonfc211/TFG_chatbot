@@ -1,1 +1,0 @@
-Alavrato es un troll
